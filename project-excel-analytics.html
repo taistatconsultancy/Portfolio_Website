@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Analytics Solutions – Stephen Mulingwa</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --primary-glow: rgba(45,212,191,0.25);
+      --bg-hero: #060d14;
+      --bg-light: #f7f9fc;
+      --bg-white: #ffffff;
+      --text-white: #ffffff;
+      --text-muted: #000000;
+      --text-body: #000000;
+      --text-heading: #000000;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --radius: 18px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-body); background: var(--bg-white); line-height: 1.7; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .text-gradient { background: linear-gradient(135deg,var(--primary),#67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; border: 2px solid transparent; transition: all 0.25s ease; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: var(--bg-hero); border-color: var(--primary); }
+    .btn-primary:hover { background: #1ab5a3; transform: translateY(-1px); box-shadow: 0 6px 20px var(--primary-glow); }
+    .btn-outline { background: transparent; color: var(--text-heading); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+    .tag { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; background: rgba(45,212,191,0.1); color: var(--primary); border: 1px solid rgba(45,212,191,0.2); }
+
+    /* ── NAVBAR ── */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); padding: 14px 0; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-heading); }
+    .nav-logo-text span { color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--primary); border-radius: 2px; }
+    .nav-cta { display: flex; align-items: center; }
+    .nav-linkedin { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 9px; background: var(--primary); color: var(--bg-hero); font-size: 0.82rem; font-weight: 700; transition: all 0.25s; }
+    .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
+    .nav-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-white); border-top: 1px solid var(--border); padding: 16px 28px 24px; box-shadow: var(--shadow-md); }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a { display: block; padding: 13px 0; font-size: 0.95rem; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .nav-mobile a:hover { color: var(--primary); }
+    .nav-mobile .btn { width: 100%; justify-content: center; margin-top: 16px; }
+    @media (max-width: 900px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: block; } }
+
+    /* ── PAGE HERO ── */
+    .page-hero { background: var(--bg-hero); padding: 140px 0 70px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px); background-size: 60px 60px; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%); }
+    .page-hero-inner { position: relative; z-index: 2; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb i { font-size: 0.65rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.8rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
+    .page-hero-tagline { font-size: 1.05rem; color: rgba(255,255,255,0.5); max-width: 640px; line-height: 1.75; margin-bottom: 28px; }
+    .hero-meta-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .meta-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+    .meta-chip i { color: var(--primary); font-size: 0.85rem; }
+
+    /* ── PROJECT IMAGE ── */
+    .project-image-wrap { background: var(--bg-light); padding: 0 0 80px; }
+    .project-image-frame { max-width: 900px; margin: 0 auto; padding: 0 28px; position: relative; top: -40px; }
+    .project-image-frame img { width: 100%; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 24px 80px rgba(0,0,0,0.15); display: block; }
+
+    /* ── PROJECT CONTENT ── */
+    .project-content { background: var(--bg-light); padding: 0 0 100px; }
+    .project-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    .project-block { background: var(--bg-white); border-radius: var(--radius); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
+    .project-block:last-child { margin-bottom: 0; }
+    .project-block h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-heading); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .block-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .project-block p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 14px; }
+    .project-block p:last-child { margin-bottom: 0; }
+    .project-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .project-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .project-block ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
+
+    /* Data flow steps */
+    .flow-steps { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+    .flow-step { display: flex; align-items: flex-start; gap: 16px; background: var(--bg-light); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--border); }
+    .flow-num { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,var(--primary),#67e8f9); color: var(--bg-hero); font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .flow-text strong { display: block; font-size: 0.88rem; color: var(--text-heading); margin-bottom: 2px; }
+    .flow-text span { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Excel logo in sidebar */
+    .excel-logo-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
+    .excel-logo-wrap img { width: 56px; height: 56px; object-fit: contain; }
+
+    /* Sidebar */
+    .project-sidebar { position: sticky; top: 100px; }
+    .sidebar-card { background: var(--bg-white); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px; box-shadow: var(--shadow-sm); margin-bottom: 20px; }
+    .sidebar-card h4 { font-family: var(--font-display); font-size: 1rem; color: var(--text-heading); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .sidebar-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--bg-light); font-size: 0.85rem; }
+    .sidebar-row:last-child { border-bottom: none; }
+    .sidebar-row .label { color: var(--text-muted); }
+    .sidebar-row .value { color: var(--text-heading); font-weight: 600; }
+    .tools-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .sidebar-actions { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-actions .btn { justify-content: center; }
+
+    /* Course CTA banner */
+    .course-cta-banner {
+      background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(103,232,249,0.04));
+      border: 1px solid rgba(45,212,191,0.2);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .course-cta-banner img { width: 40px; height: 40px; object-fit: contain; margin: 0 auto 10px; }
+    .course-cta-banner p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .course-cta-banner .btn { width: 100%; justify-content: center; font-size: 0.82rem; padding: 11px 20px; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; width: 100%; margin-bottom: 8px; }
+    .footer-social .social-link { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; transition: all 0.25s; text-decoration: none; }
+    .footer-social .social-link:hover { border-color: var(--primary); color: var(--primary); background: rgba(45,212,191,0.08); transform: translateY(-2px); }
+    .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-right: 20px; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--primary); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+    .scroll-top-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; cursor: pointer; background: none; transition: all 0.2s; }
+    .scroll-top-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/favicon.png" alt="SM">
+      <span class="nav-logo-text">Stephen<span> M.</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+        <i class="bi bi-linkedin"></i> Connect
+      </a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <i class="bi bi-list" id="hamburgerIcon"></i>
+    </button>
+  </div>
+  <div class="nav-mobile container" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="assets/STEPHEN MULINGWA_RESUME.pdf" download class="btn btn-primary">
+      <i class="bi bi-download"></i> Download Resume
+    </a>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="bi bi-chevron-right"></i>
+      <a href="projects.html">Projects</a>
+      <i class="bi bi-chevron-right"></i>
+      <span>Excel Analytics Solutions</span>
+    </div>
+    <h1>Excel Analytics <span class="text-gradient">Solutions</span></h1>
+    <p class="page-hero-tagline">Advanced Excel dashboards and data models for reporting and decision support — turning messy spreadsheets into clean, reusable business tools.</p>
+    <div class="hero-meta-chips">
+      <span class="meta-chip"><i class="bi bi-file-earmark-spreadsheet"></i> Microsoft Excel</span>
+      <span class="meta-chip"><i class="bi bi-table"></i> PivotTables</span>
+      <span class="meta-chip"><i class="bi bi-lightning"></i> Power Query</span>
+      <span class="meta-chip"><i class="bi bi-bar-chart"></i> Dashboards</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECT IMAGE ══ -->
+<div class="project-image-wrap">
+  <div class="project-image-frame">
+    <img src="assets/img/portfolio/excel-analytics.jpg.jpg" alt="Excel Analytics Solutions" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
+  </div>
+</div>
+
+<!-- ══ PROJECT CONTENT ══ -->
+<section class="project-content">
+  <div class="project-layout">
+
+    <!-- Main Content -->
+    <div>
+
+      <!-- Problem -->
+      <div class="project-block fade-up">
+        <h3>
+          <span class="block-icon" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="bi bi-exclamation-circle"></i></span>
+          The Problem
+        </h3>
+        <p>Many teams rely on Excel for reporting but struggle with slow, error-prone workbooks, unclear structure, and no single view of key metrics. Data is often copied manually between sheets, and there's no easy way to slice by period, region, or product without rebuilding the report.</p>
+        <p>Leadership needed clear, repeatable dashboards that could be updated with new data without constant rework or relying on a data analyst every month.</p>
+      </div>
+
+      <!-- What I Built -->
+      <div class="project-block fade-up delay-1">
+        <h3>
+          <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-wrench-adjustable"></i></span>
+          What I Built
+        </h3>
+        <p>I designed and built Excel-based solutions that turn raw data into structured reports and dashboards. The workbooks are built for reuse — when new data is added, the user refreshes or pastes into the data sheet, and all dashboards and PivotTables update automatically.</p>
+        <p>I used <strong style="color:var(--text-heading)">dynamic arrays, named ranges, and conditional formatting</strong> so that KPIs and exceptions are visible at a glance, and added <strong style="color:var(--text-heading)">Power Pivot data models</strong> where multiple tables needed to be combined for ratio and trend measures.</p>
+
+        <!-- Data flow -->
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <div class="flow-text">
+              <strong>Data Layer</strong>
+              <span>Single data sheet or external connection — one place to paste or refresh</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <div class="flow-text">
+              <strong>Power Query / Data Model</strong>
+              <span>Transform, clean, and combine tables with measures and calculated columns</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <div class="flow-text">
+              <strong>PivotTables &amp; Calculated Fields</strong>
+              <span>Structured summaries that update with the data — no manual rework</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">4</div>
+            <div class="flow-text">
+              <strong>Dashboard &amp; Slicers</strong>
+              <span>Charts, KPIs, conditional formatting, and filters for stakeholder use</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcome -->
+      <div class="project-block fade-up delay-2">
+        <h3>
+          <span class="block-icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="bi bi-graph-up-arrow"></i></span>
+          Outcome
+        </h3>
+        <p>Teams have reliable, reusable Excel templates and dashboards that support monthly reporting and ad hoc analysis without heavy IT support. Decision-making is faster because the data is structured and the views are consistent.</p>
+        <ul>
+          <li>Clean, reusable workbooks — refresh data and all views update</li>
+          <li>KPI summary views with variance vs. plan built in</li>
+          <li>Drill-down by time period, region, or product via slicers</li>
+          <li>Power Pivot models for multi-table ratio and trend analysis</li>
+          <li>Conditional formatting for instant exception spotting</li>
+          <li>Documented structure so non-technical staff can maintain files</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="project-sidebar">
+
+      <div class="sidebar-card fade-up">
+        <div class="excel-logo-wrap">
+          <img src="assets/img/excel_logo.png" alt="Excel" onerror="this.style.display='none'">
+        </div>
+        <h4>Project Details</h4>
+        <div class="sidebar-row">
+          <span class="label">Category</span>
+          <span class="value">Analytics</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Tool</span>
+          <span class="value">Microsoft Excel</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Type</span>
+          <span class="value">Dashboard / Template</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Sectors</span>
+          <span class="value">Multiple</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Status</span>
+          <span class="value" style="color:var(--primary)">Complete</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card fade-up delay-1">
+        <h4>Tools &amp; Technologies</h4>
+        <div class="tools-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">Power Pivot</span>
+          <span class="tag">PivotTables</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Charts &amp; Slicers</span>
+          <span class="tag">Dynamic Arrays</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card fade-up delay-2">
+        <h4>Actions</h4>
+        <div class="sidebar-actions">
+          <a href="projects.html" class="btn btn-outline">
+            <i class="bi bi-arrow-left"></i> Back to Projects
+          </a>
+          <a href="contact.html" class="btn btn-primary">
+            <i class="bi bi-send"></i> Discuss a Project
+          </a>
+        </div>
+
+        <!-- Excel course cross-link -->
+        <div class="course-cta-banner">
+          <img src="assets/img/excel_logo.png" alt="Excel" onerror="this.style.display='none'">
+          <p>Want to learn Excel dashboards yourself? Stephen teaches from beginner to advanced.</p>
+          <a href="courses.html" class="btn btn-primary">
+            <i class="bi bi-mortarboard"></i> Explore Excel Course
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Data Scientist</p>
+    <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+      <i class="bi bi-arrow-up-short"></i>
+    </button>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let menuOpen = false;
+  hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    hamburgerIcon.className = menuOpen ? 'bi bi-x-lg' : 'bi bi-list';
+  });
+
+  const revealEls = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

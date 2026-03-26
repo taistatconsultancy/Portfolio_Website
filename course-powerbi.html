@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power BI tutoring – Stephen Mulingwa</title>
+  <meta name="description" content="Power BI training: lakehouses, DAX, Power Query, PySpark, APIs, dashboards — Stephen Mulingwa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root { --primary: #2dd4bf; --primary-glow: rgba(45,212,191,0.25); --bg-hero: #060d14; --bg-light: #f7f9fc; --bg-white: #fff; --text-muted: #000; --text-heading: #000; --border: #e2e8f0; --font-display: 'DM Serif Display', Georgia, serif; --font-body: 'Outfit', sans-serif; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);color:var(--text-muted);background:var(--bg-white);line-height:1.7}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:0 28px}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border);padding:14px 0}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{width:38px;height:38px;border-radius:10px}
+    .nav-logo-text{font-family:var(--font-display);font-size:1.1rem;color:var(--text-heading)}
+    .nav-logo-text span{color:var(--primary)}
+    .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+    .nav-links a{font-size:0.875rem;font-weight:500;color:var(--text-muted);transition:color 0.25s;position:relative}
+    .nav-links a:hover,.nav-links a.active{color:var(--primary)}
+    .nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--primary);border-radius:2px}
+    .nav-linkedin{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:9px;background:var(--primary);color:var(--bg-hero);font-size:0.82rem;font-weight:700}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem}
+    .nav-mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-white);border-top:1px solid var(--border);padding:16px 28px 24px}
+    .nav-mobile.open{display:block}
+    .nav-mobile a{display:block;padding:13px 0;font-size:0.95rem;border-bottom:1px solid var(--border)}
+    @media(max-width:900px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:block}}
+    .page-hero{background:var(--bg-hero);padding:130px 0 56px;position:relative;overflow:hidden}
+    .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px);background-size:60px 60px}
+    .page-hero-inner{position:relative;z-index:2}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.35);margin-bottom:16px;flex-wrap:wrap}
+    .breadcrumb a{color:rgba(255,255,255,0.35)} .breadcrumb a:hover{color:var(--primary)}
+    .page-hero h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.15;margin-bottom:12px}
+    .page-hero h1 span{background:linear-gradient(135deg,var(--primary),#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .page-hero-lead{color:rgba(255,255,255,0.45);max-width:640px;font-size:0.95rem}
+    .course-page-main{background:var(--bg-light);padding:48px 0 80px}
+    .course-page-inner{max-width:820px}
+    .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--primary);margin-bottom:10px}
+    .course-hero-logo{width:140px;height:140px;border-radius:28px;background:var(--bg-white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:12px;margin-bottom:24px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+    .course-hero-logo img{max-width:118px;max-height:118px;width:auto;height:auto;object-fit:contain}
+    .course-detail-lead{font-size:1.06rem;color:var(--text-muted);line-height:1.85;margin-bottom:18px}
+    .course-detail-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:18px 0 24px}
+    .course-detail-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.96rem;line-height:1.6}
+    .course-block{margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+    .course-block h3{font-family:var(--font-display);font-size:1.3rem;color:var(--text-heading);margin-bottom:14px}
+    .course-block p{font-size:0.96rem;line-height:1.8;margin-bottom:14px;color:var(--text-muted)}
+    .course-detail-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:7px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:10px;font-weight:600;font-size:0.9rem;cursor:pointer;border:2px solid transparent;transition:all 0.25s}
+    .btn-primary{background:var(--primary);color:var(--bg-hero);border-color:var(--primary)}
+    .btn-primary:hover{background:#1ab5a3;transform:translateY(-1px);box-shadow:0 6px 20px var(--primary-glow)}
+    .btn-outline{margin-left:12px;border-color:var(--border);color:var(--text-heading);background:var(--bg-white)}
+    .btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+    .site-footer{background:var(--bg-hero);border-top:1px solid rgba(255,255,255,0.06);padding:28px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-nav a{font-size:0.82rem;color:rgba(255,255,255,0.35);margin-right:20px}
+    .footer-nav a:hover{color:var(--primary)}
+    .footer-social{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;width:100%;margin-bottom:8px}
+    .footer-social .social-link{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4)}
+    .footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.25)}
+    .scroll-top-btn{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.4);cursor:pointer}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/favicon.png" alt="SM">
+        <span class="nav-logo-text">Stephen<span> M.</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin"><i class="bi bi-linkedin"></i> Connect</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu"><i class="bi bi-list" id="hamburgerIcon"></i></button>
+    </div>
+    <div class="nav-mobile container" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="bi bi-chevron-right"></i>
+        <a href="courses.html">Courses</a>
+        <i class="bi bi-chevron-right"></i>
+        <span style="color:rgba(255,255,255,0.55)">Power BI</span>
+      </div>
+      <h1>Power BI — lakehouses to <span>dynamic dashboards</span></h1>
+      <p class="page-hero-lead">Data engineering, PySpark, APIs, Power Query, DAX, modelling, and visuals for real decisions.</p>
+    </div>
+  </div>
+
+  <main class="course-page-main">
+    <div class="container course-page-inner">
+      <div class="course-hero-logo"><img src="assets/img/powerbi_logo.png" alt="Power BI"></div>
+      <p class="section-label">Overview</p>
+      <p class="course-detail-lead">Power BI sits at the centre of many organisations’ reporting stacks. This track helps you go beyond default charts: we connect the dots from <strong>how data is stored and engineered</strong> (including <strong>lakehouse</strong> ideas and when <strong>PySpark</strong> appears in your stack) through <strong>Power Query</strong> (M), robust <strong>data modelling</strong>, and <strong>DAX</strong>, all the way to <strong>dynamic dashboards</strong> that leaders actually use. We also cover <strong>APIs and mixed sources</strong> so your reports stay aligned with how data really arrives in your company.</p>
+
+      <div class="course-block">
+        <h3>Who this is for</h3>
+        <p>Business analysts upgrading from Excel, data analysts owning departmental reports, and anyone responsible for “the dashboard everyone asks for.” Also suitable if you’re preparing for roles that expect both modelling skill and clear visual communication.</p>
+      </div>
+
+      <div class="course-block">
+        <p class="section-label">Curriculum</p>
+        <h3>From engineered data to decisions people trust</h3>
+        <p>Power BI works best when you understand where data comes from, how it is shaped, and how measures should behave. We go as deep as you need on modelling, DAX, and storytelling—always tied to questions your stakeholders actually ask.</p>
+        <ul class="course-detail-list">
+          <li><strong>Lakehouses and modern BI</strong> — How medallion-style layers and lakehouse patterns influence what you import and how you model in Power BI.</li>
+          <li><strong>Data engineering in context</strong> — Refresh windows, incremental refresh, and working productively with what IT or your cloud platform already provides.</li>
+          <li><strong>PySpark and big data</strong> — When large-scale tooling appears in your world, and how that upstream work relates to what lands in your semantic model (introductory through intermediate, as needed).</li>
+          <li><strong>APIs in Power Query</strong> — Web connectors, parameters, authentication basics, and turning nested JSON into clean, analysable tables.</li>
+          <li><strong>Power Query (M)</strong> — Reusable steps, query folding, resilient error handling, and transformations that stay fast as data grows.</li>
+          <li><strong>Cleaning and exploring data</strong> — Profiling, outliers, business rules, and documenting assumptions so your model is auditable.</li>
+          <li><strong>Data modelling</strong> — Star-schema thinking, relationships, role-playing dimensions, and the pitfalls that quietly break reports.</li>
+          <li><strong>DAX</strong> — Measures versus calculated columns, filter and row context, time intelligence, and habits that keep calculations understandable.</li>
+          <li><strong>Visualisation and narrative</strong> — Chart choice, accessibility, and structuring a story executives can follow in minutes.</li>
+          <li><strong>Dynamic, publish-ready dashboards</strong> — Bookmarks, drillthrough, tooltips, and a sensible approach to the Power BI Service and sharing.</li>
+        </ul>
+      </div>
+
+      <div class="course-block">
+        <h3>Outcomes you can aim for</h3>
+        <p>You should be able to own an end-to-end report: import and transform messy sources, build a coherent model, write maintainable DAX, and ship an interactive dashboard with a clear narrative — plus know where to go next when data volume or governance gets tougher.</p>
+      </div>
+
+      <div class="course-block">
+        <h3>How sessions work</h3>
+        <p>We can follow your company’s sample data (anonymised) or public datasets. Each session usually mixes explanation, live build-along, and short exercises you can repeat afterward.</p>
+      </div>
+
+      <div style="margin-top:36px">
+        <a href="contact.html?subject=Power%20BI%20Course" class="btn btn-primary"><i class="bi bi-send-fill"></i> Enquire about this track</a>
+        <a href="courses.html" class="btn btn-outline"><i class="bi bi-arrow-left"></i> All courses</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <p class="footer-copy">Stephen Mulingwa · Data Scientist</p>
+      <button type="button" class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Top"><i class="bi bi-arrow-up-short"></i></button>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.toggle('open');
+      document.getElementById('hamburgerIcon').className = document.getElementById('mobileMenu').classList.contains('open') ? 'bi bi-x-lg' : 'bi bi-list';
+    });
+  </script>
+</body>
+</html>

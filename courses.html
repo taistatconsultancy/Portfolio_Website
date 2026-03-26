@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses – Stephen Mulingwa</title>
+  <meta name="description" content="Data training & project assistance: APIs, Power BI, Excel, Python — tutoring by Stephen Mulingwa (TaiStat Firm).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --primary-glow: rgba(45, 212, 191, 0.25);
+      --bg-hero: #060d14;
+      --bg-dark: #0b1521;
+      --bg-light: #f7f9fc;
+      --bg-white: #ffffff;
+      --text-muted: #000000;
+      --text-body: #000000;
+      --text-heading: #000000;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --radius: 18px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-body); background: var(--bg-white); line-height: 1.7; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border); padding: 14px 0;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-heading); }
+    .nav-logo-text span { color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: var(--primary); border-radius: 2px;
+    }
+    .nav-linkedin {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 9px;
+      background: var(--primary); color: var(--bg-hero);
+      font-size: 0.82rem; font-weight: 700; transition: all 0.25s;
+    }
+    .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
+    .nav-mobile {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg-white); border-top: 1px solid var(--border);
+      padding: 16px 28px 24px; box-shadow: var(--shadow-md);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a { display: block; padding: 13px 0; font-size: 0.95rem; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .nav-mobile a:last-of-type { border-bottom: none; }
+    .nav-mobile a:hover, .nav-mobile a.active { color: var(--primary); }
+    .nav-mobile .btn { width: 100%; justify-content: center; margin-top: 16px; }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: var(--bg-hero); padding: 140px 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(45,212,191,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,212,191,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .page-hero-radial {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(45,212,191,0.07) 0%, transparent 70%);
+    }
+    .page-hero-inner { position: relative; z-index: 2; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb i { font-size: 0.65rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); color: #fff; line-height: 1.1; margin-bottom: 16px; }
+    .page-hero h1 span {
+      background: linear-gradient(135deg, var(--primary), #67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero p { color: rgba(255,255,255,0.45); max-width: 580px; font-size: 1rem; line-height: 1.8; }
+    .page-hero-meta { display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+    .meta-chip {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+      font-size: 0.78rem; color: rgba(255,255,255,0.5);
+    }
+    .meta-chip i { color: var(--primary); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 10px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      cursor: pointer; border: 2px solid transparent; transition: all 0.25s ease;
+    }
+    .btn-primary { background: var(--primary); color: var(--bg-hero); border-color: var(--primary); }
+    .btn-primary:hover { background: #1ab5a3; transform: translateY(-1px); box-shadow: 0 6px 20px var(--primary-glow); }
+    .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+    .btn-outline-light:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+    .btn-enroll {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 24px; border-radius: 9px;
+      background: var(--primary); color: var(--bg-hero);
+      font-size: 0.875rem; font-weight: 700; border: none;
+      cursor: pointer; font-family: var(--font-body);
+      transition: all 0.25s; margin-top: auto;
+    }
+    .btn-enroll:hover { background: #1ab5a3; transform: translateY(-1px); box-shadow: 0 6px 20px var(--primary-glow); }
+
+    /* ── Why Learn Section ── */
+    .why-section { background: var(--bg-dark); padding: 72px 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+    .why-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius); padding: 28px 22px;
+      transition: border-color 0.25s, transform 0.25s;
+      text-align: center;
+    }
+    .why-card:hover { border-color: rgba(45,212,191,0.3); transform: translateY(-3px); }
+    .why-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(45,212,191,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--primary); margin: 0 auto 16px; }
+    .why-card h4 { font-family: var(--font-display); font-size: 1rem; color: #fff; margin-bottom: 8px; }
+    .why-card p { font-size: 0.84rem; color: rgba(255,255,255,0.4); line-height: 1.7; }
+    @media (max-width: 800px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
+
+    /* ── Courses Section ── */
+    .courses-section { background: var(--bg-light); padding: 80px 0 100px; }
+    .section-label { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--text-heading); line-height: 1.2; margin-bottom: 8px; }
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary), #67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    @media (max-width: 1100px) { .courses-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .courses-grid { grid-template-columns: 1fr; } }
+    .course-card {
+      background: var(--bg-white); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s;
+      position: relative;
+      cursor: pointer;
+    }
+    .course-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); border-color: rgba(45,212,191,0.35); }
+    .course-card-hit {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: var(--radius);
+    }
+    .course-card-hit:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+    .course-banner,
+    .course-body { position: relative; z-index: 0; }
+    .course-card .btn-enroll { position: relative; z-index: 2; }
+
+    /* Card top banner */
+    .course-banner {
+      padding: 26px 20px 22px;
+      position: relative; overflow: hidden;
+    }
+    .course-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--banner-from), var(--banner-to));
+      opacity: 0.12;
+    }
+    .course-banner-icon {
+      width: 92px; height: 92px; border-radius: 22px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 20px; position: relative; z-index: 1;
+    }
+    .course-banner-icon--logo { padding: 14px; }
+    .course-banner-icon--logo img { width: 64px; height: 64px; object-fit: contain; display: block; }
+    .course-banner h3 { font-family: var(--font-display); font-size: 1.55rem; color: var(--text-heading); position: relative; z-index: 1; margin-bottom: 6px; }
+    .course-level { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; position: relative; z-index: 1; }
+
+    /* Excel theme */
+    .course-excel { --banner-from: #16a34a; --banner-to: #4ade80; }
+    .course-excel .course-banner-icon { background: rgba(22,163,74,0.12); color: #16a34a; }
+    .course-excel .course-tag { background: rgba(22,163,74,0.1); color: #16a34a; border-color: rgba(22,163,74,0.2); }
+    .course-excel .btn-enroll { background: #16a34a; }
+    .course-excel .btn-enroll:hover { background: #15803d; }
+
+    /* Power BI theme */
+    .course-powerbi { --banner-from: #f59e0b; --banner-to: #fcd34d; }
+    .course-powerbi .course-banner-icon { background: rgba(245,158,11,0.12); color: #d97706; }
+    .course-powerbi .course-tag { background: rgba(245,158,11,0.1); color: #d97706; border-color: rgba(245,158,11,0.2); }
+    .course-powerbi .btn-enroll { background: #d97706; }
+    .course-powerbi .btn-enroll:hover { background: #b45309; }
+
+    /* Python theme */
+    .course-python { --banner-from: #3b82f6; --banner-to: #67e8f9; }
+    .course-python .course-banner-icon { background: rgba(59,130,246,0.12); color: #2563eb; }
+    .course-python .course-tag { background: rgba(59,130,246,0.1); color: #2563eb; border-color: rgba(59,130,246,0.2); }
+    .course-python .btn-enroll { background: #2563eb; }
+    .course-python .btn-enroll:hover { background: #1d4ed8; }
+
+    /* APIs / connectivity theme */
+    .course-api { --banner-from: #6366f1; --banner-to: #a78bfa; }
+    .course-api .course-banner-icon { background: rgba(99,102,241,0.15); color: #4f46e5; }
+    .course-api .course-tag { background: rgba(99,102,241,0.1); color: #4338ca; border-color: rgba(99,102,241,0.25); }
+    .course-api .btn-enroll { background: #4f46e5; }
+    .course-api .btn-enroll:hover { background: #4338ca; }
+
+    .course-body { padding: 22px 22px 28px; display: flex; flex-direction: column; flex: 1; }
+    .course-desc { font-size: 0.96rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
+
+    .course-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.68rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 999px; border: 1px solid; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+
+    .course-topics { margin-bottom: 24px; }
+    .course-topics h5 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-heading); margin-bottom: 12px; }
+    .course-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .course-list li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; color: var(--text-body);
+    }
+    .course-list li::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--primary); flex-shrink: 0;
+    }
+
+    /* ── Tutoring Strip ── */
+    .tutoring-strip { background: var(--bg-white); padding: 72px 0; border-top: 1px solid var(--border); }
+    .tutoring-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .tutoring-text h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3.5vw,2.6rem); color: var(--text-heading); margin-bottom: 14px; }
+    .tutoring-text p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 18px; }
+    .tutoring-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .tutoring-list li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-body); }
+    .tutoring-list li i { color: var(--primary); font-size: 0.85rem; }
+    .tutoring-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .t-stat { text-align: center; background: var(--bg-light); border-radius: 14px; padding: 20px 14px; border: 1px solid var(--border); }
+    .t-stat .val { font-family: var(--font-display); font-size: 1.8rem; background: linear-gradient(135deg, var(--primary), #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .t-stat .lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
+    @media (max-width: 760px) { .tutoring-inner { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* ── CTA Strip ── */
+    .cta-strip { background: var(--bg-dark); padding: 72px 0; }
+    .cta-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+    .cta-inner h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3.5vw,2.6rem); color: #fff; margin-bottom: 14px; }
+    .cta-inner h2 span { background: linear-gradient(135deg, var(--primary), #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cta-inner p { color: rgba(255,255,255,0.4); margin-bottom: 32px; font-size: 0.97rem; }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; width: 100%; margin-bottom: 8px; }
+    .footer-social .social-link { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; transition: all 0.25s; text-decoration: none; }
+    .footer-social .social-link:hover { border-color: var(--primary); color: var(--primary); background: rgba(45,212,191,0.08); transform: translateY(-2px); }
+    .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-right: 20px; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--primary); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+    .scroll-top-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; cursor: pointer; background: none; transition: all 0.2s; }
+    .scroll-top-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* ── Animations ── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-right { opacity: 0; transform: translateX(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible, .fade-left.visible, .fade-right.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- ════ NAVBAR ════ -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/favicon.png" alt="SM">
+        <span class="nav-logo-text">Stephen<span> M.</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+          <i class="bi bi-linkedin"></i> Connect
+        </a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <i class="bi bi-list" id="hamburgerIcon"></i>
+      </button>
+    </div>
+    <div class="nav-mobile container" id="mobileMenu">
+      <a href="index.html" onclick="closeMobile()">Home</a>
+      <a href="projects.html" onclick="closeMobile()">Projects</a>
+      <a href="courses.html" class="active" onclick="closeMobile()">Courses</a>
+      <a href="contact.html" onclick="closeMobile()">Contact</a>
+      <a href="assets/STEPHEN%20MULINGWA_RESUME.pdf" download class="btn btn-primary">
+        <i class="bi bi-download"></i> Download Resume
+      </a>
+    </div>
+  </nav>
+
+  <!-- ════ PAGE HERO ════ -->
+  <div class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-radial"></div>
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="bi bi-chevron-right"></i>
+        <span style="color:rgba(255,255,255,0.6)">Courses</span>
+      </div>
+      <h1>Training &amp; <span>project assistance</span></h1>
+      <p>Hands-on tutoring in Excel, Power BI, Python, APIs, and data engineering — plus help on your real dashboards, reports, and automation. Five years of applied data science experience.</p>
+      <div class="page-hero-meta">
+        <div class="meta-chip"><i class="bi bi-collection-play-fill"></i> 4 focus areas</div>
+        <div class="meta-chip"><i class="bi bi-kanban-fill"></i> Project support</div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ════ WHY LEARN WITH ME ════ -->
+    <section class="why-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label" style="color:var(--primary)">Why Learn With Me</p>
+          <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.6rem);color:#fff;line-height:1.2">
+            Real skills. <span style="background:linear-gradient(135deg,var(--primary),#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Real results.</span>
+          </h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-up delay-1">
+            <div class="why-icon"><i class="bi bi-person-workspace"></i></div>
+            <h4>Hands-On Learning</h4>
+            <p>Every session uses real datasets and live projects — no generic textbook exercises.</p>
+          </div>
+          <div class="why-card fade-up delay-2">
+            <div class="why-icon"><i class="bi bi-briefcase-fill"></i></div>
+            <h4>5+ Years Experience</h4>
+            <p>Learn from someone actively working as a Data Scientist across multiple sectors.</p>
+          </div>
+          <div class="why-card fade-up delay-3">
+            <div class="why-icon"><i class="bi bi-people-fill"></i></div>
+            <h4>Flexible formats</h4>
+            <p>Sessions tailored to your pace — individual or small groups when it fits.</p>
+          </div>
+          <div class="why-card fade-up delay-3">
+            <div class="why-icon"><i class="bi bi-kanban-fill"></i></div>
+            <h4>Project assistance</h4>
+            <p>Support on live work — reports, pipelines, and analytics deliverables — not only classroom-style lessons.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ COURSES ════ -->
+    <section class="courses-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Our Programmes</p>
+          <h2 class="section-title fade-up">Available <span class="text-gradient">Courses</span></h2>
+        </div>
+
+        <div class="courses-grid">
+
+          <!-- APIs -->
+          <div class="course-card course-api fade-up delay-1">
+            <a href="course-apis.html" class="course-card-hit" aria-label="Open APIs &amp; data connectivity course page"></a>
+            <div class="course-banner">
+              <div class="course-banner-icon course-banner-icon--logo"><img src="assets/img/api.png" alt=""></div>
+              <h3>APIs &amp; data connectivity</h3>
+              <p class="course-level">REST · Sheets API · automation</p>
+            </div>
+            <div class="course-body">
+              <span class="course-tag"><i class="bi bi-link-45deg"></i> Integration focus</span>
+              <p class="course-desc">Learn how APIs work in practice: REST, Google Sheets API, and database-backed sources — then wire them into analytics tools and Python.</p>
+              <div class="course-topics">
+                <h5>Highlights</h5>
+                <ul class="course-list">
+                  <li>REST APIs &amp; API concepts</li>
+                  <li>Google Sheets API &amp; databases</li>
+                  <li>Use in Power BI, Tableau &amp; Python</li>
+                  <li>Data engineering &amp; task automation</li>
+                </ul>
+              </div>
+              <a href="contact.html?subject=APIs%20%26%20Data%20Connectivity%20Course" class="btn-enroll">
+                <i class="bi bi-send-fill"></i> Enquire
+              </a>
+            </div>
+          </div>
+
+          <!-- Power BI -->
+          <div class="course-card course-powerbi fade-up delay-2">
+            <a href="course-powerbi.html" class="course-card-hit" aria-label="Open Power BI course page"></a>
+            <div class="course-banner">
+              <div class="course-banner-icon course-banner-icon--logo"><img src="assets/img/powerbi_logo.png" alt=""></div>
+              <h3>Power BI</h3>
+              <p class="course-level">Lakehouse · DAX · dashboards</p>
+            </div>
+            <div class="course-body">
+              <span class="course-tag"><i class="bi bi-lightning-fill"></i> BI &amp; engineering</span>
+              <p class="course-desc">From modelling and DAX to lakehouses, PySpark, and API-connected datasets — build dynamic dashboards for real decisions.</p>
+              <div class="course-topics">
+                <h5>Highlights</h5>
+                <ul class="course-list">
+                  <li>Lakehouses &amp; data engineering</li>
+                  <li>PySpark, APIs, Power Query</li>
+                  <li>DAX, cleaning, analysis, modelling</li>
+                  <li>Visualization &amp; dynamic dashboards</li>
+                </ul>
+              </div>
+              <a href="contact.html?subject=Power%20BI%20Course" class="btn-enroll">
+                <i class="bi bi-send-fill"></i> Enquire
+              </a>
+            </div>
+          </div>
+
+          <!-- Excel -->
+          <div class="course-card course-excel fade-up delay-3">
+            <a href="course-excel.html" class="course-card-hit" aria-label="Open Excel course page"></a>
+            <div class="course-banner">
+              <div class="course-banner-icon course-banner-icon--logo"><img src="assets/img/excel_logo.png" alt=""></div>
+              <h3>Excel</h3>
+              <p class="course-level">Beginner → Advanced</p>
+            </div>
+            <div class="course-body">
+              <span class="course-tag"><i class="bi bi-bar-chart-fill"></i> Analytics in Excel</span>
+              <p class="course-desc">Strong Excel for analysis and reporting — formulas through automation and polished dashboards.</p>
+              <div class="course-topics">
+                <h5>Highlights</h5>
+                <ul class="course-list">
+                  <li>Excel formulas &amp; functions</li>
+                  <li>Data visualizations &amp; charts</li>
+                  <li>PivotTables &amp; data analysis</li>
+                  <li>Macros &amp; VBA automation</li>
+                  <li>Dashboards</li>
+                </ul>
+              </div>
+              <a href="contact.html?subject=Excel%20Course" class="btn-enroll">
+                <i class="bi bi-send-fill"></i> Enquire
+              </a>
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div class="course-card course-python fade-up delay-1">
+            <a href="course-python.html" class="course-card-hit" aria-label="Open Python course page"></a>
+            <div class="course-banner">
+              <div class="course-banner-icon course-banner-icon--logo"><img src="assets/img/python_logo.png" alt=""></div>
+              <h3>Python</h3>
+              <p class="course-level">ML · NLP · deployment</p>
+            </div>
+            <div class="course-body">
+              <span class="course-tag"><i class="bi bi-cpu-fill"></i> AI-ready stack</span>
+              <p class="course-desc">Python for analytics and ML: APIs, visualization, modelling, deploying models, and an intro to NLP &amp; AI workflows.</p>
+              <div class="course-topics">
+                <h5>Highlights</h5>
+                <ul class="course-list">
+                  <li>APIs &amp; automation</li>
+                  <li>Data visualization &amp; modelling</li>
+                  <li>Machine learning &amp; model deployment</li>
+                  <li>NLP &amp; AI</li>
+                </ul>
+              </div>
+              <a href="contact.html?subject=Python%20Course" class="btn-enroll">
+                <i class="bi bi-send-fill"></i> Enquire
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════ TUTORING STRIP ════ -->
+    <section class="tutoring-strip">
+      <div class="container">
+        <div class="tutoring-inner">
+          <div class="tutoring-text fade-left">
+            <p class="section-label">Private tutoring</p>
+            <h2>Prefer personalised <span class="text-gradient">guidance?</span></h2>
+            <p>Beyond the structured courses, I offer private tutoring sessions tailored entirely to your current skill level and goals — whether you're a student, professional, or postgraduate researcher.</p>
+            <ul class="tutoring-list">
+              <li><i class="bi bi-check-circle-fill"></i> Schedule sessions around your timetable</li>
+              <li><i class="bi bi-check-circle-fill"></i> Work on your own datasets and real problems</li>
+              <li><i class="bi bi-check-circle-fill"></i> Cover Excel, Power BI, Python, APIs, Tableau, R, SPSS, or statistics</li>
+              <li><i class="bi bi-check-circle-fill"></i> Support for academic projects and dissertations</li>
+              <li><i class="bi bi-check-circle-fill"></i> Available via Zoom, Google Meet, or in-person (Nairobi)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary"><i class="bi bi-send-fill"></i> Book a Session</a>
+          </div>
+          <div class="fade-right">
+            <div class="tutoring-stats">
+              <div class="t-stat">
+                <div class="val">5+</div>
+                <div class="lbl">Years teaching</div>
+              </div>
+              <div class="t-stat">
+                <div class="val">50+</div>
+                <div class="lbl">People trained</div>
+              </div>
+              <div class="t-stat">
+                <div class="val">4</div>
+                <div class="lbl">Core tracks</div>
+              </div>
+            </div>
+            <!-- Visual card -->
+            <div style="margin-top:20px;background:var(--bg-light);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
+              <p style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-heading);margin-bottom:16px">Tools I tutor in</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">REST / APIs</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Excel</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Power BI</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Tableau</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Python</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">R</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">SPSS</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Statistics</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Machine Learning</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ CTA STRIP ════ -->
+    <div class="cta-strip">
+      <div class="container">
+        <div class="cta-inner fade-up">
+          <p class="section-label" style="color:var(--primary)">Ready to Start?</p>
+          <h2>Invest in your <span>data skills today.</span></h2>
+          <p>Whether you're starting from scratch or levelling up, there's a course for you. Get in touch and let's build a learning plan together.</p>
+          <div class="btn-row">
+            <a href="contact.html" class="btn btn-primary"><i class="bi bi-send-fill"></i> Get in Touch</a>
+            <a href="projects.html" class="btn btn-outline-light"><i class="bi bi-grid-3x3-gap-fill"></i> See My Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Data Scientist</p>
+      <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up-short"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburgerIcon.className = menuOpen ? 'bi bi-x-lg' : 'bi bi-list';
+    });
+    function closeMobile() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      hamburgerIcon.className = 'bi bi-list';
+    }
+
+    const revealEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

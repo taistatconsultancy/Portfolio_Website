@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footwear Sales Application – Stephen Mulingwa</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --primary-dark: #0f9488;
+      --primary-glow: rgba(45,212,191,0.25);
+      --bg-hero: #060d14;
+      --bg-dark: #0b1521;
+      --bg-light: #f7f9fc;
+      --bg-white: #ffffff;
+      --text-white: #ffffff;
+      --text-muted: #000000;
+      --text-body: #000000;
+      --text-heading: #000000;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --radius: 18px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-body); background: var(--bg-white); line-height: 1.7; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .text-gradient { background: linear-gradient(135deg,var(--primary),#67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; border: 2px solid transparent; transition: all 0.25s ease; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: var(--bg-hero); border-color: var(--primary); }
+    .btn-primary:hover { background: #1ab5a3; transform: translateY(-1px); box-shadow: 0 6px 20px var(--primary-glow); }
+    .btn-outline { background: transparent; color: var(--text-heading); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+    .tag { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; background: rgba(45,212,191,0.1); color: var(--primary); border: 1px solid rgba(45,212,191,0.2); }
+
+    /* ── NAVBAR ── */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); padding: 14px 0; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-heading); }
+    .nav-logo-text span { color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--primary); border-radius: 2px; }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-linkedin { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 9px; background: var(--primary); color: var(--bg-hero); font-size: 0.82rem; font-weight: 700; transition: all 0.25s; }
+    .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
+    .nav-mobile { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-white); border-top: 1px solid var(--border); padding: 16px 28px 24px; box-shadow: var(--shadow-md); }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a { display: block; padding: 13px 0; font-size: 0.95rem; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .nav-mobile a:hover { color: var(--primary); }
+    .nav-mobile .btn { width: 100%; justify-content: center; margin-top: 16px; }
+    @media (max-width: 900px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: block; } }
+
+    /* ── PAGE HERO ── */
+    .page-hero { background: var(--bg-hero); padding: 140px 0 70px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px); background-size: 60px 60px; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%); }
+    .page-hero-inner { position: relative; z-index: 2; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb i { font-size: 0.65rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
+    .page-hero-tagline { font-size: 1.05rem; color: rgba(255,255,255,0.5); max-width: 640px; line-height: 1.75; margin-bottom: 28px; }
+    .hero-meta-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .meta-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+    .meta-chip i { color: var(--primary); font-size: 0.85rem; }
+
+    /* ── PROJECT IMAGE ── */
+    .project-image-wrap { background: var(--bg-light); padding: 0 0 80px; }
+    .project-image-frame { max-width: 900px; margin: 0 auto; padding: 0 28px; position: relative; top: -40px; }
+    .project-image-frame img { width: 100%; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 24px 80px rgba(0,0,0,0.15); display: block; }
+
+    /* ── PROJECT CONTENT ── */
+    .project-content { background: var(--bg-light); padding: 0 0 100px; }
+    .project-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    .project-block { background: var(--bg-white); border-radius: var(--radius); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
+    .project-block:last-child { margin-bottom: 0; }
+    .project-block h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-heading); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .block-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .project-block p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 14px; }
+    .project-block p:last-child { margin-bottom: 0; }
+    .project-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .project-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .project-block ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
+
+    /* Feature grid inside a block */
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
+    .feature-item { background: var(--bg-light); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--border); }
+    .feature-item i { color: var(--primary); font-size: 1.1rem; margin-bottom: 8px; display: block; }
+    .feature-item strong { font-size: 0.85rem; color: var(--text-heading); display: block; margin-bottom: 3px; }
+    .feature-item span { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* Sidebar */
+    .project-sidebar { position: sticky; top: 100px; }
+    .sidebar-card { background: var(--bg-white); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px; box-shadow: var(--shadow-sm); margin-bottom: 20px; }
+    .sidebar-card h4 { font-family: var(--font-display); font-size: 1rem; color: var(--text-heading); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .sidebar-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--bg-light); font-size: 0.85rem; }
+    .sidebar-row:last-child { border-bottom: none; }
+    .sidebar-row .label { color: var(--text-muted); }
+    .sidebar-row .value { color: var(--text-heading); font-weight: 600; }
+    .tools-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .sidebar-actions { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-actions .btn { justify-content: center; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; width: 100%; margin-bottom: 8px; }
+    .footer-social .social-link { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; transition: all 0.25s; text-decoration: none; }
+    .footer-social .social-link:hover { border-color: var(--primary); color: var(--primary); background: rgba(45,212,191,0.08); transform: translateY(-2px); }
+    .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-right: 20px; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--primary); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+    .scroll-top-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; cursor: pointer; background: none; transition: all 0.2s; }
+    .scroll-top-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } .feature-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/favicon.png" alt="SM">
+      <span class="nav-logo-text">Stephen<span> M.</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+        <i class="bi bi-linkedin"></i> Connect
+      </a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <i class="bi bi-list" id="hamburgerIcon"></i>
+    </button>
+  </div>
+  <div class="nav-mobile container" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="assets/STEPHEN MULINGWA_RESUME.pdf" download class="btn btn-primary">
+      <i class="bi bi-download"></i> Download Resume
+    </a>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="bi bi-chevron-right"></i>
+      <a href="projects.html">Projects</a>
+      <i class="bi bi-chevron-right"></i>
+      <span>Footwear Sales Application</span>
+    </div>
+    <h1>Footwear Sales <span class="text-gradient">Application</span></h1>
+    <p class="page-hero-tagline">R Shiny app for tracking sales, managing stock levels, and generating time series forecasts to support smarter ordering and planning.</p>
+    <div class="hero-meta-chips">
+      <span class="meta-chip"><i class="bi bi-bar-chart-line"></i> Sales Analytics</span>
+      <span class="meta-chip"><i class="bi bi-boxes"></i> Inventory Tracking</span>
+      <span class="meta-chip"><i class="bi bi-graph-up-arrow"></i> Time Series Forecasting</span>
+      <span class="meta-chip"><i class="bi bi-code-slash"></i> R Shiny</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECT IMAGE ══ -->
+<div class="project-image-wrap">
+  <div class="project-image-frame">
+    <img src="assets/img/portfolio/sales-application.jpg.jpg" alt="Footwear Sales Application" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
+  </div>
+</div>
+
+<!-- ══ PROJECT CONTENT ══ -->
+<section class="project-content">
+  <div class="project-layout">
+
+    <!-- Main Content -->
+    <div>
+
+      <!-- Problem -->
+      <div class="project-block fade-up">
+        <h3>
+          <span class="block-icon" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="bi bi-exclamation-circle"></i></span>
+          The Problem
+        </h3>
+        <p>Sales and inventory data for footwear were scattered across spreadsheets and files. The team needed one place to view current sales and stock levels, compare performance over time, and get simple forecasts to support ordering and planning.</p>
+        <p>Manual updates and ad hoc analysis were time-consuming and error-prone — the business needed a self-service tool that non-technical staff could use daily without relying on data analysts for every query.</p>
+      </div>
+
+      <!-- What I Built -->
+      <div class="project-block fade-up delay-1">
+        <h3>
+          <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-wrench-adjustable"></i></span>
+          What I Built
+        </h3>
+        <p>I built an interactive web application in <strong style="color:var(--text-heading)">R Shiny</strong> that connects to the sales and inventory data (CSV, Excel, or database). The app includes dashboards for current and historical sales, stock levels by product or category, and key metrics such as units sold, revenue, and stock turnover.</p>
+        <p>I added <strong style="color:var(--text-heading)">time series forecasting</strong> using ARIMA and similar methods in R, so that users can see projected demand and use it for restocking decisions. The interface lets users filter by product, date range, and other dimensions — charts and tables update in real time.</p>
+
+        <div class="feature-grid">
+          <div class="feature-item">
+            <i class="bi bi-speedometer2"></i>
+            <strong>Live Dashboards</strong>
+            <span>Sales & stock metrics updating in real time</span>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-funnel"></i>
+            <strong>Smart Filtering</strong>
+            <span>Filter by product, date range & category</span>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-graph-up-arrow"></i>
+            <strong>Demand Forecasting</strong>
+            <span>ARIMA-based projections for restocking</span>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-people"></i>
+            <strong>Non-Technical Friendly</strong>
+            <span>Designed for everyday business users</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcome -->
+      <div class="project-block fade-up delay-2">
+        <h3>
+          <span class="block-icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="bi bi-graph-up-arrow"></i></span>
+          Outcome
+        </h3>
+        <p>The business now has a single, interactive dashboard for sales and inventory, with built-in forecasting to support planning and replenishment. Reporting and ad hoc analysis are faster and more consistent.</p>
+        <ul>
+          <li>Centralised view of all sales and stock data in one place</li>
+          <li>Historical performance comparisons across time periods</li>
+          <li>ARIMA time series forecasting for demand planning</li>
+          <li>Real-time filtering by product, category, and date</li>
+          <li>Self-service tool — no coding required for business users</li>
+          <li>Faster, more consistent reporting and restocking decisions</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="project-sidebar">
+
+      <div class="sidebar-card fade-up">
+        <h4>Project Details</h4>
+        <div class="sidebar-row">
+          <span class="label">Category</span>
+          <span class="value">Analytics</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Domain</span>
+          <span class="value">Retail / Footwear</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Type</span>
+          <span class="value">Web Application</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Language</span>
+          <span class="value">R</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Status</span>
+          <span class="value" style="color:var(--primary)">Complete</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card fade-up delay-1">
+        <h4>Tools &amp; Technologies</h4>
+        <div class="tools-tags">
+          <span class="tag">R</span>
+          <span class="tag">R Shiny</span>
+          <span class="tag">ARIMA</span>
+          <span class="tag">forecast</span>
+          <span class="tag">ggplot2</span>
+          <span class="tag">plotly</span>
+          <span class="tag">dplyr</span>
+          <span class="tag">tidyr</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card fade-up delay-2">
+        <h4>Actions</h4>
+        <div class="sidebar-actions">
+          <a href="https://github.com/StephenMulingwa/Sales_Application" target="_blank" class="btn btn-primary">
+            <i class="bi bi-github"></i> View on GitHub
+          </a>
+          <a href="projects.html" class="btn btn-outline">
+            <i class="bi bi-arrow-left"></i> Back to Projects
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Data Scientist</p>
+    <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+      <i class="bi bi-arrow-up-short"></i>
+    </button>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let menuOpen = false;
+  hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    hamburgerIcon.className = menuOpen ? 'bi bi-x-lg' : 'bi bi-list';
+  });
+
+  const revealEls = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
