@@ -113,6 +113,24 @@
     .scroll-hint i { font-size: 1.4rem; color: rgba(255,255,255,0.25); }
     @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
     @media (max-width: 960px) { .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 120px 0 60px; } .hero-photo-wrap { order: -1; } .hero-photo-frame { width: 300px; height: 380px; } }
+    @media (max-width: 560px) {
+      .hero { min-height: auto; padding-bottom: 40px; }
+      .hero-content { grid-template-columns: 1fr 168px; align-items: start; padding: 112px 0 48px; gap: 18px; }
+      .hero-content > div:first-child { grid-column: 1 / 2; }
+      .hero-photo-wrap { order: 0; grid-column: 2 / 3; align-self: start; }
+      .hero-title { font-size: 3.1rem; line-height: 1.02; margin-bottom: 12px; }
+      .hero-role { margin-bottom: 16px; }
+      .hero-role p { font-size: 1.02rem; }
+      .hero-desc { max-width: none; margin-bottom: 20px; font-size: 0.96rem; line-height: 1.75; }
+      .hero-actions { margin-bottom: 22px; }
+      .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 18px; }
+      .hero-stats { gap: 14px; justify-content: flex-start; flex-wrap: wrap; }
+      .stat-val { font-size: 1.6rem; }
+      .hero-photo-frame { width: 168px; height: 230px; }
+      .hero-photo-card { padding: 22px 18px 18px; }
+      .hero-photo-card .hpc-name { font-size: 1.1rem; }
+      .hero-photo-card .role-row span { font-size: 0.78rem; }
+    }
 
     /* ── ABOUT ── */
     .about { background: var(--bg-white); }
