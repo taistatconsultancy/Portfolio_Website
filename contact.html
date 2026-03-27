@@ -519,8 +519,8 @@
     revealEls.forEach(el => obs.observe(el));
 
     // ── Contact form → Google Sheet (Apps Script Web App) ──
-    // Paste your deployment URL from Google Apps Script (Deploy → Web app → Copy URL)
-    const CONTACT_SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxx4VefqUklmbi8eD8yw7-8M_zZBEOG5P6ugaO-c-xCUEn5VJtmHgoDZGYWYv99fdi7/exec';
+    // Paste your NEW deployment URL here (Clienteles workbook, Clients tab).
+    const CONTACT_SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqBNvz39ha7cLw3ZoaL7kx6p7NufxMUr6HOO6bB-otFAB_OTpE51ZzIuEOBYFPWuaxpg/exec';
 
     (function () {
       const form = document.getElementById('contactForm');
@@ -567,7 +567,6 @@
         addField('phone', document.getElementById('phone').value.trim());
         addField('subject', document.getElementById('subject').value.trim());
         addField('message', document.getElementById('message').value.trim());
-        addField('source_page', window.location.href);
         document.body.appendChild(proxy);
         proxy.submit();
         document.body.removeChild(proxy);
