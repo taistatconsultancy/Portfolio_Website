@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://stephenmulingwa.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://stephenmulingwa.com/projects.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://stephenmulingwa.com/courses.html</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://stephenmulingwa.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://stephenmulingwa.com/course-excel.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stephenmulingwa.com/course-powerbi.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stephenmulingwa.com/course-python.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stephenmulingwa.com/course-apis.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stephenmulingwa.com/project-taistat-agrolink.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stephenmulingwa.com/project-yodaai.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stephenmulingwa.com/project-excel-analytics.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stephenmulingwa.com/project-churn-rate-analysis.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stephenmulingwa.com/project-sales-application.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stephenmulingwa.com/project-powerbi-dashboard.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+</urlset>

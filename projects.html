@@ -3,11 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects – Stephen Mulingwa</title>
+  <title>Portfolio Projects | Stephen Mulingwa — Data Science, AI &amp; Analytics</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="A collection of data and software projects by Stephen Mulingwa – Data Scientist, Tutor, Founder of TaiStat Firm.">
+  <meta name="description" content="Data science, Power BI, machine learning, and software projects by Stephen Mulingwa. Explore dashboards, ML, and analytics work from a Nairobi-based data scientist &amp; tutor.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://stephenmulingwa.com/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stephenmulingwa.com/projects.html">
+  <meta property="og:title" content="Stephen Mulingwa | Project Portfolio">
+  <meta property="og:description" content="Data &amp; AI projects — dashboards, analytics, and engineering.">
+  <meta property="og:image" content="https://stephenmulingwa.com/assets/img/favicon.png">
+  <meta name="twitter:card" content="summary">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -260,8 +268,8 @@
       .project-card.featured .project-card-img { height: 240px; }
     }
     @media (max-width: 600px) {
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: span 1; }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .project-card.featured { grid-column: span 2; }
     }
 
     /* ── CTA strip ── */

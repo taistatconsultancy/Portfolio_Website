@@ -3,11 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Stephen Mulingwa</title>
+  <title>Contact Stephen Mulingwa | Data Science Tutor &amp; Consultant</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="Get in touch with Stephen Mulingwa for data analytics training, consulting, and collaboration.">
+  <meta name="description" content="Contact Stephen Mulingwa for tutoring in Power BI, Tableau, Excel, Python, AI &amp; data analysis — or consulting &amp; collaboration. Email, WhatsApp &amp; booking.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://stephenmulingwa.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stephenmulingwa.com/contact.html">
+  <meta property="og:title" content="Contact | Stephen Mulingwa">
+  <meta property="og:description" content="Reach out for analytics tutoring, training, or project work.">
+  <meta property="og:image" content="https://stephenmulingwa.com/assets/img/favicon.png">
+  <meta name="twitter:card" content="summary">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -212,7 +220,7 @@
     .quick-tile-icon svg { width: 44px; height: 44px; flex-shrink: 0; }
     
     @media (max-width: 1000px) { .quick-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 700px) { .quick-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
     .quick-tile {
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
       border-radius: var(--radius); padding: 28px 22px;
@@ -312,7 +320,7 @@
                   <div class="contact-item-icon"><i class="bi bi-envelope-fill"></i></div>
                   <div>
                     <strong>Email</strong>
-                    <a href="mailto:mulingwastephen200@gmail.com">mulingwastephen200@gmail.com</a>
+                    <a href="mailto:stephen@taistat.com">stephen@taistat.com</a>
                   </div>
                 </div>
 
@@ -411,7 +419,7 @@
                   <p id="contactFormStatus" class="form-note" role="status" aria-live="polite" style="margin-top:12px;font-weight:600;display:none"></p>
                   <p class="form-note">
                     Or email directly:
-                    <a href="mailto:mulingwastephen200@gmail.com">mulingwastephen200@gmail.com</a>
+                    <a href="mailto:stephen@taistat.com">stephen@taistat.com</a>
                   </p>
                 </div>
               </form>
@@ -519,6 +527,7 @@
     revealEls.forEach(el => obs.observe(el));
 
     // ── Contact form → Google Sheet (Apps Script Web App) ──
+    // Rows are appended by the deployed script below — not by forms/contact.php.
     // Paste your NEW deployment URL here (Clienteles workbook, Clients tab).
     const CONTACT_SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqBNvz39ha7cLw3ZoaL7kx6p7NufxMUr6HOO6bB-otFAB_OTpE51ZzIuEOBYFPWuaxpg/exec';
 

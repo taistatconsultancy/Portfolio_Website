@@ -3,11 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stephen Mulingwa – Data Scientist</title>
+  <title>Stephen Mulingwa | Data Science &amp; AI Tutor | Power BI, Tableau, Excel, Python</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="Stephen Mulingwa - Data Scientist, Tutor, and Founder of TaiStat Firm.">
+  <meta name="description" content="Stephen Mulingwa — data scientist, AI consultant, and tutor for Power BI, Tableau, Excel, Python, data analysis &amp; programming. Online training &amp; Nairobi. TaiStat Firm founder.">
+  <meta name="author" content="Stephen Mulingwa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://stephenmulingwa.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stephenmulingwa.com/">
+  <meta property="og:title" content="Stephen Mulingwa | Data Science Tutor &amp; AI Consultant">
+  <meta property="og:description" content="Tutoring and consulting in data science, AI, Power BI, Tableau, Excel, Python, and analytics. Book Stephen Mulingwa (TaiStat Firm).">
+  <meta property="og:image" content="https://stephenmulingwa.com/assets/img/Me1.jpeg">
+  <meta property="og:locale" content="en_KE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stephen Mulingwa | Data Science &amp; AI Tutor">
+  <meta name="twitter:description" content="Power BI, Tableau, Excel, Python, data analysis &amp; programming tutoring — Stephen Mulingwa, TaiStat Firm.">
+  <meta name="twitter:image" content="https://stephenmulingwa.com/assets/img/Me1.jpeg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/","image":"https://stephenmulingwa.com/assets/img/Me1.jpeg","jobTitle":"Data Scientist","description":"Data scientist, AI consultant, and professional tutor specializing in Power BI, Tableau, Excel, Python, machine learning, data analysis, and programming.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/mulingwa-stephen/","https://github.com/StephenMulingwa"],"knowsAbout":["Data science","Data analysis","Machine learning","Artificial intelligence","Power BI","Tableau","Microsoft Excel","Python","Programming","Analytics tutoring"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://stephenmulingwa.com/"}},
+    {"@type":"WebSite","@id":"https://stephenmulingwa.com/#website","url":"https://stephenmulingwa.com/","name":"Stephen Mulingwa — Portfolio and Tutoring","publisher":{"@id":"https://stephenmulingwa.com/#person"}}
+  ]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -187,7 +206,7 @@
     .process-connector::before { content: ''; position: absolute; top: 55px; left: 12%; right: 12%; height: 1px; background: linear-gradient(to right,rgba(59,130,246,0.3),rgba(139,92,246,0.3),rgba(16,185,129,0.3),rgba(245,158,11,0.3)); z-index: 0; }
     .process-connector .process-grid { position: relative; z-index: 1; }
     @media (max-width: 1100px) { .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .process-connector::before { display: none; } }
-    @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 500px) { .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .process-card { padding: 24px 14px; } }
 
     /* ── PROJECTS ── */
     .projects { background: var(--bg-light); }
@@ -204,7 +223,7 @@
     .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: var(--primary); transition: gap 0.2s; }
     .project-link:hover { gap: 10px; }
     @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 580px) { .projects-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 580px) { .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .project-card-body { padding: 18px 14px; } .project-card-img { height: 160px; } }
 
     /* ── EXPERIENCE ── */
     .experience { background: var(--bg-white); }
@@ -256,7 +275,7 @@
     .tool-chip { padding: 8px 18px; border-radius: 999px; background: var(--bg-white); border: 1px solid var(--border); font-size: 0.82rem; color: #000000; font-weight: 500; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 6px; }
     .tool-chip img { width: 15px; height: 15px; object-fit: contain; }
     .tool-chip:hover { border-color: var(--primary); color: var(--primary); }
-    @media (max-width: 700px) { .skills-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .skills-grid { gap: 16px; } .skill-cat-card { padding: 22px 18px; } }
 
     /* ── COURSES ── */
     .courses { background: var(--bg-white); }
@@ -273,7 +292,7 @@
     .course-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
     .course-card h3 { font-family: var(--font-display); font-size: 1.45rem; color: var(--text-heading); margin-bottom: 12px; }
     .course-card p { font-size: 0.95rem; color: #000000; line-height: 1.8; margin-bottom: 8px; }
-    @media (max-width: 560px) { .courses-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .courses-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .course-card { padding: 22px 12px 20px; } .course-card h3 { font-size: 1.15rem; } .course-logo-wrap img { max-width: 72px; max-height: 72px; } }
     .course-learn-hint { display: inline-block; margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: var(--primary); letter-spacing: 0.02em; }
 
     /* ── CONTACT CTA ── */
@@ -944,7 +963,7 @@
       <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:16px 36px">
         <i class="bi bi-envelope-fill"></i> Get in Touch
       </a>
-      <p class="contact-detail">mulingwastephen200@gmail.com &nbsp;·&nbsp; +254 111 224 952</p>
+      <p class="contact-detail">stephen@taistat.com &nbsp;·&nbsp; +254 111 224 952</p>
       <div class="social-row">
         <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
