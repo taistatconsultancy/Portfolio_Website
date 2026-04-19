@@ -13,12 +13,12 @@
   *
   * This PHP file only runs if a form's action points to forms/contact.php.
   *
-  * ── Mail to a custom domain (e.g. stephen@taistat.com) ───────────────────
+  * ── Receiving address (Gmail or your host) ─────────────────────────────────
   * Many hosts deliver Gmail reliably but fail or drop mail to custom domains unless
   * you configure SMTP (uncomment $contact->smtp below with your provider's settings).
   */
 
-  $receiving_email_address = 'stephen@taistat.com';
+  $receiving_email_address = 'mulingwastephen200@gmail.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
     include( $php_email_form );
