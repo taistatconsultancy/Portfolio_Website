@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stephen Mulingwa | Data Science &amp; AI Tutor | Power BI, Tableau, Excel, Python</title>
+  <title>Stephen Mulingwa | Software Developer, Web Developer &amp; Data Scientist</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="Stephen Mulingwa — data scientist, AI consultant, and tutor for Power BI, Tableau, Excel, Python, data analysis &amp; programming. Online training &amp; Nairobi. TaiStat Firm founder.">
+  <meta name="description" content="Stephen Mulingwa — Software Developer, Web Developer, and Data Scientist in Nairobi. Building web apps, Next.js platforms, and data solutions. Training &amp; consulting.">
   <meta name="author" content="Stephen Mulingwa">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://stephenmulingwa.com/">
+  <link rel="canonical" href="https://stephenmulingwa.com/home">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://stephenmulingwa.com/">
-  <meta property="og:title" content="Stephen Mulingwa | Data Science Tutor &amp; AI Consultant">
-  <meta property="og:description" content="Tutoring and consulting in data science, AI, Power BI, Tableau, Excel, Python, and analytics. Book Stephen Mulingwa (TaiStat Firm).">
+  <meta property="og:url" content="https://stephenmulingwa.com/home">
+  <meta property="og:title" content="Stephen Mulingwa | Software Developer, Web Developer &amp; Data Scientist">
+  <meta property="og:description" content="Software development, web apps, and data science — Stephen Mulingwa, Nairobi Kenya.">
   <meta property="og:image" content="https://stephenmulingwa.com/assets/img/Me1.jpeg">
   <meta property="og:locale" content="en_KE">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stephen Mulingwa | Data Science &amp; AI Tutor">
-  <meta name="twitter:description" content="Power BI, Tableau, Excel, Python, data analysis &amp; programming tutoring — Stephen Mulingwa, TaiStat Firm.">
+  <meta name="twitter:title" content="Stephen Mulingwa | Software Developer &amp; Data Scientist">
+  <meta name="twitter:description" content="Web development, software apps, and data science — Stephen Mulingwa, TaiStat Firm.">
   <meta name="twitter:image" content="https://stephenmulingwa.com/assets/img/Me1.jpeg">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/","image":"https://stephenmulingwa.com/assets/img/Me1.jpeg","jobTitle":"Data Scientist","description":"Data scientist, AI consultant, and professional tutor specializing in Power BI, Tableau, Excel, Python, machine learning, data analysis, and programming.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/mulingwa-stephen/","https://github.com/StephenMulingwa"],"knowsAbout":["Data science","Data analysis","Machine learning","Artificial intelligence","Power BI","Tableau","Microsoft Excel","Python","Programming","Analytics tutoring"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://stephenmulingwa.com/"}},
-    {"@type":"WebSite","@id":"https://stephenmulingwa.com/#website","url":"https://stephenmulingwa.com/","name":"Stephen Mulingwa — Portfolio and Tutoring","publisher":{"@id":"https://stephenmulingwa.com/#person"}}
+    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/home","image":"https://stephenmulingwa.com/assets/img/Me1.jpeg","jobTitle":"Software Developer, Web Developer & Data Scientist","description":"Software developer, web developer, and data scientist specializing in Next.js, Python, analytics platforms, and AI systems.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/mulingwa-stephen/","https://github.com/StephenMulingwa"],"knowsAbout":["Software development","Web development","Data science","Next.js","Python","Machine learning","Power BI"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://taistat.com/"}},
+    {"@type":"WebSite","@id":"https://stephenmulingwa.com/#website","url":"https://stephenmulingwa.com/home","name":"Stephen Mulingwa — Portfolio","publisher":{"@id":"https://stephenmulingwa.com/#person"}}
   ]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,9 +72,32 @@
     .btn-dark:hover { border-color: var(--primary); color: var(--primary); }
     .tag { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; background: rgba(45,212,191,0.1); color: var(--primary); border: 1px solid rgba(45,212,191,0.2); }
 
+    /* ── STATUS BAR ── */
+    .status-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
+      background: #04120f; border-bottom: 1px solid rgba(34,197,94,0.25);
+      padding: 8px 0; font-size: 0.78rem;
+    }
+    .status-bar-inner { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .status-available {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: #4ade80; font-weight: 700; letter-spacing: 0.02em;
+    }
+    .status-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.6); animation: pulseDot 1.8s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+      70% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+    .status-time { color: #4ade80; font-weight: 500; }
+    .status-time strong { font-weight: 700; }
+
     /* ── NAVBAR ── */
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all 0.35s ease; padding: 20px 0; }
-    .navbar.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); padding: 14px 0; }
+    .navbar { position: fixed; top: 36px; left: 0; right: 0; z-index: 1000; transition: all 0.35s ease; padding: 20px 0; }
+    .navbar.scrolled { top: 36px; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); padding: 14px 0; }
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { display: flex; align-items: center; gap: 10px; }
     .nav-logo img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
@@ -105,7 +128,7 @@
     .particles { position: absolute; inset: 0; pointer-events: none; }
     .particle { position: absolute; border-radius: 50%; background: rgba(45,212,191,0.5); animation: floatAnim linear infinite; }
     @keyframes floatAnim { 0% { transform: translateY(0) scale(1); opacity: 0.2; } 50% { transform: translateY(-40px) scale(1.5); opacity: 0.8; } 100% { transform: translateY(0) scale(1); opacity: 0.2; } }
-    .hero-content { position: relative; z-index: 10; display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; padding: 140px 0 80px; }
+    .hero-content { position: relative; z-index: 10; display: grid; grid-template-columns: 1fr 460px; gap: 64px; align-items: center; padding: 160px 0 80px; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); font-size: 0.75rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 24px; }
     .hero-badge img { width: 22px; height: 22px; border-radius: 6px; object-fit: cover; }
     .hero-title { font-family: var(--font-display); font-size: clamp(3rem,6vw,5.5rem); line-height: 1.05; color: var(--text-white); margin-bottom: 16px; }
@@ -121,7 +144,7 @@
     .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; margin-top: 2px; }
     .hero-photo-wrap { position: relative; display: flex; justify-content: center; }
     .hero-photo-glow { position: absolute; inset: -24px; border-radius: 24px; background: linear-gradient(135deg,rgba(45,212,191,0.3),rgba(103,232,249,0.1)); filter: blur(40px); }
-    .hero-photo-frame { position: relative; width: 370px; height: 470px; border-radius: 22px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.1); box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05); }
+    .hero-photo-frame { position: relative; width: 420px; height: 540px; border-radius: 22px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.1); box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05); }
     .hero-photo-frame > img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
     .hero-photo-card { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 22px 22px; background: linear-gradient(to top,rgba(0,0,0,0.85) 60%,transparent); }
     .hero-photo-card .hpc-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-white); }
@@ -131,24 +154,24 @@
     .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce 2s ease-in-out infinite; }
     .scroll-hint i { font-size: 1.4rem; color: rgba(255,255,255,0.25); }
     @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
-    @media (max-width: 960px) { .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 120px 0 60px; } .hero-photo-wrap { order: -1; } .hero-photo-frame { width: 300px; height: 380px; } }
+    @media (max-width: 960px) { .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 140px 0 60px; } .hero-photo-wrap { order: -1; } .hero-photo-frame { width: 340px; height: 430px; } }
     @media (max-width: 560px) {
       .hero { min-height: auto; padding-bottom: 40px; }
-      .hero-content { grid-template-columns: 1fr 168px; align-items: start; padding: 112px 0 48px; gap: 18px; }
+      .hero-content { grid-template-columns: 1fr 200px; align-items: start; padding: 128px 0 48px; gap: 16px; }
       .hero-content > div:first-child { grid-column: 1 / 2; }
       .hero-photo-wrap { order: 0; grid-column: 2 / 3; align-self: start; }
-      .hero-title { font-size: 3.1rem; line-height: 1.02; margin-bottom: 12px; }
-      .hero-role { margin-bottom: 16px; }
-      .hero-role p { font-size: 1.02rem; }
-      .hero-desc { max-width: none; margin-bottom: 20px; font-size: 0.96rem; line-height: 1.75; }
-      .hero-actions { margin-bottom: 22px; }
+      .hero-title { font-size: 2.85rem; line-height: 1.02; margin-bottom: 12px; }
+      .hero-role { margin-bottom: 14px; }
+      .hero-role p { font-size: 0.95rem; }
+      .hero-desc { max-width: none; margin-bottom: 18px; font-size: 0.92rem; line-height: 1.7; }
+      .hero-actions { margin-bottom: 20px; }
       .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 18px; }
-      .hero-stats { gap: 14px; justify-content: flex-start; flex-wrap: wrap; }
-      .stat-val { font-size: 1.6rem; }
-      .hero-photo-frame { width: 168px; height: 230px; }
-      .hero-photo-card { padding: 22px 18px 18px; }
-      .hero-photo-card .hpc-name { font-size: 1.1rem; }
-      .hero-photo-card .role-row span { font-size: 0.78rem; }
+      .hero-stats { gap: 12px; justify-content: flex-start; flex-wrap: wrap; }
+      .stat-val { font-size: 1.5rem; }
+      .hero-photo-frame { width: 200px; height: 280px; }
+      .hero-photo-card { padding: 18px 14px 14px; }
+      .hero-photo-card .hpc-name { font-size: 1rem; }
+      .hero-photo-card .role-row span { font-size: 0.72rem; }
     }
 
     /* ── ABOUT ── */
@@ -206,7 +229,12 @@
     .process-connector::before { content: ''; position: absolute; top: 55px; left: 12%; right: 12%; height: 1px; background: linear-gradient(to right,rgba(59,130,246,0.3),rgba(139,92,246,0.3),rgba(16,185,129,0.3),rgba(245,158,11,0.3)); z-index: 0; }
     .process-connector .process-grid { position: relative; z-index: 1; }
     @media (max-width: 1100px) { .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .process-connector::before { display: none; } }
-    @media (max-width: 500px) { .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .process-card { padding: 24px 14px; } }
+    @media (max-width: 580px) {
+      .process-grid { grid-template-columns: 1fr; gap: 16px; }
+      .process-card { padding: 28px 22px; text-align: left; }
+      .process-card h3 { font-size: 1.25rem; }
+      .process-card p { font-size: 0.98rem; line-height: 1.8; color: rgba(255,255,255,0.55); }
+    }
 
     /* ── PROJECTS ── */
     .projects { background: var(--bg-light); }
@@ -222,8 +250,15 @@
     .project-card-body p { font-size: 0.875rem; color: #000000; line-height: 1.7; margin-bottom: 16px; }
     .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: var(--primary); transition: gap 0.2s; }
     .project-link:hover { gap: 10px; }
+    .projects-more { text-align: center; margin-top: 40px; }
     @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 580px) { .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .project-card-body { padding: 18px 14px; } .project-card-img { height: 160px; } }
+    @media (max-width: 580px) {
+      .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+      .project-card-body { padding: 24px 20px; }
+      .project-card-body h3 { font-size: 1.35rem; }
+      .project-card-body p { font-size: 0.95rem; line-height: 1.75; }
+      .project-card-img { height: 220px; }
+    }
 
     /* ── EXPERIENCE ── */
     .experience { background: var(--bg-white); }
@@ -256,26 +291,20 @@
     @media (max-width: 860px) { .experience-grid { grid-template-columns: 1fr; gap: 48px; } }
 
     /* ── SKILLS ── */
-    .skills { background: var(--bg-light); }
-    .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; margin-top: 56px; }
-    .skill-cat-card { background: var(--bg-white); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: border-color 0.25s; }
-    .skill-cat-card:hover { border-color: rgba(45,212,191,0.3); }
-    .skill-cat-head { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
-    .skill-cat-head img { width: 28px; height: 28px; object-fit: contain; border-radius: 7px; }
-    .skill-cat-head h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-heading); }
-    .skill-row { margin-bottom: 16px; }
-    .skill-row:last-child { margin-bottom: 0; }
-    .skill-label { display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--text-body); font-weight: 500; margin-bottom: 8px; }
-    .skill-name { display: flex; align-items: center; gap: 7px; }
-    .skill-name img { width: 16px; height: 16px; object-fit: contain; border-radius: 3px; }
-    .skill-pct { color: #000000; font-family: var(--font-display); }
-    .skill-bar-bg { height: 8px; border-radius: 4px; background: var(--bg-light); overflow: hidden; }
-    .skill-bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
-    .tools-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 44px; }
+    .skills { background: var(--bg-light); padding-bottom: 56px; }
+    .skills-groups { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
+    .skill-group { text-align: center; }
+    .skill-group h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-heading); margin-bottom: 14px; }
+    .tools-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 0; }
     .tool-chip { padding: 8px 18px; border-radius: 999px; background: var(--bg-white); border: 1px solid var(--border); font-size: 0.82rem; color: #000000; font-weight: 500; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 6px; }
     .tool-chip img { width: 15px; height: 15px; object-fit: contain; }
     .tool-chip:hover { border-color: var(--primary); color: var(--primary); }
-    @media (max-width: 700px) { .skills-grid { gap: 16px; } .skill-cat-card { padding: 22px 18px; } }
+    @media (max-width: 700px) {
+      .skills.section-pad { padding-top: 64px; padding-bottom: 40px; }
+      .skills-groups { gap: 20px; margin-top: 28px; }
+      .skill-group h3 { font-size: 1.05rem; margin-bottom: 10px; }
+      .tools-list { gap: 8px; }
+    }
 
     /* ── COURSES ── */
     .courses { background: var(--bg-white); }
@@ -327,18 +356,27 @@
 </head>
 <body>
 
+<!-- ══════════ STATUS BAR ══════════ -->
+<div class="status-bar" role="status">
+  <div class="container status-bar-inner">
+    <span class="status-available"><span class="status-dot" aria-hidden="true"></span> Available for Work</span>
+    <span class="status-time"><strong id="eatClock">--:--</strong> EAT · Nairobi, Kenya</span>
+  </div>
+</div>
+
 <!-- ══════════ NAVBAR ══════════ -->
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="index.html" class="nav-logo">
+    <a href="/home" class="nav-logo">
       <img src="assets/img/favicon.png" alt="SM Logo">
       <span class="nav-logo-text">Stephen<span> M.</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="/home" class="active">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/courses">Projects Development</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a></li>
     </ul>
     <div class="nav-cta">
       <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
@@ -350,10 +388,11 @@
     </button>
   </div>
   <div class="nav-mobile container" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="courses.html">Courses</a>
-    <a href="contact.html">Contact</a>
+    <a href="/home">Home</a>
+    <a href="/projects">Projects</a>
+    <a href="/courses">Projects Development</a>
+    <a href="/contact">Contact</a>
+    <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
   </div>
 </nav>
 <!-- ══════════ HERO ══════════ -->
@@ -372,13 +411,13 @@
         </h1>
         <div class="hero-role">
           <div class="line"></div>
-          <p>Data Scientist &amp; AI Consultant</p>
+          <p>Data Scientist &amp; Software Development</p>
         </div>
         <p class="hero-desc">
-          Transforming complex data into intelligent, actionable solutions. Building AI-powered analytics platforms and predictive models that drive smarter decisions from Power BI dashboards to machine learning systems.
+          Software developer, web developer, and data scientist building production web apps, analytics platforms, and AI-powered tools — from Next.js systems to Power BI dashboards and predictive models.
         </p>
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary"><i class="bi bi-send"></i> Work with Me</a>
+          <a href="/contact" class="btn btn-primary"><i class="bi bi-send"></i> Work with Me</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
@@ -405,7 +444,7 @@
             <p class="hpc-name">Stephen Mulingwa</p>
             <div class="role-row">
               <i class="bi bi-briefcase-fill"></i>
-              <span>Data Scientist Consultant</span>
+              <span>Software Developer &amp; Data Scientist</span>
             </div>
           </div>
         </div>
@@ -426,11 +465,11 @@
 
     <div class="about-split">
       <div class="about-main fade-left">
-        <p>…and I’m a Data Scientist, Data Analyst, and Tutor based in Nairobi, Kenya.</p>
-        <p>My work is driven by one belief: <strong>data only creates value when it solves real problems</strong>. I specialize in <strong>machine learning, statistical modeling, software development</strong>, and <strong>AI system design</strong>, building intelligent solutions that turn complex datasets into clear, practical decisions.</p>
-        <p>Currently, I work with large-scale logistics and telematics data, developing predictive models, automated dashboards, and AI-driven systems that improve operational efficiency, safety, and performance. I am also passionate about using analytics to support Kenyan dfarmers, designing data solutions that enhance productivity and financial returns.</p>
-        <p>Beyond this, I develop scalable analytics platforms that support organizations across healthcare, research, and business sectors. Skilled in <strong>Python, SQL, Power BI,</strong> and <strong>Tableau</strong>, I focus on delivering insights that are not only accurate but impactful.</p>
-        <p>My goal is to help organizations adopt smarter, data-driven strategies that foster innovation, optimization, and sustainable growth.</p>
+        <p>…and I’m a Software Developer, Web Developer, and Data Scientist based in Nairobi, Kenya.</p>
+        <p>My work is driven by one belief: <strong>technology only creates value when it solves real problems</strong>. I specialize in <strong>software development, web development, machine learning</strong>, and <strong>AI system design</strong>, shipping apps and platforms teams can actually use.</p>
+        <p>Currently, I work with large-scale logistics and telematics data, developing predictive models, automated dashboards, and AI-driven systems that improve operational efficiency, safety, and performance. I also build full-stack products — from wellness ops portals to agri-marketplaces — for Kenyan businesses.</p>
+        <p>Beyond this, I develop scalable web and analytics platforms across healthcare, research, and business sectors. Skilled in <strong>Next.js, Python, SQL, Power BI,</strong> and <strong>cloud databases</strong>, I focus on delivering solutions that are accurate and impactful.</p>
+        <p>My goal is to help organizations adopt smarter digital strategies that foster innovation, optimization, and sustainable growth.</p>
       </div>
       <aside class="about-aside fade-right">
         <div class="about-stats">
@@ -440,7 +479,7 @@
           <div class="about-stat-card"><div class="val">$15</div><div class="lbl">Hourly Rate</div></div>
         </div>
         <div class="about-actions">
-          <a href="contact.html" class="btn btn-dark"><i class="bi bi-person-lines-fill"></i> Explore Background</a>
+          <a href="/contact" class="btn btn-dark"><i class="bi bi-person-lines-fill"></i> Explore Background</a>
         </div>
       </aside>
     </div>
@@ -495,6 +534,17 @@
     <div class="projects-grid">
       <article class="project-card fade-up delay-1">
         <div class="project-card-img-wrap">
+          <img class="project-card-img" src="assets/img/portfolio/kiki-mobile-wellness.png" alt="Kiki's Mobile Wellness" onerror="this.style.background='#e2e8f0'">
+        </div>
+        <div class="project-card-body">
+          <h3>Kiki's Mobile Wellness</h3>
+          <p class="project-tagline">Operations portal for appointments, sales, stock &amp; staff</p>
+          <p><strong>What I did:</strong> Built a role-based Next.js PWA with appointments, checkout, inventory, expenses, analytics dashboards, and Neon Postgres — installed as an app for daily ops.</p>
+          <a href="project-kiki-mobile-wellness.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="project-card fade-up delay-2">
+        <div class="project-card-img-wrap">
           <img class="project-card-img" src="assets/img/portfolio/taistat-agrolink.jpg.png" alt="TaiStat AgroLink" onerror="this.style.background='#e2e8f0'">
         </div>
         <div class="project-card-body">
@@ -504,7 +554,7 @@
           <a href="project-taistat-agrolink.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
         </div>
       </article>
-      <article class="project-card fade-up delay-2">
+      <article class="project-card fade-up delay-3">
         <div class="project-card-img-wrap">
           <img class="project-card-img" src="assets/img/portfolio/yodaai.jpg.png" alt="YodaAI" onerror="this.style.background='#e2e8f0'">
         </div>
@@ -515,50 +565,9 @@
           <a href="project-yodaai.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
         </div>
       </article>
-      <article class="project-card fade-up delay-3">
-        <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/churn-rate-analysis.jpg.jpg" alt="Churn Rate Analysis" onerror="this.style.background='#e2e8f0'">
-        </div>
-        <div class="project-card-body">
-          <h3>Churn Rate Analysis</h3>
-          <p class="project-tagline">Neural networks for telecom churn prediction</p>
-          <p><strong>What I did:</strong> Built predictive models to identify churn risk and support retention strategies using Python and machine learning.</p>
-          <a href="project-churn-rate-analysis.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </article>
-      <article class="project-card fade-up delay-1">
-        <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/sales-application.jpg.jpg" alt="Footwear Sales Application" onerror="this.style.background='#e2e8f0'">
-        </div>
-        <div class="project-card-body">
-          <h3>Footwear Sales Application</h3>
-          <p class="project-tagline">R Shiny app for sales, stock &amp; time series prediction</p>
-          <p><strong>What I did:</strong> Interactive dashboard for tracking sales and inventory with forecasting capabilities.</p>
-          <a href="project-sales-application.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </article>
-      <article class="project-card fade-up delay-2">
-        <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/powerbi-dashboard.jpg.png" alt="Power BI Analytics" onerror="this.style.background='#e2e8f0'">
-        </div>
-        <div class="project-card-body">
-          <h3>Power BI Analytics Dashboards</h3>
-          <p class="project-tagline">Business intelligence and HR analytics</p>
-          <p><strong>What I did:</strong> Interactive dashboards for HR and operations KPIs, country-level staff analytics, gender distribution, and reporting.</p>
-          <a href="project-powerbi-dashboard.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </article>
-      <article class="project-card fade-up delay-3">
-        <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/excel-analytics.jpg.jpg" alt="Excel Analytics Solutions" onerror="this.style.background='#e2e8f0'">
-        </div>
-        <div class="project-card-body">
-          <h3>Excel Analytics Solutions</h3>
-          <p class="project-tagline">Advanced dashboards and data models</p>
-          <p><strong>What I did:</strong> Excel-based dashboards, PivotTables, and models for reporting and decision support across sectors.</p>
-          <a href="project-excel-analytics.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </article>
+    </div>
+    <div class="projects-more fade-up">
+      <a href="/projects" class="btn btn-dark"><i class="bi bi-grid-3x3-gap"></i> More Projects</a>
     </div>
   </div>
 </section>
@@ -610,7 +619,7 @@
               <div class="timeline-head">
                 <h4>
                   <img src="assets/img/taistat_logo.png" alt="TaiStat" onerror="this.style.display='none'">
-                  Data Scientist Consultant
+                  Data Scientist &amp; Software Developer
                   <span class="current-badge">Current</span>
                 </h4>
                 <span class="timeline-period"><i class="bi bi-calendar3"></i> Jun 2025 – Present</span>
@@ -634,7 +643,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-card">
               <div class="timeline-head">
-                <h4>Freelance Data Scientist &amp; Analyst</h4>
+                <h4>Freelance Software Developer &amp; Data Scientist</h4>
                 <span class="timeline-period"><i class="bi bi-calendar3"></i> Aug 2023 – Present</span>
               </div>
               <p class="company-name"><i class="bi bi-globe"></i> Remote – Freelance</p>
@@ -723,174 +732,55 @@
       <p class="section-label">Technical Arsenal</p>
       <h2 class="section-title fade-up">My Data <span class="text-gradient">Toolkit</span></h2>
     </div>
-    <div class="skills-grid" id="skillsGrid">
-
-      <!-- Programming & Analysis -->
-      <div class="skill-cat-card fade-up delay-1">
-        <div class="skill-cat-head">
-          <img src="assets/img/python_logo.png" alt="Python" onerror="this.style.display='none'">
-          <h3>Programming &amp; Analysis</h3>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name"><img src="assets/img/excel_logo.png" alt="" onerror="this.style.display='none'"> Excel</span>
-            <span class="skill-pct">95%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="95" style="background:#3b82f6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name"><img src="assets/img/python_logo.png" alt="" onerror="this.style.display='none'"> Python</span>
-            <span class="skill-pct">90%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90" style="background:#3b82f6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">SQL</span>
-            <span class="skill-pct">90%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90" style="background:#3b82f6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">R</span>
-            <span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="80" style="background:#3b82f6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Stata / SPSS</span>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="75" style="background:#3b82f6"></div></div>
+    <div class="skills-groups" id="skillsGrid">
+      <div class="skill-group fade-up">
+        <h3>Software &amp; Web Development</h3>
+        <div class="tools-list">
+          <span class="tool-chip">Next.js</span>
+          <span class="tool-chip">Software Development</span>
+          <span class="tool-chip">Web Development</span>
+          <span class="tool-chip">Vercel</span>
+          <span class="tool-chip">APIs</span>
+          <span class="tool-chip">FastAPI</span>
+          <span class="tool-chip">Git &amp; GitHub</span>
         </div>
       </div>
-
-      <!-- Data Visualization -->
-      <div class="skill-cat-card fade-up delay-2">
-        <div class="skill-cat-head">
-          <img src="assets/img/powerbi_logo.png" alt="Power BI" onerror="this.style.display='none'">
-          <h3>Data Visualization</h3>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name"><img src="assets/img/powerbi_logo.png" alt="" onerror="this.style.display='none'"> Power BI</span>
-            <span class="skill-pct">92%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="92" style="background:#8b5cf6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Tableau</span>
-            <span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="85" style="background:#8b5cf6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Matplotlib / Seaborn</span>
-            <span class="skill-pct">88%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="88" style="background:#8b5cf6"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">R Shiny</span>
-            <span class="skill-pct">78%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="78" style="background:#8b5cf6"></div></div>
+      <div class="skill-group fade-up delay-1">
+        <h3>Programming &amp; Data</h3>
+        <div class="tools-list">
+          <span class="tool-chip"><img src="assets/img/python_logo.png" alt="" onerror="this.style.display='none'"> Python</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">PostgreSQL</span>
+          <span class="tool-chip">R</span>
+          <span class="tool-chip"><img src="assets/img/excel_logo.png" alt="" onerror="this.style.display='none'"> Excel</span>
+          <span class="tool-chip"><img src="assets/img/powerbi_logo.png" alt="" onerror="this.style.display='none'"> Power BI</span>
+          <span class="tool-chip">Tableau</span>
         </div>
       </div>
-
-      <!-- Machine Learning & AI -->
-      <div class="skill-cat-card fade-up delay-3">
-        <div class="skill-cat-head">
-          <img src="assets/img/taistat_logo.png" alt="TaiStat" onerror="this.style.display='none'">
-          <h3>Machine Learning &amp; AI</h3>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Scikit-Learn</span>
-            <span class="skill-pct">88%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="88" style="background:#10b981"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">TensorFlow / PyTorch</span>
-            <span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="80" style="background:#10b981"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Hugging Face</span>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="75" style="background:#10b981"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">NLP &amp; Deep Learning</span>
-            <span class="skill-pct">78%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="78" style="background:#10b981"></div></div>
+      <div class="skill-group fade-up delay-2">
+        <h3>Cloud, Databases &amp; Ops</h3>
+        <div class="tools-list">
+          <span class="tool-chip">Neon database</span>
+          <span class="tool-chip">Supabase database</span>
+          <span class="tool-chip">AWS</span>
+          <span class="tool-chip">Cloudinary</span>
+          <span class="tool-chip">Docker</span>
+          <span class="tool-chip">Streamlit</span>
         </div>
       </div>
-
-      <!-- Cloud & DevOps -->
-      <div class="skill-cat-card fade-up delay-4">
-        <div class="skill-cat-head">
-          <img src="assets/img/python_logo.png" alt="Cloud" onerror="this.style.display='none'">
-          <h3>Cloud &amp; DevOps</h3>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Streamlit</span>
-            <span class="skill-pct">90%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90" style="background:#f59e0b"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Docker</span>
-            <span class="skill-pct">82%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="82" style="background:#f59e0b"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">AWS</span>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="75" style="background:#f59e0b"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label">
-            <span class="skill-name">Azure</span>
-            <span class="skill-pct">70%</span>
-          </div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="70" style="background:#f59e0b"></div></div>
+      <div class="skill-group fade-up delay-3">
+        <h3>Telematics &amp; Fleet</h3>
+        <div class="tools-list">
+          <span class="tool-chip">Wialon</span>
+          <span class="tool-chip">Telematics</span>
+          <span class="tool-chip">Fleet Tracking</span>
+          <span class="tool-chip">Google Colab</span>
+          <span class="tool-chip">Jupyter Notebooks</span>
+          <span class="tool-chip">SPSS</span>
+          <span class="tool-chip">Stata</span>
         </div>
       </div>
-
     </div>
-
-    <div class="tools-list fade-up">
-      <p style="width:100%;text-align:center;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#000000;margin-bottom:12px">Also proficient in</p>
-      <span class="tool-chip">Git &amp; GitHub</span>
-      <span class="tool-chip">Jupyter Notebooks</span>
-      <span class="tool-chip">Google Colab</span>
-      <span class="tool-chip"><img src="assets/img/excel_logo.png" alt="" onerror="this.style.display='none'"> SPSS</span>
-      <span class="tool-chip">Stata</span>
-      <span class="tool-chip">Bloomberg Terminal</span>
-      <span class="tool-chip"><img src="assets/img/python_logo.png" alt="" onerror="this.style.display='none'"> Python data analysis</span>
-      <span class="tool-chip">FastAPI</span>
-      <span class="tool-chip">PostgreSQL</span>
-    </div>
-
   </div>
 </section>
 
@@ -899,8 +789,8 @@
   <div class="container">
     <div class="text-center" style="margin-bottom:0">
       <p class="section-label">Training</p>
-      <h2 class="section-title fade-up">Training &amp; <span class="text-gradient">project help</span></h2>
-      <p class="section-subtitle fade-up delay-1" style="margin:0 auto 56px">Hands-on tutoring in data tools, APIs, and analytics plus support on your real projects.</p>
+      <h2 class="section-title fade-up">Training &amp; <span class="text-gradient">Software Development</span></h2>
+      <p class="section-subtitle fade-up delay-1" style="margin:0 auto 56px">Hands-on training in software development, web development, and data analysis — plus support on your real projects.</p>
     </div>
     <div class="courses-grid">
 
@@ -959,12 +849,12 @@
   <div class="container">
     <div class="contact-inner fade-up">
       <p class="section-label" style="color:var(--primary)">Let's Work Together</p>
-      <h2 class="section-title" style="color:#fff">Ready to turn your data into <span class="text-gradient">business growth</span>?</h2>
-      <p class="sub">Let's discuss how data analytics and AI-powered training can drive your next breakthrough.</p>
-      <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:16px 36px">
+      <h2 class="section-title" style="color:#fff">Ready to build your next <span class="text-gradient">web or data product</span>?</h2>
+      <p class="sub">Let's discuss software development, web apps, and data analytics that drive real business growth.</p>
+      <a href="/contact" class="btn btn-primary" style="font-size:1rem;padding:16px 36px">
         <i class="bi bi-envelope-fill"></i> Get in Touch
       </a>
-      <p class="contact-detail">mulingwastephen200@gmail.com &nbsp;·&nbsp; +254 111 224 952</p>
+      <p class="contact-detail">stephen@taistat.com &nbsp;·&nbsp; +254 111 224 952</p>
       <div class="social-row">
         <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -978,12 +868,13 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="courses.html">Courses</a>
-      <a href="contact.html">Contact</a>
+      <a href="/home">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="/courses">Projects Development</a>
+      <a href="/contact">Contact</a>
+      <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
     </nav>
-    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Data Scientist</p>
+    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Software Developer &amp; Data Scientist</p>
     <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
       <i class="bi bi-arrow-up-short"></i>
     </button>
@@ -991,6 +882,17 @@
 </footer>
 
 <script>
+  // EAT clock
+  function updateEatClock() {
+    const el = document.getElementById('eatClock');
+    if (!el) return;
+    el.textContent = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+    }).format(new Date());
+  }
+  updateEatClock();
+  setInterval(updateEatClock, 1000);
+
   // Navbar scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -1029,18 +931,6 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
-
-  // Skill bars animate on scroll
-  const skillsGrid = document.getElementById('skillsGrid');
-  const skillObs = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.level + '%';
-      });
-      skillObs.disconnect();
-    }
-  }, { threshold: 0.2 });
-  if (skillsGrid) skillObs.observe(skillsGrid);
 </script>
 </body>
 </html>
