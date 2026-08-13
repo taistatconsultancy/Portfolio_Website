@@ -1,0 +1,7 @@
+{
+  "name": "stephen-mulingwa-portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "npx --yes serve -c serve.json -l 3000"
+  }
+}

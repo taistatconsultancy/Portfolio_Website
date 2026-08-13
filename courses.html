@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects Development — Training &amp; Software | Stephen Mulingwa</title>
+  <title>Services — Training &amp; Software | Stephen Mulingwa</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="Training in software development, web development, and data analysis — plus project tiers and Kenyan pricing structure. Stephen Mulingwa, Nairobi.">
+  <meta name="description" content="Training in software development, web development, and data analysis — plus a clear project breakdown for web and software builds. Stephen Mulingwa, Nairobi.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://stephenmulingwa.com/courses">
+  <link rel="canonical" href="https://stephenmulingwa.com/services">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://stephenmulingwa.com/courses">
-  <meta property="og:title" content="Projects Development | Stephen Mulingwa">
-  <meta property="og:description" content="Software development, web development, data analysis training, and project delivery tiers.">
+  <meta property="og:url" content="https://stephenmulingwa.com/services">
+  <meta property="og:title" content="Services | Stephen Mulingwa">
+  <meta property="og:description" content="Software development, web development, data analysis training, and a clear project breakdown.">
   <meta property="og:image" content="https://stephenmulingwa.com/assets/img/favicon.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Stephen Mulingwa — Projects Development">
+  <meta name="twitter:title" content="Stephen Mulingwa — Services">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Stephen Mulingwa — Projects Development","url":"https://stephenmulingwa.com/courses","image":"https://stephenmulingwa.com/assets/img/favicon.png","description":"Training and delivery in software development, web development, and data analysis.","areaServed":["KE","Worldwide"],"provider":{"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa"}}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Stephen Mulingwa — Services","url":"https://stephenmulingwa.com/services","image":"https://stephenmulingwa.com/assets/img/favicon.png","description":"Training and delivery in software development, web development, and data analysis.","areaServed":["KE","Worldwide"],"provider":{"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa"}}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,8 +177,38 @@
     }
 
     .courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
-    .pricing-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
-    @media (max-width: 1100px) { .courses-grid { grid-template-columns: repeat(2, 1fr); } .pricing-tiers { grid-template-columns: 1fr; } }
+    .offer-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 18px 0 8px; }
+    .offer-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: var(--bg-white); border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--text-heading); }
+    .offer-chip i { color: var(--primary); }
+    .dev-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 36px 0 8px; }
+    .dev-track { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 26px; box-shadow: var(--shadow-sm); text-align: left; }
+    .dev-track h3 { font-family: var(--font-display); font-size: 1.35rem; color: var(--text-heading); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .dev-track h3 i { color: var(--primary); font-size: 1.15rem; }
+    .dev-track p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.7; }
+    .dev-track ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .dev-track li { display: flex; gap: 10px; font-size: 0.9rem; color: var(--text-body); line-height: 1.55; }
+    .dev-track li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
+    .breakdown-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+    .tier-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px 26px; text-align: left; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; cursor: default; }
+    .tier-card:hover { transform: none; box-shadow: var(--shadow-md); border-color: rgba(45,212,191,0.35); }
+    .tier-num { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--bg-hero); margin-bottom: 16px; }
+    .tier-1 .tier-num { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+    .tier-2 .tier-num { background: linear-gradient(135deg,#8b5cf6,#7c3aed); }
+    .tier-3 .tier-num { background: linear-gradient(135deg,#0f9488,#2dd4bf); }
+    .tier-card h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--text-heading); margin-bottom: 10px; }
+    .tier-card .course-desc { margin-bottom: 14px; }
+    .tier-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; flex: 1; }
+    .tier-card li { display: flex; gap: 8px; font-size: 0.88rem; color: var(--text-body); line-height: 1.5; }
+    .tier-card li i { color: var(--primary); font-size: 0.85rem; margin-top: 3px; flex-shrink: 0; }
+    .tier-note { font-size: 0.82rem; font-weight: 600; color: var(--primary); margin-top: auto; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    .process-step { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 18px 20px; text-align: left; }
+    .process-step .step-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+    .process-step h4 { font-family: var(--font-display); font-size: 1.05rem; color: var(--text-heading); margin-bottom: 8px; }
+    .process-step p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.65; }
+    .breakdown-cta { text-align: center; margin-top: 32px; }
+    @media (max-width: 1100px) { .courses-grid { grid-template-columns: repeat(2, 1fr); } .breakdown-tiers, .process-steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 700px) { .dev-tracks, .breakdown-tiers, .process-steps { grid-template-columns: 1fr; } }
     @media (max-width: 560px) {
       .courses-grid { grid-template-columns: 1fr; gap: 16px; }
       .why-grid { grid-template-columns: 1fr !important; gap: 16px; }
@@ -329,12 +359,12 @@
       <ul class="nav-links">
         <li><a href="/home">Home</a></li>
         <li><a href="/projects">Projects</a></li>
-        <li><a href="/courses" class="active">Projects Development</a></li>
+        <li><a href="/services" class="active">Services</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+        <a href="https://www.linkedin.com/in/stephenmulingwa/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
           <i class="bi bi-linkedin"></i> Connect
         </a>
       </div>
@@ -345,7 +375,7 @@
     <div class="nav-mobile container" id="mobileMenu">
       <a href="/home" onclick="closeMobile()">Home</a>
       <a href="/projects" onclick="closeMobile()">Projects</a>
-      <a href="/courses" class="active" onclick="closeMobile()">Projects Development</a>
+      <a href="/services" class="active" onclick="closeMobile()">Services</a>
       <a href="/contact" onclick="closeMobile()">Contact</a>
       <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer" onclick="closeMobile()">Brochure</a>
     </div>
@@ -359,7 +389,7 @@
       <div class="breadcrumb">
         <a href="/home">Home</a>
         <i class="bi bi-chevron-right"></i>
-        <span style="color:rgba(255,255,255,0.6)">Projects Development</span>
+        <span style="color:rgba(255,255,255,0.6)">Services</span>
       </div>
       <h1>Training &amp; <span>Software Development</span></h1>
       <p>Training on my courses, software development, web development, and data analysis — plus help building real projects from landing pages to full apps.</p>
@@ -527,52 +557,110 @@
       </div>
     </section>
 
-    <!-- ════ PROJECT COMPLEXITY & PRICING ════ -->
-    <section class="courses-section" id="pricing" style="background:var(--bg-light);padding-top:80px;padding-bottom:80px">
+    <!-- ════ PROJECT BREAKDOWN ════ -->
+    <section class="courses-section" id="breakdown" style="background:var(--bg-light);padding-top:80px;padding-bottom:80px">
       <div class="container">
-        <div class="text-center" style="margin-bottom:40px">
-          <p class="section-label">Project Delivery</p>
-          <h2 class="section-title fade-up">Project Complexity <span class="text-gradient">&amp; Pricing</span></h2>
-          <p class="section-subtitle fade-up delay-1" style="margin:0 auto">Clear tiers for software and web projects — with free post-launch support windows and a Kenya-ready quote structure.</p>
-        </div>
-
-        <div class="pricing-tiers">
-          <article class="course-card fade-up delay-1" style="text-align:left;cursor:default">
-            <h3 style="font-size:1.25rem">Tier 1: Frontend / MVP</h3>
-            <p class="course-desc">Basic responsive landing pages, portfolios, or UI static prototypes built with Next.js/React.</p>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-top:12px">After deployment: 1 month free service &amp; maintenance</p>
-          </article>
-          <article class="course-card fade-up delay-2" style="text-align:left;cursor:default">
-            <h3 style="font-size:1.25rem">Tier 2: Interactive Web App</h3>
-            <p class="course-desc">Dynamic applications with user authentication, database CRUD, and dashboard elements.</p>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-top:12px">After deployment: 2 months free service &amp; maintenance</p>
-          </article>
-          <article class="course-card fade-up delay-3" style="text-align:left;cursor:default">
-            <h3 style="font-size:1.25rem">Tier 3: Advanced / E‑Commerce</h3>
-            <p class="course-desc">Apps with M-Pesa (Daraja/Pesapal), custom notifications, calendars, and complex cloud backends.</p>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-top:12px">After deployment: 3 months free service &amp; maintenance</p>
-          </article>
-        </div>
-
-        <div class="course-card fade-up" style="margin-top:28px;text-align:left;cursor:default;max-width:920px;margin-left:auto;margin-right:auto">
-          <h3 style="font-size:1.35rem;margin-bottom:16px">Professional Service Breakdown</h3>
-          <ol style="padding-left:18px;display:flex;flex-direction:column;gap:14px;font-size:0.92rem;line-height:1.7;color:#000">
-            <li><strong>Discovery, UI/UX Design &amp; Wireframing (15%–20%)</strong> — mobile-first user flows, UI assets, up to 2 design revision rounds before coding.</li>
-            <li><strong>Frontend &amp; Backend Development (50%–60%)</strong> — responsive layouts, cloud databases (Supabase, MongoDB, or Vercel Postgres), JWT/NextAuth security.</li>
-            <li><strong>Integrations &amp; Localizations (add-on)</strong> — M-Pesa Daraja/Pesapal, SMS via Africa's Talking, and other local tools.</li>
-            <li><strong>Deployment, QA &amp; Launch (10%–15%)</strong> — Vercel production, custom domains, SEO and performance for Kenyan mobile networks.</li>
-          </ol>
-          <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--border)">
-            <h4 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:10px">Local pricing notes</h4>
-            <ul style="padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:0.9rem;line-height:1.7">
-              <li>Domain and hosting billed separately (.co.ke roughly KES 1,000–3,000/year; premium Vercel/DB if needed).</li>
-              <li>Milestone payments: <strong>40%</strong> deposit · <strong>40%</strong> on core working app · <strong>20%</strong> before custom-domain launch.</li>
-              <li>Post-warranty updates via retainer, typically <strong>KES 10,000–30,000 / month</strong>.</li>
-            </ul>
-            <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn-enroll" style="margin-top:18px;display:inline-flex">
-              <i class="bi bi-file-earmark-pdf"></i> Download Brochure PDF
-            </a>
+        <div class="text-center" style="margin-bottom:8px">
+          <p class="section-label">Services</p>
+          <h2 class="section-title fade-up">Project <span class="text-gradient">Breakdown</span></h2>
+          <p class="section-subtitle fade-up delay-1" style="margin:0 auto">Software development and web development — scoped in clear tiers, from landing pages to full production apps.</p>
+          <div class="offer-chips fade-up delay-1">
+            <span class="offer-chip"><i class="bi bi-code-slash"></i> Software Development</span>
+            <span class="offer-chip"><i class="bi bi-globe2"></i> Web Development</span>
+            <span class="offer-chip"><i class="bi bi-phone"></i> Responsive &amp; PWA</span>
           </div>
+        </div>
+
+        <div class="dev-tracks">
+          <article class="dev-track fade-up delay-1">
+            <h3><i class="bi bi-globe2"></i> Web Development</h3>
+            <p>Public sites and product UIs that look sharp on phone, tablet, and desktop.</p>
+            <ul>
+              <li>Company websites, landing pages, and portfolios</li>
+              <li>Marketing pages with clear calls to action</li>
+              <li>Dashboards and admin screens</li>
+              <li>SEO-ready layouts and Vercel deployment</li>
+            </ul>
+          </article>
+          <article class="dev-track fade-up delay-2">
+            <h3><i class="bi bi-cpu"></i> Software Development</h3>
+            <p>Internal tools and apps teams actually use day to day — not just static pages.</p>
+            <ul>
+              <li>Auth, roles, and secure user sessions</li>
+              <li>Database CRUD, APIs, and cloud storage</li>
+              <li>Payments, calendars, notifications, and ops workflows</li>
+              <li>Next.js / React apps with Neon, Supabase, or Postgres</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="breakdown-tiers">
+          <article class="tier-card tier-1 fade-up delay-1">
+            <div class="tier-num">01</div>
+            <h3>Frontend / MVP</h3>
+            <p class="course-desc">A focused first release — enough to launch, share, and validate.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Responsive landing pages and portfolios</li>
+              <li><i class="bi bi-check2"></i> Next.js / React UI prototypes</li>
+              <li><i class="bi bi-check2"></i> Clean mobile-first layouts</li>
+            </ul>
+            <p class="tier-note">Includes 1 month of post-launch support</p>
+          </article>
+          <article class="tier-card tier-2 fade-up delay-2">
+            <div class="tier-num">02</div>
+            <h3>Interactive Web App</h3>
+            <p class="course-desc">A working product with users, data, and a real dashboard.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Sign-in and role-based access</li>
+              <li><i class="bi bi-check2"></i> Database create, read, update, delete</li>
+              <li><i class="bi bi-check2"></i> Dashboards and day-to-day workflows</li>
+            </ul>
+            <p class="tier-note">Includes 2 months of post-launch support</p>
+          </article>
+          <article class="tier-card tier-3 fade-up delay-3">
+            <div class="tier-num">03</div>
+            <h3>Advanced / E‑Commerce</h3>
+            <p class="course-desc">Full apps with payments, notifications, and a stronger backend.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> M-Pesa (Daraja / Pesapal) and checkout</li>
+              <li><i class="bi bi-check2"></i> Calendars, alerts, and cloud databases</li>
+              <li><i class="bi bi-check2"></i> Complex ops portals and integrations</li>
+            </ul>
+            <p class="tier-note">Includes 3 months of post-launch support</p>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top:48px">
+          <p class="section-label">How a build runs</p>
+          <h2 class="section-title fade-up" style="font-size:clamp(1.6rem,3vw,2.2rem)">Service <span class="text-gradient">breakdown</span></h2>
+        </div>
+        <div class="process-steps">
+          <article class="process-step fade-up delay-1">
+            <p class="step-label">Step 01</p>
+            <h4>Discover &amp; design</h4>
+            <p>Mobile-first user flows, UI assets, and up to two design revision rounds before coding starts.</p>
+          </article>
+          <article class="process-step fade-up delay-2">
+            <p class="step-label">Step 02</p>
+            <h4>Build frontend &amp; backend</h4>
+            <p>Responsive layouts, cloud databases (Supabase, MongoDB, or Vercel Postgres), and secure auth.</p>
+          </article>
+          <article class="process-step fade-up delay-3">
+            <p class="step-label">Step 03</p>
+            <h4>Integrations</h4>
+            <p>Optional M-Pesa Daraja / Pesapal, SMS via Africa&apos;s Talking, calendars, and other local tools.</p>
+          </article>
+          <article class="process-step fade-up delay-3">
+            <p class="step-label">Step 04</p>
+            <h4>Launch &amp; QA</h4>
+            <p>Vercel production, custom domains, SEO, and performance tuned for Kenyan mobile networks.</p>
+          </article>
+        </div>
+
+        <div class="breakdown-cta fade-up">
+          <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn-enroll" style="display:inline-flex">
+            <i class="bi bi-file-earmark-pdf"></i> Download Brochure PDF
+          </a>
         </div>
       </div>
     </section>
@@ -613,6 +701,9 @@
             <div style="margin-top:20px;background:var(--bg-light);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
               <p style="font-family:var(--font-display);font-size:1.1rem;color:var(--text-heading);margin-bottom:16px">Tools I tutor in</p>
               <div style="display:flex;flex-wrap:wrap;gap:10px">
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Software Development</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Web Development</span>
+                <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Next.js</span>
                 <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">REST / APIs</span>
                 <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Excel</span>
                 <span style="padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:0.8rem;color:var(--text-muted);font-weight:500">Power BI</span>
@@ -653,12 +744,12 @@
       <nav class="footer-nav">
         <a href="/home">Home</a>
         <a href="/projects">Projects</a>
-        <a href="/courses">Projects Development</a>
+        <a href="/services">Services</a>
         <a href="/contact">Contact</a>
         <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
       </nav>
       <div class="footer-social">
-        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/stephenmulingwa/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
         <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
       </div>

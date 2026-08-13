@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/home" },
+    { "source": "/index.html", "destination": "/home" },
+    { "source": "/projects.html", "destination": "/projects" },
+    { "source": "/courses.html", "destination": "/services" },
+    { "source": "/courses", "destination": "/services" },
+    { "source": "/contact.html", "destination": "/contact" }
+  ],
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/projects", "destination": "/projects.html" },
+    { "source": "/services", "destination": "/courses.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ]
+}

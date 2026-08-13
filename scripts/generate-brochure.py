@@ -134,7 +134,7 @@ pdf.body(
     "Available for Work | Nairobi, Kenya (East Africa Time)\n"
     "Website: https://stephenmulingwa.com/home\n"
     "Projects: https://stephenmulingwa.com/projects\n"
-    "Projects Development: https://stephenmulingwa.com/courses\n"
+    "Services: https://stephenmulingwa.com/services\n"
     "Email: mulingwastephen200@gmail.com | WhatsApp: +254 111 224 952"
 )
 

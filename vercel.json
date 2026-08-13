@@ -3,13 +3,14 @@
     { "source": "/", "destination": "/home", "permanent": false },
     { "source": "/index.html", "destination": "/home", "permanent": true },
     { "source": "/projects.html", "destination": "/projects", "permanent": true },
-    { "source": "/courses.html", "destination": "/courses", "permanent": true },
-    { "source": "/contact.html", "destination": "/contact", "permanent": true }
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/courses.html", "destination": "/services", "permanent": true },
+    { "source": "/courses", "destination": "/services", "permanent": true }
   ],
   "rewrites": [
     { "source": "/home", "destination": "/index.html" },
     { "source": "/projects", "destination": "/projects.html" },
-    { "source": "/courses", "destination": "/courses.html" },
+    { "source": "/services", "destination": "/courses.html" },
     { "source": "/contact", "destination": "/contact.html" }
   ]
 }

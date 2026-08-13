@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="https://stephenmulingwa.com/assets/img/Me1.jpeg">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/home","image":"https://stephenmulingwa.com/assets/img/Me1.jpeg","jobTitle":"Software Developer, Web Developer & Data Scientist","description":"Software developer, web developer, and data scientist specializing in Next.js, Python, analytics platforms, and AI systems.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/mulingwa-stephen/","https://github.com/StephenMulingwa"],"knowsAbout":["Software development","Web development","Data science","Next.js","Python","Machine learning","Power BI"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://taistat.com/"}},
+    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/home","image":"https://stephenmulingwa.com/assets/img/Me1.jpeg","jobTitle":"Software Developer, Web Developer & Data Scientist","description":"Software developer, web developer, and data scientist specializing in Next.js, Python, analytics platforms, and AI systems.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/stephenmulingwa/","https://github.com/StephenMulingwa"],"knowsAbout":["Software development","Web development","Data science","Next.js","Python","Machine learning","Power BI"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://taistat.com/"}},
     {"@type":"WebSite","@id":"https://stephenmulingwa.com/#website","url":"https://stephenmulingwa.com/home","name":"Stephen Mulingwa — Portfolio","publisher":{"@id":"https://stephenmulingwa.com/#person"}}
   ]}
   </script>
@@ -157,21 +157,21 @@
     @media (max-width: 960px) { .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 140px 0 60px; } .hero-photo-wrap { order: -1; } .hero-photo-frame { width: 340px; height: 430px; } }
     @media (max-width: 560px) {
       .hero { min-height: auto; padding-bottom: 40px; }
-      .hero-content { grid-template-columns: 1fr 200px; align-items: start; padding: 128px 0 48px; gap: 16px; }
-      .hero-content > div:first-child { grid-column: 1 / 2; }
-      .hero-photo-wrap { order: 0; grid-column: 2 / 3; align-self: start; }
-      .hero-title { font-size: 2.85rem; line-height: 1.02; margin-bottom: 12px; }
-      .hero-role { margin-bottom: 14px; }
-      .hero-role p { font-size: 0.95rem; }
-      .hero-desc { max-width: none; margin-bottom: 18px; font-size: 0.92rem; line-height: 1.7; }
-      .hero-actions { margin-bottom: 20px; }
+      .hero-content { grid-template-columns: 1fr; align-items: start; padding: 128px 0 48px; gap: 28px; text-align: left; }
+      .hero-content > div:first-child { grid-column: 1; order: 1; }
+      .hero-photo-wrap { order: 2; grid-column: 1; justify-content: center; }
+      .hero-title { font-size: 3.1rem; line-height: 1.05; margin-bottom: 14px; }
+      .hero-role { margin-bottom: 16px; }
+      .hero-role p { font-size: 1.05rem; }
+      .hero-desc { max-width: none; margin-bottom: 22px; font-size: 1rem; line-height: 1.75; }
+      .hero-actions { margin-bottom: 22px; }
       .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 18px; }
-      .hero-stats { gap: 12px; justify-content: flex-start; flex-wrap: wrap; }
-      .stat-val { font-size: 1.5rem; }
-      .hero-photo-frame { width: 200px; height: 280px; }
-      .hero-photo-card { padding: 18px 14px 14px; }
-      .hero-photo-card .hpc-name { font-size: 1rem; }
-      .hero-photo-card .role-row span { font-size: 0.72rem; }
+      .hero-stats { gap: 18px; justify-content: flex-start; flex-wrap: wrap; }
+      .stat-val { font-size: 1.6rem; }
+      .hero-photo-frame { width: min(280px, 78vw); height: 360px; }
+      .hero-photo-card { padding: 20px 16px 16px; }
+      .hero-photo-card .hpc-name { font-size: 1.1rem; }
+      .hero-photo-card .role-row span { font-size: 0.82rem; }
     }
 
     /* ── ABOUT ── */
@@ -374,12 +374,12 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="/home" class="active">Home</a></li>
       <li><a href="/projects">Projects</a></li>
-      <li><a href="/courses">Projects Development</a></li>
+      <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact</a></li>
       <li><a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+      <a href="https://www.linkedin.com/in/stephenmulingwa/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
         <i class="bi bi-linkedin"></i> Connect
       </a>
     </div>
@@ -390,7 +390,7 @@
   <div class="nav-mobile container" id="mobileMenu">
     <a href="/home">Home</a>
     <a href="/projects">Projects</a>
-    <a href="/courses">Projects Development</a>
+    <a href="/services">Services</a>
     <a href="/contact">Contact</a>
     <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
   </div>
@@ -467,7 +467,7 @@
       <div class="about-main fade-left">
         <p>…and I’m a Software Developer, Web Developer, and Data Scientist based in Nairobi, Kenya.</p>
         <p>My work is driven by one belief: <strong>technology only creates value when it solves real problems</strong>. I specialize in <strong>software development, web development, machine learning</strong>, and <strong>AI system design</strong>, shipping apps and platforms teams can actually use.</p>
-        <p>Currently, I work with large-scale logistics and telematics data, developing predictive models, automated dashboards, and AI-driven systems that improve operational efficiency, safety, and performance. I also build full-stack products — from wellness ops portals to agri-marketplaces — for Kenyan businesses.</p>
+        <p>Currently, I work with large-scale logistics and telematics data, developing predictive models, automated dashboards, and AI-driven systems that improve operational efficiency, safety, and performance. I also build full-stack products from wellness ops portals to agri-marketplaces for Kenyan businesses.</p>
         <p>Beyond this, I develop scalable web and analytics platforms across healthcare, research, and business sectors. Skilled in <strong>Next.js, Python, SQL, Power BI,</strong> and <strong>cloud databases</strong>, I focus on delivering solutions that are accurate and impactful.</p>
         <p>My goal is to help organizations adopt smarter digital strategies that foster innovation, optimization, and sustainable growth.</p>
       </div>
@@ -479,7 +479,8 @@
           <div class="about-stat-card"><div class="val">$15</div><div class="lbl">Hourly Rate</div></div>
         </div>
         <div class="about-actions">
-          <a href="/contact" class="btn btn-dark"><i class="bi bi-person-lines-fill"></i> Explore Background</a>
+          <a href="assets/resume/STEPHEN%20MULINGWA-RESUME.pdf" class="btn btn-dark" download="STEPHEN MULINGWA-RESUME.pdf"><i class="bi bi-person-lines-fill"></i> Explore Background</a>
+          <a href="assets/resume/STEPHEN%20MULINGWA-RESUME.pdf" class="btn btn-primary" download="STEPHEN MULINGWA-RESUME.pdf"><i class="bi bi-download"></i> Download Resume</a>
         </div>
       </aside>
     </div>
@@ -856,7 +857,7 @@
       </a>
       <p class="contact-detail">stephen@taistat.com &nbsp;·&nbsp; +254 111 224 952</p>
       <div class="social-row">
-        <a href="https://www.linkedin.com/in/mulingwa-stephen/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/stephenmulingwa/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
         <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
       </div>
@@ -870,7 +871,7 @@
     <nav class="footer-nav">
       <a href="/home">Home</a>
       <a href="/projects">Projects</a>
-      <a href="/courses">Projects Development</a>
+      <a href="/services">Services</a>
       <a href="/contact">Contact</a>
       <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
     </nav>
