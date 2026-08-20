@@ -1,7 +1,6 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/home" },
-    { "source": "/index.html", "destination": "/home" },
+    { "source": "/index.html", "destination": "/" },
     { "source": "/projects.html", "destination": "/projects" },
     { "source": "/courses.html", "destination": "/services" },
     { "source": "/courses", "destination": "/services" },
