@@ -145,12 +145,7 @@
     .hero-photo-wrap { position: relative; display: flex; justify-content: center; }
     .hero-photo-glow { position: absolute; inset: -24px; border-radius: 24px; background: linear-gradient(135deg,rgba(45,212,191,0.3),rgba(103,232,249,0.1)); filter: blur(40px); }
     .hero-photo-frame { position: relative; width: 420px; height: 540px; border-radius: 22px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.1); box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05); }
-    .hero-photo-frame > img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .hero-photo-card { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 22px 22px; background: linear-gradient(to top,rgba(0,0,0,0.85) 60%,transparent); }
-    .hero-photo-card .hpc-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-white); }
-    .hero-photo-card .role-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
-    .hero-photo-card .role-row i { font-size: 0.8rem; color: var(--primary); }
-    .hero-photo-card .role-row span { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .hero-photo-frame > img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce 2s ease-in-out infinite; }
     .scroll-hint i { font-size: 1.4rem; color: rgba(255,255,255,0.25); }
     @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
@@ -169,9 +164,6 @@
       .hero-stats { gap: 18px; justify-content: flex-start; flex-wrap: wrap; }
       .stat-val { font-size: 1.6rem; }
       .hero-photo-frame { width: min(280px, 78vw); height: 360px; }
-      .hero-photo-card { padding: 20px 16px 16px; }
-      .hero-photo-card .hpc-name { font-size: 1.1rem; }
-      .hero-photo-card .role-row span { font-size: 0.82rem; }
     }
 
     /* ── ABOUT ── */
@@ -438,13 +430,6 @@
         <div class="hero-photo-glow"></div>
         <div class="hero-photo-frame">
           <img src="assets/img/Me1.png" alt="Stephen Mulingwa" onerror="this.src='assets/img/Me3.GIF'">
-          <div class="hero-photo-card">
-            <p class="hpc-name">Stephen Mulingwa</p>
-            <div class="role-row">
-              <i class="bi bi-briefcase-fill"></i>
-              <span>Software Developer &amp; Data Scientist</span>
-            </div>
-          </div>
         </div>
       </div>
 
