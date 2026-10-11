@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sales &amp; Inventory Analytics App | Stephen Mulingwa</title>
-  <meta name="description" content="Sales and inventory application — software &amp; analytics portfolio project by Stephen Mulingwa.">
+  <title>TaiStat Website Case Study | Stephen Mulingwa — Web Development</title>
+  <meta name="description" content="TaiStat Firm website — AI and data consultancy site built and delivered by Stephen Mulingwa.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://stephenmulingwa.com/project-sales-application.html">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://stephenmulingwa.com/project-taistat-website.html">
+  <link rel="icon" href="/assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -69,9 +69,25 @@
     @media (max-width: 900px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: block; } }
 
     /* ── PAGE HERO ── */
-    .page-hero { background: var(--bg-hero); padding: 140px 0 70px; position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px); background-size: 60px 60px; }
-    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%); }
+    .page-hero {
+      background: var(--bg-hero);
+      padding: 140px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px);
+      background-size: 60px 60px;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%);
+    }
     .page-hero-inner { position: relative; z-index: 2; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
@@ -90,7 +106,15 @@
 
     /* ── PROJECT CONTENT ── */
     .project-content { background: var(--bg-light); padding: 0 0 100px; }
-    .project-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
     .project-block { background: var(--bg-white); border-radius: var(--radius); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
     .project-block:last-child { margin-bottom: 0; }
@@ -101,13 +125,6 @@
     .project-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
     .project-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
     .project-block ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
-
-    /* Feature grid inside a block */
-    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
-    .feature-item { background: var(--bg-light); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--border); }
-    .feature-item i { color: var(--primary); font-size: 1.1rem; margin-bottom: 8px; display: block; }
-    .feature-item strong { font-size: 0.85rem; color: var(--text-heading); display: block; margin-bottom: 3px; }
-    .feature-item span { font-size: 0.78rem; color: var(--text-muted); }
 
     /* Sidebar */
     .project-sidebar { position: sticky; top: 100px; }
@@ -120,6 +137,21 @@
     .tools-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .sidebar-actions { display: flex; flex-direction: column; gap: 10px; }
     .sidebar-actions .btn { justify-content: center; }
+
+    /* County badge strip */
+    .county-strip {
+      background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(103,232,249,0.04));
+      border: 1px solid rgba(45,212,191,0.2);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .county-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--primary); line-height: 1; }
+    .county-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+    .county-text strong { color: var(--text-heading); display: block; }
 
     /* ── FOOTER ── */
     .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
@@ -138,7 +170,10 @@
     .fade-up.visible { opacity: 1; transform: none; }
     .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
 
-    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } .feature-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 860px) {
+      .project-layout { grid-template-columns: 1fr; }
+      .project-sidebar { position: static; }
+    }
   </style>
 </head>
 <body>
@@ -147,7 +182,7 @@
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
     <a href="/home" class="nav-logo">
-      <img src="assets/img/favicon.png" alt="SM">
+      <img src="/assets/img/favicon.png" alt="SM">
       <span class="nav-logo-text">Stephen<span> M.</span></span>
     </a>
     <ul class="nav-links">
@@ -181,15 +216,15 @@
       <i class="bi bi-chevron-right"></i>
       <a href="/projects">Projects</a>
       <i class="bi bi-chevron-right"></i>
-      <span>Footwear Sales Application</span>
+      <span>TaiStat Website</span>
     </div>
-    <h1>Footwear Sales <span class="text-gradient">Application</span></h1>
-    <p class="page-hero-tagline">R Shiny app for tracking sales, managing stock levels, and generating time series forecasts to support smarter ordering and planning.</p>
+    <h1>TaiStat <span class="text-gradient">Firm Website</span></h1>
+    <p class="page-hero-tagline">The public web presence for TaiStat Firm — showcasing AI, data consultancy, agriculture solutions, and services to clients worldwide.</p>
     <div class="hero-meta-chips">
-      <span class="meta-chip"><i class="bi bi-bar-chart-line"></i> Sales Analytics</span>
-      <span class="meta-chip"><i class="bi bi-boxes"></i> Inventory Tracking</span>
-      <span class="meta-chip"><i class="bi bi-graph-up-arrow"></i> Time Series Forecasting</span>
-      <span class="meta-chip"><i class="bi bi-code-slash"></i> R Shiny</span>
+      <span class="meta-chip"><i class="bi bi-globe2"></i> Web Development</span>
+      <span class="meta-chip"><i class="bi bi-building"></i> Company Site</span>
+      <span class="meta-chip"><i class="bi bi-robot"></i> AI &amp; Data</span>
+      <span class="meta-chip"><i class="bi bi-newspaper"></i> Blog &amp; Services</span>
     </div>
   </div>
 </section>
@@ -197,7 +232,7 @@
 <!-- ══ PROJECT IMAGE ══ -->
 <div class="project-image-wrap">
   <div class="project-image-frame">
-    <img src="assets/img/portfolio/sales-application.jpg.jpg" alt="Footwear Sales Application" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
+    <img src="/assets/img/portfolio/taistat-website.png" alt="TaiStat Firm Website" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
   </div>
 </div>
 
@@ -214,39 +249,25 @@
           <span class="block-icon" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="bi bi-exclamation-circle"></i></span>
           The Problem
         </h3>
-        <p>Sales and inventory data for footwear were scattered across spreadsheets and files. The team needed one place to view current sales and stock levels, compare performance over time, and get simple forecasts to support ordering and planning.</p>
-        <p>Manual updates and ad hoc analysis were time-consuming and error-prone — the business needed a self-service tool that non-technical staff could use daily without relying on data analysts for every query.</p>
+        <p>TaiStat needed a clear, professional website that explained its AI and data consultancy offering — especially agriculture impact — and made it easy for clients to explore services, portfolio work, and get in touch.</p>
+        <p>Without a strong web presence, it was harder to communicate capability, showcase flagship products like Mkulima Sokoni, and convert enquiries into conversations.</p>
       </div>
 
-      <!-- What I Built -->
+      <!-- What I Did -->
       <div class="project-block fade-up delay-1">
         <h3>
           <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-wrench-adjustable"></i></span>
           What I Built
         </h3>
-        <p>I built an interactive web application in <strong style="color:var(--text-heading)">R Shiny</strong> that connects to the sales and inventory data (CSV, Excel, or database). The app includes dashboards for current and historical sales, stock levels by product or category, and key metrics such as units sold, revenue, and stock turnover.</p>
-        <p>I added <strong style="color:var(--text-heading)">time series forecasting</strong> using ARIMA and similar methods in R, so that users can see projected demand and use it for restocking decisions. The interface lets users filter by product, date range, and other dimensions — charts and tables update in real time.</p>
+        <p>I delivered the <strong style="color:var(--text-heading)">TaiStat Firm website</strong> at taistat.com — structuring home messaging, services, industries, portfolio highlights, about content, blog entry points, and contact paths.</p>
+        <p>The site positions TaiStat as an AI and data consultancy rooted in Nairobi, with clear CTAs and sections for agriculture technology, enterprise analytics, training, and custom software.</p>
+        <p>This was a full web development delivery: layout, content hierarchy, responsive behaviour, and production launch for a client-facing brand site.</p>
 
-        <div class="feature-grid">
-          <div class="feature-item">
-            <i class="bi bi-speedometer2"></i>
-            <strong>Live Dashboards</strong>
-            <span>Sales & stock metrics updating in real time</span>
-          </div>
-          <div class="feature-item">
-            <i class="bi bi-funnel"></i>
-            <strong>Smart Filtering</strong>
-            <span>Filter by product, date range & category</span>
-          </div>
-          <div class="feature-item">
-            <i class="bi bi-graph-up-arrow"></i>
-            <strong>Demand Forecasting</strong>
-            <span>ARIMA-based projections for restocking</span>
-          </div>
-          <div class="feature-item">
-            <i class="bi bi-people"></i>
-            <strong>Non-Technical Friendly</strong>
-            <span>Designed for everyday business users</span>
+        <div class="county-strip">
+          <div class="county-num">1</div>
+          <div class="county-text">
+            <strong>Live Company Website</strong>
+            Public brand presence for TaiStat Firm serving clients worldwide from Nairobi.
           </div>
         </div>
       </div>
@@ -257,14 +278,14 @@
           <span class="block-icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="bi bi-graph-up-arrow"></i></span>
           Outcome
         </h3>
-        <p>The business now has a single, interactive dashboard for sales and inventory, with built-in forecasting to support planning and replenishment. Reporting and ad hoc analysis are faster and more consistent.</p>
+        <p>TaiStat now has a clear digital front door that explains services, highlights flagship agriculture work, and routes prospects to contact and content.</p>
         <ul>
-          <li>Centralised view of all sales and stock data in one place</li>
-          <li>Historical performance comparisons across time periods</li>
-          <li>ARIMA time series forecasting for demand planning</li>
-          <li>Real-time filtering by product, category, and date</li>
-          <li>Self-service tool — no coding required for business users</li>
-          <li>Faster, more consistent reporting and restocking decisions</li>
+          <li>Responsive company website at taistat.com</li>
+          <li>Services and industries structured for consultancy discovery</li>
+          <li>Portfolio and flagship project storytelling (including Mkulima Sokoni)</li>
+          <li>Blog and newsletter entry points for ongoing content</li>
+          <li>Contact and CTA paths for client acquisition</li>
+          <li>Brand-aligned layout for a Nairobi-based AI &amp; data firm</li>
         </ul>
       </div>
 
@@ -277,45 +298,43 @@
         <h4>Project Details</h4>
         <div class="sidebar-row">
           <span class="label">Category</span>
-          <span class="value">Analytics</span>
+          <span class="value">Web Development</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Domain</span>
-          <span class="value">Retail / Footwear</span>
+          <span class="label">Client</span>
+          <span class="value">TaiStat Firm</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">URL</span>
+          <span class="value">taistat.com</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Type</span>
-          <span class="value">Web Application</span>
-        </div>
-        <div class="sidebar-row">
-          <span class="label">Language</span>
-          <span class="value">R</span>
+          <span class="value">Company Website</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Status</span>
-          <span class="value" style="color:var(--primary)">Complete</span>
+          <span class="value" style="color:var(--primary)">Live</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-1">
         <h4>Tools &amp; Technologies</h4>
         <div class="tools-tags">
-          <span class="tag">R</span>
-          <span class="tag">R Shiny</span>
-          <span class="tag">ARIMA</span>
-          <span class="tag">forecast</span>
-          <span class="tag">ggplot2</span>
-          <span class="tag">plotly</span>
-          <span class="tag">dplyr</span>
-          <span class="tag">tidyr</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Responsive Design</span>
+          <span class="tag">SEO</span>
+          <span class="tag">Content Architecture</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-2">
         <h4>Actions</h4>
         <div class="sidebar-actions">
-          <a href="https://github.com/StephenMulingwa/Sales_Application" target="_blank" class="btn btn-primary">
-            <i class="bi bi-github"></i> View on GitHub
+          <a href="https://taistat.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="bi bi-box-arrow-up-right"></i> Visit TaiStat
           </a>
           <a href="/projects" class="btn btn-outline">
             <i class="bi bi-arrow-left"></i> Back to Projects
@@ -342,7 +361,7 @@
       <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
       <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
     </div>
-    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Data Scientist</p>
+    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Software Developer &amp; Data Scientist</p>
     <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
       <i class="bi bi-arrow-up-short"></i>
     </button>
@@ -366,6 +385,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => obs.observe(el));
 </script>
-<script src="assets/js/whatsapp-float.js" defer></script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
 </body>
 </html>

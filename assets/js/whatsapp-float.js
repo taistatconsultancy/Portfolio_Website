@@ -3,7 +3,7 @@
 
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'assets/css/whatsapp-float.css';
+  link.href = '/assets/css/whatsapp-float.css';
   document.head.appendChild(link);
 
   var a = document.createElement('a');

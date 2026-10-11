@@ -1,15 +1,31 @@
 {
+  "cleanUrls": false,
   "redirects": [
     { "source": "/index.html", "destination": "/" },
     { "source": "/projects.html", "destination": "/projects" },
     { "source": "/courses.html", "destination": "/services" },
     { "source": "/courses", "destination": "/services" },
-    { "source": "/contact.html", "destination": "/contact" }
+    { "source": "/contact.html", "destination": "/contact" },
+    { "source": "/course-apis.html", "destination": "/services" },
+    { "source": "/course-excel.html", "destination": "/services" },
+    { "source": "/course-powerbi.html", "destination": "/services" },
+    { "source": "/course-python.html", "destination": "/services" }
   ],
   "rewrites": [
     { "source": "/home", "destination": "/index.html" },
-    { "source": "/projects", "destination": "/projects.html" },
-    { "source": "/services", "destination": "/courses.html" },
-    { "source": "/contact", "destination": "/contact.html" }
+    { "source": "/projects", "destination": "/pages/projects.html" },
+    { "source": "/services", "destination": "/pages/services.html" },
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "/brochure", "destination": "/pages/brochure.html" },
+
+    { "source": "/project-fleet-telematics-dashboard.html", "destination": "/pages/projects/fleet-telematics-dashboard.html" },
+    { "source": "/project-kiki-mobile-wellness.html", "destination": "/pages/projects/kiki-mobile-wellness.html" },
+    { "source": "/project-taistat-website.html", "destination": "/pages/projects/taistat-website.html" },
+    { "source": "/project-taistat-agrolink.html", "destination": "/pages/projects/taistat-agrolink.html" },
+    { "source": "/project-yodaai.html", "destination": "/pages/projects/yodaai.html" },
+    { "source": "/project-excel-analytics.html", "destination": "/pages/projects/excel-analytics.html" },
+    { "source": "/project-churn-rate-analysis.html", "destination": "/pages/projects/churn-rate-analysis.html" },
+    { "source": "/project-sales-application.html", "destination": "/pages/projects/sales-application.html" },
+    { "source": "/project-powerbi-dashboard.html", "destination": "/pages/projects/powerbi-dashboard.html" }
   ]
 }

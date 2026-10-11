@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Power BI Dashboard Portfolio | Analytics — Stephen Mulingwa</title>
-  <meta name="description" content="Power BI dashboards and business analytics — project by Stephen Mulingwa, Power BI tutor &amp; data analyst.">
+  <title>Sales &amp; Inventory Analytics App | Stephen Mulingwa</title>
+  <meta name="description" content="Sales and inventory application — software &amp; analytics portfolio project by Stephen Mulingwa.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://stephenmulingwa.com/project-powerbi-dashboard.html">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://stephenmulingwa.com/project-sales-application.html">
+  <link rel="icon" href="/assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,8 +15,10 @@
   <style>
     :root {
       --primary: #2dd4bf;
+      --primary-dark: #0f9488;
       --primary-glow: rgba(45,212,191,0.25);
       --bg-hero: #060d14;
+      --bg-dark: #0b1521;
       --bg-light: #f7f9fc;
       --bg-white: #ffffff;
       --text-white: #ffffff;
@@ -55,7 +57,7 @@
     .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
     .nav-links a:hover, .nav-links a.active { color: var(--primary); }
     .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--primary); border-radius: 2px; }
-    .nav-cta { display: flex; align-items: center; }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
     .nav-linkedin { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 9px; background: var(--primary); color: var(--bg-hero); font-size: 0.82rem; font-weight: 700; transition: all 0.25s; }
     .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
@@ -75,7 +77,7 @@
     .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb i { font-size: 0.65rem; }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.8rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
     .page-hero-tagline { font-size: 1.05rem; color: rgba(255,255,255,0.5); max-width: 640px; line-height: 1.75; margin-bottom: 28px; }
     .hero-meta-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .meta-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; }
@@ -100,18 +102,12 @@
     .project-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
     .project-block ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
 
-    /* KPI stats row */
-    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
-    .kpi-card { background: var(--bg-light); border-radius: 14px; padding: 18px 16px; border: 1px solid var(--border); text-align: center; transition: border-color 0.25s; }
-    .kpi-card:hover { border-color: var(--primary); }
-    .kpi-val { font-family: var(--font-display); font-size: 1.5rem; background: linear-gradient(135deg,var(--primary),#67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-    .kpi-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
-
-    /* Nav module strip */
-    .nav-modules { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-    .nav-mod { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-light); font-size: 0.8rem; color: var(--text-muted); font-weight: 500; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s; }
-    .nav-mod i { color: var(--primary); font-size: 0.8rem; }
-    .nav-mod.active-mod { border-color: var(--primary); color: var(--primary); background: rgba(45,212,191,0.06); }
+    /* Feature grid inside a block */
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
+    .feature-item { background: var(--bg-light); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--border); }
+    .feature-item i { color: var(--primary); font-size: 1.1rem; margin-bottom: 8px; display: block; }
+    .feature-item strong { font-size: 0.85rem; color: var(--text-heading); display: block; margin-bottom: 3px; }
+    .feature-item span { font-size: 0.78rem; color: var(--text-muted); }
 
     /* Sidebar */
     .project-sidebar { position: sticky; top: 100px; }
@@ -124,10 +120,6 @@
     .tools-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .sidebar-actions { display: flex; flex-direction: column; gap: 10px; }
     .sidebar-actions .btn { justify-content: center; }
-
-    /* powerbi logo in sidebar */
-    .pbi-logo-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
-    .pbi-logo-wrap img { width: 56px; height: 56px; object-fit: contain; }
 
     /* ── FOOTER ── */
     .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
@@ -146,8 +138,7 @@
     .fade-up.visible { opacity: 1; transform: none; }
     .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
 
-    @media (max-width: 900px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } }
+    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } .feature-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -156,7 +147,7 @@
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
     <a href="/home" class="nav-logo">
-      <img src="assets/img/favicon.png" alt="SM">
+      <img src="/assets/img/favicon.png" alt="SM">
       <span class="nav-logo-text">Stephen<span> M.</span></span>
     </a>
     <ul class="nav-links">
@@ -190,15 +181,15 @@
       <i class="bi bi-chevron-right"></i>
       <a href="/projects">Projects</a>
       <i class="bi bi-chevron-right"></i>
-      <span>Power BI Analytics Dashboards</span>
+      <span>Footwear Sales Application</span>
     </div>
-    <h1>Power BI <span class="text-gradient">Analytics Dashboards</span></h1>
-    <p class="page-hero-tagline">Business intelligence and HR analytics — interactive dashboards for KPIs, country-level staff analytics, gender distribution, and multi-department reporting.</p>
+    <h1>Footwear Sales <span class="text-gradient">Application</span></h1>
+    <p class="page-hero-tagline">R Shiny app for tracking sales, managing stock levels, and generating time series forecasts to support smarter ordering and planning.</p>
     <div class="hero-meta-chips">
-      <span class="meta-chip"><i class="bi bi-graph-up"></i> Power BI</span>
-      <span class="meta-chip"><i class="bi bi-people"></i> HR Analytics</span>
-      <span class="meta-chip"><i class="bi bi-globe"></i> Multi-Country</span>
-      <span class="meta-chip"><i class="bi bi-funnel"></i> Interactive Filters</span>
+      <span class="meta-chip"><i class="bi bi-bar-chart-line"></i> Sales Analytics</span>
+      <span class="meta-chip"><i class="bi bi-boxes"></i> Inventory Tracking</span>
+      <span class="meta-chip"><i class="bi bi-graph-up-arrow"></i> Time Series Forecasting</span>
+      <span class="meta-chip"><i class="bi bi-code-slash"></i> R Shiny</span>
     </div>
   </div>
 </section>
@@ -206,7 +197,7 @@
 <!-- ══ PROJECT IMAGE ══ -->
 <div class="project-image-wrap">
   <div class="project-image-frame">
-    <img src="assets/img/portfolio/powerbi-dashboard.jpg.png" alt="Power BI Analytics Dashboard" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
+    <img src="/assets/img/portfolio/sales-application.jpg.jpg" alt="Footwear Sales Application" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
   </div>
 </div>
 
@@ -217,54 +208,46 @@
     <!-- Main Content -->
     <div>
 
-      <!-- Overview -->
+      <!-- Problem -->
       <div class="project-block fade-up">
         <h3>
-          <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-grid-3x3-gap"></i></span>
-          Overview
+          <span class="block-icon" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="bi bi-exclamation-circle"></i></span>
+          The Problem
         </h3>
-        <p>This project involved designing and building a suite of interactive Power BI dashboards for organisational analytics, with a strong focus on Human Resources and operations. The dashboards give leadership and HR teams a single place to monitor headcount, satisfaction, training, and diversity across countries and departments.</p>
-        <p>Users can filter by country, month, and year to answer questions quickly without touching raw data.</p>
-
-        <!-- Live KPI snapshot -->
-        <div class="kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-val">1,511</div>
-            <div class="kpi-label">Total Staff</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">84.85</div>
-            <div class="kpi-label">Avg. Satisfaction</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">306</div>
-            <div class="kpi-label">Avg. Training Hrs</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-val">52 / 48%</div>
-            <div class="kpi-label">Male / Female Split</div>
-          </div>
-        </div>
+        <p>Sales and inventory data for footwear were scattered across spreadsheets and files. The team needed one place to view current sales and stock levels, compare performance over time, and get simple forecasts to support ordering and planning.</p>
+        <p>Manual updates and ad hoc analysis were time-consuming and error-prone — the business needed a self-service tool that non-technical staff could use daily without relying on data analysts for every query.</p>
       </div>
 
-      <!-- What I Did -->
+      <!-- What I Built -->
       <div class="project-block fade-up delay-1">
         <h3>
-          <span class="block-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6"><i class="bi bi-wrench-adjustable"></i></span>
+          <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-wrench-adjustable"></i></span>
           What I Built
         </h3>
-        <p>I designed the data model and report structure in Power BI, then built multiple linked views. The HR dashboard centres on headline KPIs at the top so that senior stakeholders see the main numbers immediately.</p>
-        <p>Below the KPIs I added a <strong style="color:var(--text-heading)">bar chart showing total staff per country</strong> for clear geographic distribution, and a <strong style="color:var(--text-heading)">donut chart</strong> for gender split (52.48% male, 47.52% female). A detailed breakdown table shows international versus local staff by country — Egypt, Ethiopia, Ghana, Kenya, and others — all linked to the same filter controls.</p>
-        <p>All visuals respond to the same slicer panel (country, month, year) so selecting any region or time period updates every chart and table consistently.</p>
+        <p>I built an interactive web application in <strong style="color:var(--text-heading)">R Shiny</strong> that connects to the sales and inventory data (CSV, Excel, or database). The app includes dashboards for current and historical sales, stock levels by product or category, and key metrics such as units sold, revenue, and stock turnover.</p>
+        <p>I added <strong style="color:var(--text-heading)">time series forecasting</strong> using ARIMA and similar methods in R, so that users can see projected demand and use it for restocking decisions. The interface lets users filter by product, date range, and other dimensions — charts and tables update in real time.</p>
 
-        <!-- Navigation modules -->
-        <p style="font-size:0.82rem;font-weight:600;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:20px;margin-bottom:0">Dashboard Navigation Modules</p>
-        <div class="nav-modules">
-          <span class="nav-mod active-mod"><i class="bi bi-people-fill"></i> HR</span>
-          <span class="nav-mod"><i class="bi bi-briefcase"></i> Mission</span>
-          <span class="nav-mod"><i class="bi bi-truck"></i> Supply Chain</span>
-          <span class="nav-mod"><i class="bi bi-currency-dollar"></i> Finance</span>
-          <span class="nav-mod"><i class="bi bi-laptop"></i> ICT</span>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <i class="bi bi-speedometer2"></i>
+            <strong>Live Dashboards</strong>
+            <span>Sales & stock metrics updating in real time</span>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-funnel"></i>
+            <strong>Smart Filtering</strong>
+            <span>Filter by product, date range & category</span>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-graph-up-arrow"></i>
+            <strong>Demand Forecasting</strong>
+            <span>ARIMA-based projections for restocking</span>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-people"></i>
+            <strong>Non-Technical Friendly</strong>
+            <span>Designed for everyday business users</span>
+          </div>
         </div>
       </div>
 
@@ -274,14 +257,14 @@
           <span class="block-icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="bi bi-graph-up-arrow"></i></span>
           Outcome
         </h3>
-        <p>Stakeholders can now explore HR and operational metrics in one place, with clear visuals and drill-down by country and time. The dashboards support planning, diversity reporting, and capacity discussions with data that is consistent, filterable, and easy to interpret.</p>
+        <p>The business now has a single, interactive dashboard for sales and inventory, with built-in forecasting to support planning and replenishment. Reporting and ad hoc analysis are faster and more consistent.</p>
         <ul>
-          <li>Single source of truth for HR KPIs across all departments</li>
-          <li>Country-level staff breakdown — international vs. local headcount</li>
-          <li>Gender distribution tracking with visual donut charts</li>
-          <li>Multi-department navigation (HR, Finance, Supply Chain, ICT)</li>
-          <li>Consistent slicers — filter by country, month, and year</li>
-          <li>Faster diversity reporting and capacity planning discussions</li>
+          <li>Centralised view of all sales and stock data in one place</li>
+          <li>Historical performance comparisons across time periods</li>
+          <li>ARIMA time series forecasting for demand planning</li>
+          <li>Real-time filtering by product, category, and date</li>
+          <li>Self-service tool — no coding required for business users</li>
+          <li>Faster, more consistent reporting and restocking decisions</li>
         </ul>
       </div>
 
@@ -291,25 +274,22 @@
     <aside class="project-sidebar">
 
       <div class="sidebar-card fade-up">
-        <div class="pbi-logo-wrap">
-          <img src="assets/img/powerbi_logo.png" alt="Power BI" onerror="this.style.display='none'">
-        </div>
         <h4>Project Details</h4>
         <div class="sidebar-row">
           <span class="label">Category</span>
-          <span class="value">Dashboards</span>
+          <span class="value">Analytics</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Domain</span>
-          <span class="value">HR &amp; Operations</span>
+          <span class="value">Retail / Footwear</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Tool</span>
-          <span class="value">Power BI</span>
+          <span class="label">Type</span>
+          <span class="value">Web Application</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Scope</span>
-          <span class="value">Multi-country</span>
+          <span class="label">Language</span>
+          <span class="value">R</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Status</span>
@@ -320,23 +300,25 @@
       <div class="sidebar-card fade-up delay-1">
         <h4>Tools &amp; Technologies</h4>
         <div class="tools-tags">
-          <span class="tag">Power BI Desktop</span>
-          <span class="tag">Power BI Service</span>
-          <span class="tag">Power Query</span>
-          <span class="tag">DAX</span>
-          <span class="tag">Excel / CSV</span>
-          <span class="tag">SQL</span>
+          <span class="tag">R</span>
+          <span class="tag">R Shiny</span>
+          <span class="tag">ARIMA</span>
+          <span class="tag">forecast</span>
+          <span class="tag">ggplot2</span>
+          <span class="tag">plotly</span>
+          <span class="tag">dplyr</span>
+          <span class="tag">tidyr</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-2">
         <h4>Actions</h4>
         <div class="sidebar-actions">
+          <a href="https://github.com/StephenMulingwa/Sales_Application" target="_blank" class="btn btn-primary">
+            <i class="bi bi-github"></i> View on GitHub
+          </a>
           <a href="/projects" class="btn btn-outline">
             <i class="bi bi-arrow-left"></i> Back to Projects
-          </a>
-          <a href="/contact" class="btn btn-primary">
-            <i class="bi bi-send"></i> Discuss a Project
           </a>
         </div>
       </div>
@@ -384,6 +366,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => obs.observe(el));
 </script>
-<script src="assets/js/whatsapp-float.js" defer></script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
 </body>
 </html>

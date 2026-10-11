@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brochure | Stephen Mulingwa: Fleet Intelligence, Integrations &amp; Software</title>
+  <meta name="description" content="Services brochure: fleet and telematics analytics (Wialon, MiX Telematics, Howen VSS), ERP integration, API development and documentation, consultancy, and web and software development by Stephen Mulingwa, Nairobi.">
+  <link rel="canonical" href="https://stephenmulingwa.com/brochure">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #060d14;
+      --navy-2: #0b1521;
+      --navy-3: #12202f;
+      --teal: #2dd4bf;
+      --teal-dark: #0f9488;
+      --cyan: #67e8f9;
+      --ink: #0b1220;
+      --body: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --soft: #f4f7fb;
+      --display: 'DM Serif Display', Georgia, serif;
+      --sans: 'Outfit', system-ui, sans-serif;
+    }
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--sans); color: var(--body); background: #1b2635; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Screen toolbar ── */
+    .toolbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px; background: rgba(6,13,20,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .toolbar-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-family: var(--display); font-size: 1.05rem; }
+    .toolbar-brand img { width: 30px; height: 30px; border-radius: 8px; }
+    .toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tb-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; border-radius: 9px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.18); color: #fff; background: transparent; cursor: pointer; font-family: var(--sans); }
+    .tb-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .tb-btn.primary { background: var(--teal); border-color: var(--teal); color: var(--navy); }
+    .tb-btn.primary:hover { background: #1ab5a3; color: var(--navy); }
+    @media (max-width: 640px) { .toolbar-brand span { display: none; } .tb-btn { padding: 8px 12px; font-size: 0.8rem; } }
+
+    .sheets { padding: 28px 0 48px; }
+    @media screen { .sheets { zoom: var(--fit, 1); } }
+
+    /* ── A4 sheet ── */
+    .sheet { width: 210mm; height: 297mm; margin: 0 auto 28px; position: relative; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(0,0,0,0.45); display: flex; flex-direction: column; }
+    .sheet:last-child { margin-bottom: 0; }
+    .sheet > * { flex-shrink: 0; }
+
+    @media print {
+      body { background: none; }
+      .toolbar { display: none; }
+      .sheets { padding: 0; }
+      .sheet { margin: 0; box-shadow: none; break-after: page; }
+      .sheet:last-child { break-after: auto; }
+    }
+
+    .eyebrow { font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); }
+    .grad { background: linear-gradient(135deg, var(--teal), var(--cyan)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* ── Dark header band (both pages) ── */
+    .band { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+    .band::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.06) 1px, transparent 1px); background-size: 11mm 11mm; }
+    .band::after { content: ''; position: absolute; width: 140mm; height: 140mm; right: -45mm; top: -40mm; background: radial-gradient(circle, rgba(45,212,191,0.17) 0%, transparent 65%); }
+    .band > * { position: relative; z-index: 1; }
+
+    /* ════ PAGE 1 ════ */
+    .hero { padding: 11mm 14mm 8.5mm; }
+    .top { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 3mm; }
+    .brand img { width: 10mm; height: 10mm; border-radius: 2.5mm; }
+    .brand strong { display: block; font-family: var(--display); font-size: 13.5pt; font-weight: 400; line-height: 1.1; }
+    .brand span { font-size: 7.8pt; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
+    .edition { font-size: 7.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 1.5mm 3.8mm; }
+
+    .platforms { margin-top: 6.5mm; padding: 4.2mm 4.8mm 3.6mm; border-radius: 4mm; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+    .platforms-head { display: flex; align-items: center; justify-content: space-between; gap: 4mm; margin-bottom: 2.6mm; }
+    .platforms-head span { font-size: 7.6pt; color: rgba(255,255,255,0.55); }
+    .logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+    .logo-tile { background: #fff; border-radius: 3mm; height: 16.5mm; display: flex; align-items: center; justify-content: center; gap: 2.4mm; padding: 0 4mm; box-shadow: 0 3mm 8mm rgba(0,0,0,0.35); }
+    .logo-tile img.wialon { height: 6.4mm; width: auto; }
+    .logo-tile img.wialon-mark { height: 9mm; width: auto; }
+    .logo-tile img.mix { height: 10.4mm; width: auto; }
+    .logo-tile img.howen { height: 8.6mm; width: auto; }
+    .mix-word { font-family: var(--sans); font-weight: 700; font-size: 15pt; letter-spacing: -0.01em; color: #034333; line-height: 1; }
+    .mix-word small { display: block; font-size: 7pt; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #0a6a52; margin-top: 0.8mm; }
+    .vss-tag { font-size: 8pt; font-weight: 700; letter-spacing: 0.08em; color: #fff; background: #1f2937; border-radius: 1.4mm; padding: 0.9mm 2mm; }
+    .logo-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-top: 1.4mm; text-align: center; font-size: 7.2pt; color: rgba(255,255,255,0.6); }
+    .others { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5mm; margin-top: 2.6mm; padding-top: 2.5mm; border-top: 1px dashed rgba(255,255,255,0.14); }
+    .others b { font-size: 7.6pt; font-weight: 600; color: rgba(255,255,255,0.8); margin-right: 1mm; }
+    .others span { font-size: 7.2pt; font-weight: 600; padding: 0.9mm 2.6mm; border-radius: 999px; color: var(--teal); background: rgba(45,212,191,0.1); border: 1px solid rgba(45,212,191,0.25); }
+
+    .headline { display: grid; grid-template-columns: 1fr 52mm; gap: 8mm; align-items: end; margin-top: 7mm; }
+    .headline h1 { font-family: var(--display); font-weight: 400; font-size: 26pt; line-height: 1.07; margin: 2.4mm 0 3mm; }
+    .headline h1 em { font-style: italic; color: var(--teal); }
+    .lead { font-size: 9.5pt; line-height: 1.58; color: rgba(255,255,255,0.72); }
+    .stats { display: grid; gap: 3mm; }
+    .stat { border-left: 2px solid var(--teal); padding-left: 3.2mm; }
+    .stat b { display: block; font-family: var(--display); font-weight: 400; font-size: 15pt; line-height: 1.1; }
+    .stat span { font-size: 7.4pt; color: rgba(255,255,255,0.58); }
+
+    .body { flex: 1; padding: 6mm 14mm 0; display: flex; flex-direction: column; }
+    .block-title { display: flex; align-items: center; gap: 3mm; margin: 0 0 3.2mm; font-family: var(--display); font-weight: 400; font-size: 13pt; color: var(--ink); }
+    .block-title::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .gap-s { margin-top: 5mm; }
+
+    .problems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.2mm; }
+    .problem { border: 1px solid var(--line); border-radius: 3.5mm; padding: 3.2mm 3.5mm 3.2mm; background: #fff; display: grid; grid-template-columns: 8mm 1fr; column-gap: 2.6mm; align-items: center; }
+    .problem .icon { margin: 0; }
+    .problem p { grid-column: 1 / -1; margin-top: 1.8mm; }
+    .icon { width: 8mm; height: 8mm; border-radius: 2.5mm; display: grid; place-items: center; font-size: 11pt; margin-bottom: 2mm; flex-shrink: 0; }
+    .ic-amber { background: rgba(245,158,11,0.12); color: #d97706; }
+    .ic-blue { background: rgba(59,130,246,0.1); color: #2563eb; }
+    .ic-green { background: rgba(16,185,129,0.1); color: #059669; }
+    .ic-violet { background: rgba(139,92,246,0.1); color: #7c3aed; }
+    .ic-teal { background: rgba(45,212,191,0.14); color: var(--teal-dark); }
+    .ic-rose { background: rgba(244,63,94,0.1); color: #e11d48; }
+    .problem h4 { font-size: 9.2pt; font-weight: 700; color: var(--ink); line-height: 1.22; }
+    .problem p { font-size: 8pt; line-height: 1.5; }
+
+    .who { display: flex; flex-wrap: wrap; gap: 1.6mm; margin-top: 4mm; align-items: center; }
+    .who b { font-size: 8pt; color: var(--ink); margin-right: 1mm; }
+    .who span { font-size: 7.3pt; font-weight: 600; padding: 1mm 2.5mm; border-radius: 999px; border: 1px solid var(--line); color: var(--body); background: var(--soft); }
+
+    .deliver { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+    .dv { display: flex; gap: 2.6mm; align-items: center; padding: 3.4mm 3.2mm; border-radius: 3mm; background: var(--navy-2); color: #fff; }
+    .dv i { color: var(--teal); font-size: 12.5pt; }
+    .dv b { display: block; font-size: 8.2pt; font-weight: 700; line-height: 1.25; }
+    .dv span { display: block; font-size: 7.1pt; color: rgba(255,255,255,0.6); line-height: 1.35; margin-top: 0.5mm; }
+
+    .foot { display: flex; justify-content: space-between; align-items: center; padding: 3.5mm 14mm 5mm; margin-top: auto; font-size: 7.4pt; color: var(--muted); }
+    .foot b { color: var(--teal-dark); font-weight: 600; }
+
+    /* ════ PAGE 2 ════ */
+    .head2 { padding: 8mm 14mm 6mm; }
+    .head2 h2 { font-family: var(--display); font-weight: 400; font-size: 20pt; line-height: 1.1; margin: 1.6mm 0 2mm; }
+    .head2 p { font-size: 9pt; color: rgba(255,255,255,0.7); max-width: 158mm; line-height: 1.55; }
+    .page-no { position: absolute; top: 9mm; right: 14mm; font-family: var(--display); font-size: 11pt; color: rgba(255,255,255,0.35); }
+
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.2mm; }
+    .svc { border: 1px solid var(--line); border-radius: 3.5mm; padding: 3.2mm 3.5mm 3.2mm; background: #fff; display: grid; grid-template-columns: 8mm 1fr; column-gap: 2.6mm; align-items: center; align-content: start; }
+    .svc .icon { margin: 0; }
+    .svc p, .svc ul { grid-column: 1 / -1; }
+    .svc p { margin-top: 1.8mm; }
+    .svc.featured { border-color: rgba(15,148,136,0.55); background: linear-gradient(170deg, rgba(45,212,191,0.08), #fff 55%); }
+    
+    .svc h4 { font-size: 9.2pt; font-weight: 700; color: var(--ink); line-height: 1.22; }
+    .svc p { font-size: 7.8pt; line-height: 1.46; margin-bottom: 1.5mm; }
+    .svc ul { list-style: none; display: grid; gap: 0.9mm; }
+    .svc li { font-size: 7.5pt; display: flex; gap: 1.6mm; color: var(--ink); line-height: 1.35; }
+    .svc li i { color: var(--teal-dark); font-size: 7pt; margin-top: 0.4mm; }
+
+    .flow { display: grid; grid-template-columns: 1fr 5mm 1fr 5mm 1fr 5mm 1fr; align-items: stretch; background: var(--soft); border: 1px solid var(--line); border-radius: 4mm; padding: 3mm; }
+    .node { background: #fff; border: 1px solid var(--line); border-radius: 3mm; padding: 2.4mm 2.8mm 2.4mm; }
+    .node.hub { background: var(--navy-2); border-color: var(--navy-2); color: #fff; }
+    .node small { font-size: 6.6pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-dark); }
+    .node.hub small { color: var(--teal); }
+    .node h5 { font-size: 8.8pt; font-weight: 700; color: var(--ink); margin: 0.6mm 0 0.8mm; line-height: 1.25; }
+    .node.hub h5 { color: #fff; }
+    .node p { font-size: 7.2pt; line-height: 1.42; color: var(--muted); }
+    .node.hub p { color: rgba(255,255,255,0.62); }
+    .arrow { display: grid; place-items: center; color: var(--teal-dark); font-size: 11pt; }
+
+    .offer { background: var(--navy-2); color: #fff; border-radius: 4mm; padding: 4mm 4.8mm; position: relative; overflow: hidden; }
+    .offer::after { content: ''; position: absolute; width: 90mm; height: 90mm; right: -30mm; top: -45mm; background: radial-gradient(circle, rgba(45,212,191,0.2), transparent 65%); }
+    .offer > * { position: relative; z-index: 1; }
+    .offer h3 { font-family: var(--display); font-weight: 400; font-size: 13.5pt; margin: 1mm 0 1mm; }
+    .offer > p { font-size: 8.1pt; color: rgba(255,255,255,0.72); max-width: 165mm; line-height: 1.5; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.6mm; margin-top: 3mm; }
+    .step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 3mm; padding: 2.4mm 2.6mm; display: grid; grid-template-columns: 5.6mm 1fr; column-gap: 2mm; align-items: center; }
+    .step p { grid-column: 1 / -1; margin-top: 1.2mm; }
+    .step b { display: inline-grid; place-items: center; width: 5.6mm; height: 5.6mm; border-radius: 50%; background: var(--teal); color: var(--navy); font-size: 7.2pt; }
+    .step h5 { font-size: 8.2pt; font-weight: 700; line-height: 1.2; }
+    .step p { font-size: 7.2pt; color: rgba(255,255,255,0.62); line-height: 1.42; }
+
+    .ways { display: flex; flex-wrap: wrap; gap: 1.6mm; margin-top: 3mm; }
+    .ways span { display: inline-flex; align-items: center; gap: 1.4mm; font-size: 7.4pt; font-weight: 600; padding: 1mm 2.6mm; border-radius: 999px; color: var(--teal); background: rgba(45,212,191,0.1); border: 1px solid rgba(45,212,191,0.25); }
+
+    .closing { margin-top: auto; background: var(--navy); color: #fff; padding: 6mm 14mm; display: grid; grid-template-columns: 1fr auto; gap: 8mm; align-items: center; position: relative; overflow: hidden; }
+    .closing::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 120% at 100% 0%, rgba(45,212,191,0.18), transparent 60%); }
+    .closing > * { position: relative; }
+    .closing h3 { font-family: var(--display); font-weight: 400; font-size: 16pt; line-height: 1.15; margin: 1.2mm 0 1.8mm; }
+    .closing p { font-size: 8.3pt; color: rgba(255,255,255,0.68); line-height: 1.5; }
+    .closing-list { display: grid; gap: 1.8mm; }
+    .cc { display: flex; align-items: center; gap: 2.5mm; font-size: 8.6pt; color: rgba(255,255,255,0.88); }
+    .cc i { color: var(--teal); font-size: 10pt; }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="/home" class="toolbar-brand"><img src="/assets/img/favicon.png" alt="SM"><span>Stephen Mulingwa · Brochure</span></a>
+  <div class="toolbar-actions">
+    <a href="/home" class="tb-btn"><i class="bi bi-arrow-left"></i> Back to site</a>
+    <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" class="tb-btn primary" download="Stephen-Mulingwa-Brochure.pdf"><i class="bi bi-download"></i> Download PDF</a>
+  </div>
+</div>
+
+<main class="sheets" id="sheets">
+
+  <!-- ════════════ PAGE 1 · FLEET & TELEMATICS ════════════ -->
+  <section class="sheet">
+    <div class="band hero">
+      <header class="top">
+        <div class="brand">
+          <img src="/assets/img/favicon.png" alt="SM">
+          <div><strong>Stephen Mulingwa</strong><span>Fleet Intelligence · Integrations · Software</span></div>
+        </div>
+        <span class="edition">Services Brochure · 2026</span>
+      </header>
+
+      <div class="platforms">
+        <div class="platforms-head">
+          <p class="eyebrow">Tracking platforms I work with</p>
+          <span>Data pulled through each platform's API</span>
+        </div>
+        <div class="logos">
+          <div class="logo-tile"><img class="wialon-mark" src="/assets/img/platforms/wialon-symbol.png" alt=""><img class="wialon" src="/assets/img/platforms/wialon.svg" alt="Wialon"></div>
+          <div class="logo-tile"><img class="mix" src="/assets/img/platforms/mix-symbol.png" alt=""><span class="mix-word">MiX<small>Telematics</small></span></div>
+          <div class="logo-tile"><img class="howen" src="/assets/img/platforms/howen-vss.png" alt="Howen"><span class="vss-tag">VSS</span></div>
+        </div>
+        <div class="logo-caps"><span>Wialon (Gurtam)</span><span>MiX Telematics (MiX by Powerfleet)</span><span>Howen VSS video telematics</span></div>
+        <div class="others">
+          <b>+ other API-enabled platforms:</b>
+          <span>Geotab</span><span>Navixy</span><span>GPSGate</span><span>Traccar</span><span>flespi</span><span>Teltonika devices</span><span>Custom GPS feeds</span>
+        </div>
+      </div>
+
+      <div class="headline">
+        <div>
+          <p class="eyebrow">Nairobi, Kenya · On-site &amp; remote</p>
+          <h1>Fleet intelligence, integrations &amp; software for businesses that <em>move</em>.</h1>
+          <p class="lead">I help transport and logistics companies turn GPS, telematics, video, and fuel data into clear decisions, connect it to their ERP and business systems, and build the software that puts it to work.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>3+</b><span>Telematics platforms integrated</span></div>
+          <div class="stat"><b>5+</b><span>Years in data &amp; software</span></div>
+          <div class="stat"><b>50+</b><span>Projects delivered</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <h3 class="block-title">Problems I help fleets solve</h3>
+      <div class="problems">
+        <article class="problem">
+          <div class="icon ic-amber"><i class="bi bi-fuel-pump"></i></div>
+          <h4>Fuel loss &amp; siphoning alerts</h4>
+          <p>Match tank-level drops against geofences and stops to flag unexplained fuel drains, with a clear record of every incident.</p>
+        </article>
+        <article class="problem">
+          <div class="icon ic-blue"><i class="bi bi-hourglass-split"></i></div>
+          <h4>Turnaround time (TAT) analytics</h4>
+          <p>Measure depot queuing, loading, and offloading times so dispatch can plan better and trucks spend less time idle.</p>
+        </article>
+        <article class="problem">
+          <div class="icon ic-green"><i class="bi bi-shield-check"></i></div>
+          <h4>Driver safety scorecards</h4>
+          <p>Speeding, harsh braking, over-revving, night driving, and VSS video alarms turned into scorecards for coaching and client safety (HSE) reviews.</p>
+        </article>
+        <article class="problem">
+          <div class="icon ic-violet"><i class="bi bi-clipboard2-check"></i></div>
+          <h4>Delivery reconciliation &amp; exceptions</h4>
+          <p>Compare trips with delivery records and turn late deliveries and unauthorised stops into documented, actionable incidents.</p>
+        </article>
+        <article class="problem">
+          <div class="icon ic-teal"><i class="bi bi-file-earmark-bar-graph"></i></div>
+          <h4>Automated compliance reporting</h4>
+          <p>Daily, weekly, and monthly reports that support client contracts and regulatory tracking requirements, without manual exports.</p>
+        </article>
+        <article class="problem">
+          <div class="icon ic-rose"><i class="bi bi-plug"></i></div>
+          <h4>Telematics &amp; system integration</h4>
+          <p>Wialon, MiX Telematics, and Howen VSS data combined through their APIs into one dashboard, web portal, or ERP your team already uses.</p>
+        </article>
+      </div>
+
+      <div class="who">
+        <b>Who I work with:</b>
+        <span>Fuel &amp; petroleum transporters</span>
+        <span>Haulage &amp; trucking companies</span>
+        <span>Distribution fleets</span>
+        <span>Tracking installers &amp; resellers</span>
+      </div>
+
+      <h3 class="block-title gap-s">What you receive</h3>
+      <div class="deliver">
+        <div class="dv"><i class="bi bi-exclamation-triangle"></i><div><b>Daily exception report</b><span>Stops, drains &amp; delays flagged</span></div></div>
+        <div class="dv"><i class="bi bi-person-badge"></i><div><b>Driver scorecards</b><span>Ranked weekly for coaching</span></div></div>
+        <div class="dv"><i class="bi bi-fuel-pump-diesel"></i><div><b>Fuel reconciliation</b><span>Fillings vs. drains vs. distance</span></div></div>
+        <div class="dv"><i class="bi bi-speedometer2"></i><div><b>Live ops dashboard</b><span>All platforms, one view</span></div></div>
+      </div>
+    </div>
+
+    <footer class="foot"><span><b>Stephen Mulingwa</b> · Fleet Intelligence, Integrations &amp; Software</span><span>stephenmulingwa.com · 01</span></footer>
+  </section>
+
+  <!-- ════════════ PAGE 2 · SERVICES & GETTING STARTED ════════════ -->
+  <section class="sheet">
+    <header class="band head2">
+      <span class="page-no">02</span>
+      <p class="eyebrow">Services</p>
+      <h2>Integrations, APIs, consultancy &amp; <span class="grad">software</span></h2>
+      <p>One partner for the data, the integrations, and the software that delivers them, from connecting your tracking platform to your ERP to documenting the APIs your partners rely on.</p>
+    </header>
+
+    <div class="body">
+      <div class="services">
+        <article class="svc featured">
+          <div class="icon ic-teal"><i class="bi bi-diagram-3"></i></div>
+          <h4>ERP integration with tracking platforms</h4>
+          <p>Sync trips, mileage, fuel, driver hours, and asset status from your tracking platform into your ERP automatically.</p>
+          <ul>
+            <li><i class="bi bi-check2"></i> Odoo, SAP, Dynamics, Sage, ERPNext</li>
+            <li><i class="bi bi-check2"></i> Trip costing, billing &amp; fuel accounts</li>
+            <li><i class="bi bi-check2"></i> Mileage-based maintenance jobs</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <div class="icon ic-blue"><i class="bi bi-hdd-network"></i></div>
+          <h4>API development &amp; integration</h4>
+          <p>Secure APIs, webhooks, and middleware that move data reliably between your systems.</p>
+          <ul>
+            <li><i class="bi bi-check2"></i> Wialon, MiX &amp; VSS API connectors</li>
+            <li><i class="bi bi-check2"></i> REST APIs, webhooks &amp; scheduled syncs</li>
+            <li><i class="bi bi-check2"></i> M-Pesa (Daraja), SMS &amp; email alerts</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <div class="icon ic-violet"><i class="bi bi-journal-code"></i></div>
+          <h4>API documentation</h4>
+          <p>Clear documentation that lets clients, partners, and developers integrate without endless calls.</p>
+          <ul>
+            <li><i class="bi bi-check2"></i> OpenAPI / Swagger specifications</li>
+            <li><i class="bi bi-check2"></i> Postman collections &amp; examples</li>
+            <li><i class="bi bi-check2"></i> Integration guides &amp; developer portals</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <div class="icon ic-amber"><i class="bi bi-bar-chart-line"></i></div>
+          <h4>Fleet analytics &amp; dashboards</h4>
+          <p>Fuel, TAT, safety, and utilisation insights from all your platforms in one place.</p>
+          <ul>
+            <li><i class="bi bi-check2"></i> Power BI &amp; custom web dashboards</li>
+            <li><i class="bi bi-check2"></i> Scheduled exception reports</li>
+            <li><i class="bi bi-check2"></i> Python &amp; SQL data pipelines</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <div class="icon ic-green"><i class="bi bi-lightbulb"></i></div>
+          <h4>Technology &amp; data consultancy</h4>
+          <p>Independent advice before you spend: what to track, which platform to use, and how to report it.</p>
+          <ul>
+            <li><i class="bi bi-check2"></i> Telematics platform &amp; data audits</li>
+            <li><i class="bi bi-check2"></i> Integration architecture &amp; roadmaps</li>
+            <li><i class="bi bi-check2"></i> KPI and reporting design</li>
+          </ul>
+        </article>
+        <article class="svc">
+          <div class="icon ic-rose"><i class="bi bi-code-square"></i></div>
+          <h4>Web &amp; software development</h4>
+          <p>Websites, client portals, and internal systems built around how your team works.</p>
+          <ul>
+            <li><i class="bi bi-check2"></i> Company websites &amp; client portals</li>
+            <li><i class="bi bi-check2"></i> Fleet, inventory &amp; operations apps</li>
+            <li><i class="bi bi-check2"></i> Next.js, React, Python &amp; Postgres</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="block-title gap-s">How an ERP integration works</h3>
+      <div class="flow">
+        <div class="node"><small>Source</small><h5>Tracking platforms</h5><p>Wialon, MiX Telematics, Howen VSS &amp; other GPS feeds</p></div>
+        <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+        <div class="node hub"><small>Integration layer</small><h5>APIs &amp; middleware</h5><p>Clean, match, and validate trips, fuel &amp; events</p></div>
+        <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+        <div class="node"><small>Destination</small><h5>Your ERP</h5><p>Odoo, SAP, Dynamics, Sage, ERPNext or custom</p></div>
+        <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+        <div class="node"><small>Outcome</small><h5>Reports &amp; billing</h5><p>Costing, invoicing, maintenance &amp; KPI dashboards</p></div>
+      </div>
+
+      <div class="offer gap-s">
+        <p class="eyebrow">For transport &amp; logistics companies</p>
+        <h3>Begin with a Fleet Operations Diagnostic</h3>
+        <p>Share an authorised sample of trip logs, fuel data, or delivery timestamps. I'll return a short report on your operational blind spots and where better data and integration could add value, before you commit to a larger build.</p>
+        <div class="steps">
+          <div class="step"><b>1</b><h5>Discovery call</h5><p>15 minutes on your fleet, platforms, and pain points.</p></div>
+          <div class="step"><b>2</b><h5>Data sample</h5><p>A limited, authorised extract of trips, fuel, or deliveries.</p></div>
+          <div class="step"><b>3</b><h5>Diagnostic report</h5><p>Clear findings on exceptions, delays, and reporting gaps.</p></div>
+          <div class="step"><b>4</b><h5>Pilot &amp; rollout</h5><p>A focused solution, measured against your own numbers.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="closing">
+      <div>
+        <p class="eyebrow">Let's work together</p>
+        <h3>Let's talk about your fleet, integration, or next build.</h3>
+        <p>Book a 15-minute discovery call. Payments run on clear milestones, with hosting and licences billed separately.</p>
+        <div class="ways">
+          <span><i class="bi bi-box-seam"></i> Fixed-scope projects</span>
+          <span><i class="bi bi-arrow-repeat"></i> Monthly retainers</span>
+          <span><i class="bi bi-chat-square-text"></i> Consultancy sessions</span>
+        </div>
+      </div>
+      <div class="closing-list">
+        <a class="cc" href="mailto:mulingwastephen200@gmail.com"><i class="bi bi-envelope"></i> mulingwastephen200@gmail.com</a>
+        <a class="cc" href="https://wa.me/254111224952"><i class="bi bi-whatsapp"></i> +254 111 224 952</a>
+        <a class="cc" href="https://stephenmulingwa.com"><i class="bi bi-globe2"></i> stephenmulingwa.com</a>
+        <a class="cc" href="https://www.linkedin.com/in/stephenmulingwa/"><i class="bi bi-linkedin"></i> in/stephenmulingwa</a>
+      </div>
+    </footer>
+  </section>
+
+</main>
+
+<script>
+  (function () {
+    var A4_WIDTH_PX = 794;
+    function fit() {
+      var scale = Math.min(1, (window.innerWidth - 24) / A4_WIDTH_PX);
+      document.documentElement.style.setProperty('--fit', scale);
+    }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body>
+</html>

@@ -2,6 +2,8 @@
   "name": "stephen-mulingwa-portfolio",
   "private": true,
   "scripts": {
-    "dev": "npx --yes serve -c serve.json -l 3000"
+    "dev": "npx --yes serve -c serve.json -l 3000",
+    "dev:py": "python scripts/dev_server.py 3000",
+    "brochure": "powershell -ExecutionPolicy Bypass -File scripts/build-brochure.ps1"
   }
 }

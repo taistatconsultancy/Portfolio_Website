@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Stephen Mulingwa | Software Developer &amp; Data Scientist</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="Contact Stephen Mulingwa for software development, web apps, data science training, or consulting. Email, WhatsApp &amp; Nairobi / remote.">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+  <meta name="description" content="Contact Stephen Mulingwa for fleet and telematics analytics, ERP integration with tracking platforms, API development and documentation, consultancy, and web and software development. Email, WhatsApp &amp; Nairobi / remote.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://stephenmulingwa.com/contact">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://stephenmulingwa.com/contact">
   <meta property="og:title" content="Contact | Stephen Mulingwa">
-  <meta property="og:description" content="Reach out for software, web, or data projects and training.">
+  <meta property="og:description" content="Reach out for fleet analytics, ERP and API integration, API documentation, consultancy, or web and software projects.">
   <meta property="og:image" content="https://stephenmulingwa.com/assets/img/favicon.png">
   <meta name="twitter:card" content="summary">
 
@@ -217,7 +217,7 @@
 
     /* ── Quick Contact ── */
     .quick-section { background: var(--bg-dark); padding: 64px 0; }
-    .quick-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 36px; }
+    .quick-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 900px; margin: 36px auto 0; }
     /* Logos in quick tiles */
     .quick-tile-icon {
       display: flex; align-items: center; justify-content: center;
@@ -225,8 +225,8 @@
     }
     .quick-tile-icon svg { width: 44px; height: 44px; flex-shrink: 0; }
     
-    @media (max-width: 1000px) { .quick-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 700px) { .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+    @media (max-width: 1000px) { .quick-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 700px) { .quick-grid { grid-template-columns: 1fr; max-width: 420px; gap: 14px; } }
     .quick-tile {
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
       border-radius: var(--radius); padding: 28px 22px;
@@ -260,7 +260,7 @@
   <nav class="navbar">
     <div class="container navbar-inner">
       <a href="/home" class="nav-logo">
-        <img src="assets/img/favicon.png" alt="SM">
+        <img src="/assets/img/favicon.png" alt="SM">
         <span class="nav-logo-text">Stephen<span> M.</span></span>
       </a>
       <ul class="nav-links">
@@ -298,7 +298,7 @@
           <span style="color:rgba(255,255,255,0.6)">Contact</span>
         </div>
         <h1>Let's <span>Work Together</span></h1>
-        <p>Ready to build your next web app or data product? Let's discuss software development, training, or consulting.</p>
+        <p>Ready to build your next web app or data product? Let's discuss fleet analytics, ERP and API integration, consultancy, or software development.</p>
         <div class="page-hero-meta">
           <div class="meta-chip"><i class="bi bi-reply-fill"></i> Fast Response</div>
           <div class="meta-chip"><i class="bi bi-globe"></i> Remote & Nairobi</div>
@@ -306,8 +306,8 @@
         </div>
       </div>
       <div class="hero-downloads">
-        <a href="assets/resume/STEPHEN%20MULINGWA-RESUME.pdf" class="btn btn-primary" download="STEPHEN MULINGWA-RESUME.pdf"><i class="bi bi-download"></i> Download Resume</a>
-        <a href="assets/brochure/stephen-mulingwa-brochure.pdf" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf"></i> Download Brochure</a>
+        <a href="/assets/resume/STEPHEN%20MULINGWA-RESUME.pdf" class="btn btn-primary" download="STEPHEN MULINGWA-RESUME.pdf"><i class="bi bi-download"></i> Download Resume</a>
+        <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf"></i> Download Brochure</a>
       </div>
     </div>
   </div>
@@ -324,7 +324,7 @@
             <div class="info-card">
               <div class="info-card-top">
                 <h2>Get in Touch</h2>
-                <p>Reach out for software development, web apps, training, or collaboration. I respond to email and WhatsApp promptly.</p>
+                <p>Reach out for fleet analytics, integrations, API documentation, consultancy, or software development. I respond to email and WhatsApp promptly.</p>
               </div>
               <div class="info-card-body">
 
@@ -370,7 +370,7 @@
 
                 <div class="avail-badge">
                   <div class="avail-dot"></div>
-                  <p><strong>Currently available</strong> for new projects and training engagements.</p>
+                  <p><strong>Currently available</strong> for new projects, integrations, and consultancy engagements.</p>
                 </div>
 
               </div>
@@ -399,14 +399,15 @@
                   <label for="subject">Subject</label>
                   <select id="subject" name="subject">
                     <option value="">Select a topic…</option>
-                    <option value="APIs & Data Connectivity Course">APIs &amp; data connectivity tutoring</option>
-                    <option value="Excel Course">Excel tutoring</option>
-                    <option value="Power BI Course">Power BI tutoring</option>
-                    <option value="Python Course">Python tutoring</option>
-                    <option value="Data Analytics Consulting">Data Analytics Consulting</option>
-                    <option value="Power BI Dashboard">Power BI Dashboard</option>
-                    <option value="Machine Learning Project">Machine Learning Project</option>
-                    <option value="1-on-1 Tutoring">1-on-1 Tutoring</option>
+                    <option value="Fleet Operations Diagnostic">Fleet Operations Diagnostic</option>
+                    <option value="Fleet Analytics">Fleet &amp; telematics analytics</option>
+                    <option value="ERP Integration">ERP integration with tracking platforms</option>
+                    <option value="API Development">API development &amp; integration</option>
+                    <option value="API Documentation">API documentation</option>
+                    <option value="Consultancy">Technology &amp; data consultancy</option>
+                    <option value="Web or Software Project">Web or software project</option>
+                    <option value="Power BI Dashboard">Power BI dashboard</option>
+                    <option value="Support Retainer">Monthly support retainer</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
@@ -488,7 +489,7 @@
         <a href="/projects">Projects</a>
         <a href="/services">Services</a>
         <a href="/contact">Contact</a>
-        <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
+        <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
       </nav>
       <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Software Developer &amp; Data Scientist</p>
       <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
@@ -600,6 +601,6 @@
       });
     })();
   </script>
-<script src="assets/js/whatsapp-float.js" defer></script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
 </body>
 </html>

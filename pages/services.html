@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Fleet Analytics, ERP &amp; API Integration, Consultancy | Stephen Mulingwa</title>
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+  <meta name="description" content="Fleet and telematics analytics (Wialon, MiX Telematics, Howen VSS), ERP integration with tracking platforms, API development and documentation, technology consultancy, and web and software development. Stephen Mulingwa, Nairobi.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://stephenmulingwa.com/services">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stephenmulingwa.com/services">
+  <meta property="og:title" content="Services | Stephen Mulingwa">
+  <meta property="og:description" content="Fleet analytics, ERP integration with tracking platforms, API development and documentation, consultancy, and web and software development.">
+  <meta property="og:image" content="https://stephenmulingwa.com/assets/img/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stephen Mulingwa — Services">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Stephen Mulingwa — Services","url":"https://stephenmulingwa.com/services","image":"https://stephenmulingwa.com/assets/img/favicon.png","description":"Fleet and telematics analytics, ERP integration with tracking platforms, API development and documentation, technology consultancy, and web and software development.","serviceType":["Fleet telematics analytics","ERP integration","API development","API documentation","Technology consultancy","Web development","Software development"],"areaServed":["KE","Worldwide"],"provider":{"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa"}}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2dd4bf;
+      --primary-glow: rgba(45, 212, 191, 0.25);
+      --bg-hero: #060d14;
+      --bg-dark: #0b1521;
+      --bg-light: #f7f9fc;
+      --bg-white: #ffffff;
+      --text-muted: #000000;
+      --text-body: #000000;
+      --text-heading: #000000;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --radius: 18px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-body); background: var(--bg-white); line-height: 1.7; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border); padding: 14px 0;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-heading); }
+    .nav-logo-text span { color: var(--primary); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: var(--primary); border-radius: 2px;
+    }
+    .nav-linkedin {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 9px;
+      background: var(--primary); color: var(--bg-hero);
+      font-size: 0.82rem; font-weight: 700; transition: all 0.25s;
+    }
+    .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
+    .nav-mobile {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg-white); border-top: 1px solid var(--border);
+      padding: 16px 28px 24px; box-shadow: var(--shadow-md);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a { display: block; padding: 13px 0; font-size: 0.95rem; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .nav-mobile a:last-of-type { border-bottom: none; }
+    .nav-mobile a:hover, .nav-mobile a.active { color: var(--primary); }
+    .nav-mobile .btn { width: 100%; justify-content: center; margin-top: 16px; }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: var(--bg-hero); padding: 140px 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(45,212,191,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,212,191,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .page-hero-radial {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(45,212,191,0.07) 0%, transparent 70%);
+    }
+    .page-hero-inner { position: relative; z-index: 2; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb i { font-size: 0.65rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); color: #fff; line-height: 1.1; margin-bottom: 16px; }
+    .page-hero h1 span {
+      background: linear-gradient(135deg, var(--primary), #67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero p { color: rgba(255,255,255,0.45); max-width: 580px; font-size: 1rem; line-height: 1.8; }
+    .page-hero-meta { display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+    .meta-chip {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+      font-size: 0.78rem; color: rgba(255,255,255,0.5);
+    }
+    .meta-chip i { color: var(--primary); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 10px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      cursor: pointer; border: 2px solid transparent; transition: all 0.25s ease;
+    }
+    .btn-primary { background: var(--primary); color: var(--bg-hero); border-color: var(--primary); }
+    .btn-primary:hover { background: #1ab5a3; transform: translateY(-1px); box-shadow: 0 6px 20px var(--primary-glow); }
+    .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+    .btn-outline-light:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+    .btn-enroll {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 24px; border-radius: 9px;
+      background: var(--primary); color: var(--bg-hero);
+      font-size: 0.875rem; font-weight: 700; border: none;
+      cursor: pointer; font-family: var(--font-body);
+      transition: all 0.25s; margin-top: auto;
+    }
+    .btn-enroll:hover { background: #1ab5a3; transform: translateY(-1px); box-shadow: 0 6px 20px var(--primary-glow); }
+
+    /* ── Platforms strip ── */
+    .platforms-section { background: var(--bg-dark); padding: 64px 0; }
+    .platform-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 920px; margin: 40px auto 0; }
+    .platform { text-align: center; }
+    .platform-tile { background: #fff; border-radius: 16px; height: 96px; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0 22px; box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+    .platform-tile img.wialon { height: 34px; width: auto; }
+    .platform-tile img.wialon-mark { height: 46px; width: auto; }
+    .platform-tile img.mix { height: 54px; width: auto; }
+    .platform-tile img.howen { height: 46px; width: auto; }
+    .mix-word { font-family: var(--font-body); font-weight: 700; font-size: 1.6rem; color: #034333; line-height: 1; text-align: left; }
+    .mix-word small { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #0a6a52; margin-top: 4px; }
+    .vss-tag { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; background: #1f2937; border-radius: 6px; padding: 4px 9px; }
+    .platform-caption { margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+    .other-platforms { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 32px; }
+    .other-platforms b { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-right: 4px; }
+    .other-platforms span { font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 999px; color: var(--primary); background: rgba(45,212,191,0.08); border: 1px solid rgba(45,212,191,0.25); }
+    @media (max-width: 800px) { .platform-logos { grid-template-columns: 1fr; max-width: 360px; } }
+
+    /* ── Courses Section ── */
+    .courses-section { background: var(--bg-light); padding: 80px 0 100px; }
+    .section-label { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--text-heading); line-height: 1.2; margin-bottom: 8px; }
+    .section-subtitle { color: #000; font-size: 1.05rem; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary), #67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .offer-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 18px 0 8px; }
+    .offer-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: var(--bg-white); border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--text-heading); }
+    .offer-chip i { color: var(--primary); }
+    .breakdown-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+    .tier-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px 26px; text-align: left; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; cursor: default; }
+    .tier-card:hover { transform: none; box-shadow: var(--shadow-md); border-color: rgba(45,212,191,0.35); }
+    .tier-num { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--bg-hero); margin-bottom: 16px; }
+    .tier-1 .tier-num { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+    .tier-2 .tier-num { background: linear-gradient(135deg,#8b5cf6,#7c3aed); }
+    .tier-3 .tier-num { background: linear-gradient(135deg,#0f9488,#2dd4bf); }
+    .tier-card h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--text-heading); margin-bottom: 10px; }
+    .tier-card .course-desc { margin-bottom: 14px; }
+    .tier-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; flex: 1; }
+    .tier-card li { display: flex; gap: 8px; font-size: 0.88rem; color: var(--text-body); line-height: 1.5; }
+    .tier-card li i { color: var(--primary); font-size: 0.85rem; margin-top: 3px; flex-shrink: 0; }
+    .tier-note { font-size: 0.82rem; font-weight: 600; color: var(--primary); margin-top: auto; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    .process-step { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 18px 20px; text-align: left; }
+    .process-step .step-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+    .process-step h4 { font-family: var(--font-display); font-size: 1.05rem; color: var(--text-heading); margin-bottom: 8px; }
+    .process-step p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.65; }
+    .breakdown-cta { text-align: center; margin-top: 32px; }
+    @media (max-width: 1100px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } .breakdown-tiers, .process-steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 700px) { .breakdown-tiers, .process-steps { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) {
+      .svc-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+    .course-desc { font-size: 0.96rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
+
+    /* ── Service cards ── */
+    .svc-card { --accent: var(--primary); --tint: rgba(45,212,191,0.12); background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 26px 26px; display: flex; flex-direction: column; position: relative; transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s; }
+    .svc-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); border-color: rgba(45,212,191,0.35); }
+    .svc-card.featured { border-color: rgba(15,148,136,0.55); background: linear-gradient(170deg, rgba(45,212,191,0.07), #fff 50%); }
+    .svc-badge { position: absolute; top: 22px; right: 22px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0f9488; background: rgba(45,212,191,0.14); padding: 4px 10px; border-radius: 999px; }
+    .svc-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; background: var(--tint); color: var(--accent); margin-bottom: 18px; }
+    .svc-card h3 { font-family: var(--font-display); font-size: 1.35rem; color: var(--text-heading); line-height: 1.25; margin-bottom: 10px; }
+    .svc-card > p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+    .svc-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; flex: 1; }
+    .svc-card li { display: flex; gap: 9px; font-size: 0.88rem; color: var(--text-body); line-height: 1.5; }
+    .svc-card li i { color: var(--accent); font-size: 0.9rem; margin-top: 2px; flex-shrink: 0; }
+    .svc-card .btn-enroll { align-self: flex-start; background: var(--accent); }
+    .svc-teal { --accent: #0f9488; --tint: rgba(45,212,191,0.14); }
+    .svc-blue { --accent: #2563eb; --tint: rgba(59,130,246,0.1); }
+    .svc-violet { --accent: #7c3aed; --tint: rgba(139,92,246,0.1); }
+    .svc-amber { --accent: #d97706; --tint: rgba(245,158,11,0.12); }
+    .svc-green { --accent: #059669; --tint: rgba(16,185,129,0.1); }
+    .svc-rose { --accent: #e11d48; --tint: rgba(244,63,94,0.1); }
+    .more-services { margin-top: 36px; text-align: center; }
+    .more-services p { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin-bottom: 14px; }
+
+    /* ── Ways to work together ── */
+    .engage-section { background: var(--bg-white); padding: 80px 0; border-top: 1px solid var(--border); }
+    .engage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .engage-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; background: var(--bg-light); }
+    .engage-card i { font-size: 1.5rem; color: var(--primary); }
+    .engage-card h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--text-heading); margin: 14px 0 8px; }
+    .engage-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+    .diagnostic { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; background: var(--bg-dark); color: #fff; border-radius: var(--radius); padding: 30px 32px; }
+    .diagnostic h3 { font-family: var(--font-display); font-size: 1.45rem; margin: 6px 0 8px; }
+    .diagnostic p { font-size: 0.92rem; color: rgba(255,255,255,0.6); max-width: 640px; line-height: 1.7; }
+    @media (max-width: 860px) { .engage-grid { grid-template-columns: 1fr; } }
+
+    /* ── CTA Strip ── */
+    .cta-strip { background: var(--bg-dark); padding: 72px 0; }
+    .cta-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+    .cta-inner h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3.5vw,2.6rem); color: #fff; margin-bottom: 14px; }
+    .cta-inner h2 span { background: linear-gradient(135deg, var(--primary), #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cta-inner p { color: rgba(255,255,255,0.4); margin-bottom: 32px; font-size: 0.97rem; }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; width: 100%; margin-bottom: 8px; }
+    .footer-social .social-link { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; transition: all 0.25s; text-decoration: none; }
+    .footer-social .social-link:hover { border-color: var(--primary); color: var(--primary); background: rgba(45,212,191,0.08); transform: translateY(-2px); }
+    .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-right: 20px; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--primary); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+    .scroll-top-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 1.1rem; cursor: pointer; background: none; transition: all 0.2s; }
+    .scroll-top-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* ── Animations ── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-right { opacity: 0; transform: translateX(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible, .fade-left.visible, .fade-right.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- ════ NAVBAR ════ -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="/home" class="nav-logo">
+        <img src="/assets/img/favicon.png" alt="SM">
+        <span class="nav-logo-text">Stephen<span> M.</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/services" class="active">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://www.linkedin.com/in/stephenmulingwa/" target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+          <i class="bi bi-linkedin"></i> Connect
+        </a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <i class="bi bi-list" id="hamburgerIcon"></i>
+      </button>
+    </div>
+    <div class="nav-mobile container" id="mobileMenu">
+      <a href="/home" onclick="closeMobile()">Home</a>
+      <a href="/projects" onclick="closeMobile()">Projects</a>
+      <a href="/services" class="active" onclick="closeMobile()">Services</a>
+      <a href="/contact" onclick="closeMobile()">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ════ PAGE HERO ════ -->
+  <div class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-radial"></div>
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="/home">Home</a>
+        <i class="bi bi-chevron-right"></i>
+        <span style="color:rgba(255,255,255,0.6)">Services</span>
+      </div>
+      <h1>Fleet, Integration &amp; <span>Software Services</span></h1>
+      <p>Fleet and telematics analytics, ERP integration with tracking platforms, API development and documentation, consultancy, and the web and software that bring it together.</p>
+      <div class="page-hero-meta">
+        <div class="meta-chip"><i class="bi bi-truck"></i> Fleet &amp; telematics</div>
+        <div class="meta-chip"><i class="bi bi-diagram-3"></i> ERP &amp; API integration</div>
+        <div class="meta-chip"><i class="bi bi-code-slash"></i> Software &amp; Web</div>
+        <div class="meta-chip"><i class="bi bi-kanban-fill"></i> Project delivery</div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ════ PLATFORMS ════ -->
+    <section class="platforms-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Tracking platforms I work with</p>
+          <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.6rem);color:#fff;line-height:1.2">
+            Your platform, <span class="text-gradient">connected.</span>
+          </h2>
+        </div>
+        <div class="platform-logos">
+          <div class="platform fade-up delay-1">
+            <div class="platform-tile"><img class="wialon-mark" src="/assets/img/platforms/wialon-symbol.png" alt=""><img class="wialon" src="/assets/img/platforms/wialon.svg" alt="Wialon"></div>
+            <p class="platform-caption">Wialon (Gurtam)</p>
+          </div>
+          <div class="platform fade-up delay-2">
+            <div class="platform-tile"><img class="mix" src="/assets/img/platforms/mix-symbol.png" alt=""><span class="mix-word">MiX<small>Telematics</small></span></div>
+            <p class="platform-caption">MiX Telematics (MiX by Powerfleet)</p>
+          </div>
+          <div class="platform fade-up delay-3">
+            <div class="platform-tile"><img class="howen" src="/assets/img/platforms/howen-vss.png" alt="Howen"><span class="vss-tag">VSS</span></div>
+            <p class="platform-caption">Howen VSS video telematics</p>
+          </div>
+        </div>
+        <div class="other-platforms fade-up">
+          <b>+ other API-enabled platforms:</b>
+          <span>Geotab</span><span>Navixy</span><span>GPSGate</span><span>Traccar</span><span>flespi</span><span>Teltonika devices</span><span>Custom GPS feeds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ SERVICES ════ -->
+    <section class="courses-section" id="services" style="padding-bottom:64px">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">What I offer</p>
+          <h2 class="section-title fade-up">Services for <span class="text-gradient">fleets &amp; businesses</span></h2>
+          <p class="section-subtitle fade-up delay-1">One partner for the data, the integrations, and the software that delivers them.</p>
+        </div>
+
+        <div class="svc-grid">
+          <article class="svc-card svc-teal featured fade-up delay-1">
+            <span class="svc-badge">Core</span>
+            <div class="svc-icon"><i class="bi bi-diagram-3"></i></div>
+            <h3>ERP Integration with Tracking Platforms</h3>
+            <p>Sync trips, mileage, fuel, driver hours, and asset status from Wialon, MiX Telematics, or VSS into your ERP automatically, with no manual exports.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Odoo, SAP, Microsoft Dynamics, Sage &amp; ERPNext</li>
+              <li><i class="bi bi-check2"></i> Trip costing, client billing &amp; fuel accounts</li>
+              <li><i class="bi bi-check2"></i> Mileage-based maintenance work orders</li>
+              <li><i class="bi bi-check2"></i> Scheduled syncs with error alerts</li>
+            </ul>
+            <a href="/contact?subject=ERP%20Integration" class="btn-enroll"><i class="bi bi-send-fill"></i> Enquire</a>
+          </article>
+
+          <article class="svc-card svc-blue fade-up delay-2">
+            <div class="svc-icon"><i class="bi bi-hdd-network"></i></div>
+            <h3>API Development &amp; Integration</h3>
+            <p>Secure APIs, webhooks, and middleware that move data reliably between tracking platforms, ERPs, and your own systems.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Wialon, MiX &amp; VSS API connectors</li>
+              <li><i class="bi bi-check2"></i> REST APIs, webhooks &amp; data pipelines</li>
+              <li><i class="bi bi-check2"></i> M-Pesa (Daraja), SMS &amp; email alerts</li>
+              <li><i class="bi bi-check2"></i> Authentication, logging &amp; monitoring</li>
+            </ul>
+            <a href="/contact?subject=API%20Development" class="btn-enroll"><i class="bi bi-send-fill"></i> Enquire</a>
+          </article>
+
+          <article class="svc-card svc-violet fade-up delay-3">
+            <div class="svc-icon"><i class="bi bi-journal-code"></i></div>
+            <h3>API Documentation</h3>
+            <p>Clear, accurate documentation that lets clients, partners, and developers integrate with your platform without endless support calls.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> OpenAPI / Swagger specifications</li>
+              <li><i class="bi bi-check2"></i> Postman collections with examples</li>
+              <li><i class="bi bi-check2"></i> Integration guides &amp; quick-starts</li>
+              <li><i class="bi bi-check2"></i> Developer portals &amp; changelogs</li>
+            </ul>
+            <a href="/contact?subject=API%20Documentation" class="btn-enroll"><i class="bi bi-send-fill"></i> Enquire</a>
+          </article>
+
+          <article class="svc-card svc-amber fade-up delay-1">
+            <div class="svc-icon"><i class="bi bi-bar-chart-line"></i></div>
+            <h3>Fleet &amp; Telematics Analytics</h3>
+            <p>Fuel, turnaround time, driver safety, and utilisation insights from all your tracking platforms in one place.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Fuel loss &amp; siphoning alerts</li>
+              <li><i class="bi bi-check2"></i> Driver safety scorecards &amp; TAT analytics</li>
+              <li><i class="bi bi-check2"></i> Power BI &amp; custom web dashboards</li>
+              <li><i class="bi bi-check2"></i> Automated compliance reports</li>
+            </ul>
+            <a href="/contact?subject=Fleet%20Analytics" class="btn-enroll"><i class="bi bi-send-fill"></i> Enquire</a>
+          </article>
+
+          <article class="svc-card svc-green fade-up delay-2">
+            <div class="svc-icon"><i class="bi bi-lightbulb"></i></div>
+            <h3>Technology &amp; Data Consultancy</h3>
+            <p>Independent advice before you spend: what to track, which platform fits, how systems should connect, and how to report it.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Telematics platform &amp; data audits</li>
+              <li><i class="bi bi-check2"></i> Integration architecture &amp; roadmaps</li>
+              <li><i class="bi bi-check2"></i> KPI and reporting design</li>
+              <li><i class="bi bi-check2"></i> Vendor and tool selection support</li>
+            </ul>
+            <a href="/contact?subject=Consultancy" class="btn-enroll"><i class="bi bi-send-fill"></i> Enquire</a>
+          </article>
+
+          <article class="svc-card svc-rose fade-up delay-3">
+            <div class="svc-icon"><i class="bi bi-code-square"></i></div>
+            <h3>Web &amp; Software Development</h3>
+            <p>Websites, client portals, and internal systems built around how your team actually works.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Company websites &amp; landing pages</li>
+              <li><i class="bi bi-check2"></i> Client portals &amp; fleet operations apps</li>
+              <li><i class="bi bi-check2"></i> Inventory, sales &amp; workflow systems</li>
+              <li><i class="bi bi-check2"></i> Next.js, React, Python &amp; Postgres</li>
+            </ul>
+            <a href="/contact?subject=Web%20or%20Software%20Project" class="btn-enroll"><i class="bi bi-send-fill"></i> Enquire</a>
+          </article>
+        </div>
+
+        <div class="more-services fade-up">
+          <p>And more</p>
+          <div class="offer-chips">
+            <span class="offer-chip"><i class="bi bi-gear-wide-connected"></i> Data pipelines &amp; automation</span>
+            <span class="offer-chip"><i class="bi bi-file-earmark-bar-graph"></i> Scheduled reporting</span>
+            <span class="offer-chip"><i class="bi bi-phone"></i> Progressive web apps</span>
+            <span class="offer-chip"><i class="bi bi-shield-check"></i> System audits &amp; reviews</span>
+            <span class="offer-chip"><i class="bi bi-tools"></i> Support &amp; maintenance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ PROJECT BREAKDOWN ════ -->
+    <section class="courses-section" id="breakdown" style="background:var(--bg-light);padding-top:0;padding-bottom:80px">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:8px">
+          <p class="section-label">Web &amp; software builds</p>
+          <h2 class="section-title fade-up">Project <span class="text-gradient">Breakdown</span></h2>
+        </div>
+
+        <div class="breakdown-tiers">
+          <article class="tier-card tier-1 fade-up delay-1">
+            <div class="tier-num">01</div>
+            <h3>Frontend / MVP</h3>
+            <p class="course-desc">A focused first release — enough to launch, share, and validate.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Responsive landing pages and portfolios</li>
+              <li><i class="bi bi-check2"></i> Next.js / React UI prototypes</li>
+              <li><i class="bi bi-check2"></i> Clean mobile-first layouts</li>
+            </ul>
+            <p class="tier-note">Includes 1 month of post-launch support</p>
+          </article>
+          <article class="tier-card tier-2 fade-up delay-2">
+            <div class="tier-num">02</div>
+            <h3>Interactive Web App</h3>
+            <p class="course-desc">A working product with users, data, and a real dashboard.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> Sign-in and role-based access</li>
+              <li><i class="bi bi-check2"></i> Database create, read, update, delete</li>
+              <li><i class="bi bi-check2"></i> Dashboards and day-to-day workflows</li>
+            </ul>
+            <p class="tier-note">Includes 2 months of post-launch support</p>
+          </article>
+          <article class="tier-card tier-3 fade-up delay-3">
+            <div class="tier-num">03</div>
+            <h3>Advanced / E‑Commerce</h3>
+            <p class="course-desc">Full apps with payments, notifications, and a stronger backend.</p>
+            <ul>
+              <li><i class="bi bi-check2"></i> M-Pesa (Daraja / Pesapal) and checkout</li>
+              <li><i class="bi bi-check2"></i> Calendars, alerts, and cloud databases</li>
+              <li><i class="bi bi-check2"></i> Complex ops portals and integrations</li>
+            </ul>
+            <p class="tier-note">Includes 3 months of post-launch support</p>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top:48px">
+          <p class="section-label">How a build runs</p>
+          <h2 class="section-title fade-up" style="font-size:clamp(1.6rem,3vw,2.2rem)">Service <span class="text-gradient">breakdown</span></h2>
+        </div>
+        <div class="process-steps">
+          <article class="process-step fade-up delay-1">
+            <p class="step-label">Step 01</p>
+            <h4>Discover &amp; design</h4>
+            <p>Mobile-first user flows, UI assets, and up to two design revision rounds before coding starts.</p>
+          </article>
+          <article class="process-step fade-up delay-2">
+            <p class="step-label">Step 02</p>
+            <h4>Build frontend &amp; backend</h4>
+            <p>Responsive layouts, cloud databases (Supabase, MongoDB, or Vercel Postgres), and secure auth.</p>
+          </article>
+          <article class="process-step fade-up delay-3">
+            <p class="step-label">Step 03</p>
+            <h4>Integrations</h4>
+            <p>Telematics and ERP APIs, M-Pesa Daraja / Pesapal, SMS via Africa&apos;s Talking, and other tools you already use.</p>
+          </article>
+          <article class="process-step fade-up delay-3">
+            <p class="step-label">Step 04</p>
+            <h4>Launch &amp; QA</h4>
+            <p>Vercel production, custom domains, SEO, and performance tuned for Kenyan mobile networks.</p>
+          </article>
+        </div>
+
+        <div class="breakdown-cta fade-up">
+          <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn-enroll" style="display:inline-flex">
+            <i class="bi bi-file-earmark-pdf"></i> Download Brochure PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ WAYS TO WORK TOGETHER ════ -->
+    <section class="engage-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Engagement</p>
+          <h2 class="section-title fade-up" style="font-size:clamp(1.8rem,3.5vw,2.6rem)">Ways to <span class="text-gradient">work together</span></h2>
+        </div>
+        <div class="engage-grid">
+          <article class="engage-card fade-up delay-1">
+            <i class="bi bi-box-seam"></i>
+            <h3>Fixed-scope projects</h3>
+            <p>Integrations, dashboards, documentation, or apps delivered against clear milestones and an agreed scope.</p>
+          </article>
+          <article class="engage-card fade-up delay-2">
+            <i class="bi bi-arrow-repeat"></i>
+            <h3>Monthly retainer</h3>
+            <p>Ongoing reporting, integration monitoring, support, and improvements for a predictable monthly fee.</p>
+          </article>
+          <article class="engage-card fade-up delay-3">
+            <i class="bi bi-chat-square-text"></i>
+            <h3>Consultancy sessions</h3>
+            <p>Advisory calls, platform and data audits, and technical reviews when you need an expert view.</p>
+          </article>
+        </div>
+        <div class="diagnostic fade-up">
+          <div>
+            <p class="section-label" style="margin-bottom:0">For transport &amp; logistics companies</p>
+            <h3>Start with a Fleet Operations Diagnostic</h3>
+            <p>Share an authorised sample of trip, fuel, or delivery records and get a short report on blind spots and where better data and integration could add value, before committing to a larger build.</p>
+          </div>
+          <a href="/contact?subject=Fleet%20Operations%20Diagnostic" class="btn btn-primary"><i class="bi bi-send-fill"></i> Request a diagnostic</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ CTA STRIP ════ -->
+    <div class="cta-strip">
+      <div class="container">
+        <div class="cta-inner fade-up">
+          <p class="section-label" style="color:var(--primary)">Ready to Start?</p>
+          <h2>Let's connect your data &amp; <span>build what's next.</span></h2>
+          <p>Whether you need an ERP integration, API documentation, consultancy, or a web or software build, get in touch and let's plan the next step together.</p>
+          <div class="btn-row">
+            <a href="/contact" class="btn btn-primary"><i class="bi bi-send-fill"></i> Get in Touch</a>
+            <a href="/projects" class="btn btn-outline-light"><i class="bi bi-grid-3x3-gap-fill"></i> See My Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="/home">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+        <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/stephenmulingwa/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Software Developer &amp; Data Scientist</p>
+      <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up-short"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburgerIcon.className = menuOpen ? 'bi bi-x-lg' : 'bi bi-list';
+    });
+    function closeMobile() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      hamburgerIcon.className = 'bi bi-list';
+    }
+
+    const revealEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
+</body>
+</html>

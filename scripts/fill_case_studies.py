@@ -1,6 +1,6 @@
 from pathlib import Path
 
-root = Path(r"C:\Users\MULINGWA STEPHEN\Documents\Portfolio\My Portfolio")
+root = Path(__file__).resolve().parents[1]
 
 def apply(path, replacements, label):
     text = path.read_text(encoding="utf-8")
@@ -308,5 +308,5 @@ web_reps = [
     ),
 ]
 
-apply(root / "project-kiki-mobile-wellness.html", kiki_reps, "Kiki")
-apply(root / "project-taistat-website.html", web_reps, "Web")
+apply(root / "pages" / "projects" / "kiki-mobile-wellness.html", kiki_reps, "Kiki")
+apply(root / "pages" / "projects" / "taistat-website.html", web_reps, "Web")

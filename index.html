@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stephen Mulingwa | Software Developer, Web Developer &amp; Data Scientist</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/favicon.png">
-  <meta name="description" content="Stephen Mulingwa — Software Developer, Web Developer, and Data Scientist in Nairobi. Building web apps, Next.js platforms, and data solutions. Training &amp; consulting.">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+  <meta name="description" content="Stephen Mulingwa — Fleet &amp; telematics data scientist, web developer, and software developer in Nairobi. Fleet intelligence for transport &amp; logistics companies, web apps, and data solutions.">
   <meta name="author" content="Stephen Mulingwa">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://stephenmulingwa.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://stephenmulingwa.com/">
   <meta property="og:title" content="Stephen Mulingwa | Software Developer, Web Developer &amp; Data Scientist">
-  <meta property="og:description" content="Software development, web apps, and data science — Stephen Mulingwa, Nairobi Kenya.">
+  <meta property="og:description" content="Fleet &amp; telematics analytics, web development, and software development for transport and logistics companies — Stephen Mulingwa, Nairobi Kenya.">
   <meta property="og:image" content="https://stephenmulingwa.com/assets/img/Me1.png">
   <meta property="og:locale" content="en_KE">
   <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="https://stephenmulingwa.com/assets/img/Me1.png">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/","image":"https://stephenmulingwa.com/assets/img/Me1.png","jobTitle":"Software Developer, Web Developer & Data Scientist","description":"Software developer, web developer, and data scientist specializing in Next.js, Python, analytics platforms, and AI systems.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/stephenmulingwa/","https://github.com/StephenMulingwa"],"knowsAbout":["Software development","Web development","Data science","Next.js","Python","Machine learning","Power BI"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://taistat.com/"}},
+    {"@type":"Person","@id":"https://stephenmulingwa.com/#person","name":"Stephen Mulingwa","url":"https://stephenmulingwa.com/","image":"https://stephenmulingwa.com/assets/img/Me1.png","jobTitle":"Software Developer, Web Developer & Data Scientist","description":"Software developer, web developer, and data scientist specializing in Next.js, Python, analytics platforms, and AI systems.","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"sameAs":["https://www.linkedin.com/in/stephenmulingwa/","https://github.com/StephenMulingwa"],"knowsAbout":["Fleet analytics","Telematics","Wialon API","Transport and logistics","Software development","Web development","Data science","Next.js","Python","Machine learning","Power BI"],"worksFor":{"@type":"Organization","name":"TaiStat Firm","url":"https://taistat.com/"}},
     {"@type":"WebSite","@id":"https://stephenmulingwa.com/#website","url":"https://stephenmulingwa.com/","name":"Stephen Mulingwa — Portfolio","publisher":{"@id":"https://stephenmulingwa.com/#person"}}
   ]}
   </script>
@@ -189,9 +189,31 @@
     .about-main p:last-of-type { margin-bottom: 0; }
     .highlight { color: var(--primary); font-weight: 600; }
     .about-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-top: 28px; }
+    /* ── SERVICES ── */
+    .services-home { background: var(--bg-white); }
+    .home-platforms { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; margin: 0 auto 44px; }
+    .home-platforms .lbl { width: 100%; text-align: center; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #64748b; margin-bottom: 2px; }
+    .hp-tile { height: 72px; min-width: 210px; padding: 0 22px; display: flex; align-items: center; justify-content: center; gap: 10px; background: #fff; border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-sm); }
+    .hp-tile img.wialon { height: 26px; width: auto; }
+    .hp-tile img.wialon-mark { height: 36px; width: auto; }
+    .hp-tile img.mix { height: 42px; width: auto; }
+    .hp-tile img.howen { height: 36px; width: auto; }
+    .hp-mix { font-weight: 700; font-size: 1.3rem; color: #034333; line-height: 1; }
+    .hp-mix small { display: block; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #0a6a52; margin-top: 3px; }
+    .hp-vss { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; background: #1f2937; border-radius: 6px; padding: 3px 8px; }
+    .hs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .hs-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; display: block; }
+    .hs-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 12px 40px rgba(45,212,191,0.1); }
+    .hs-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; background: rgba(45,212,191,0.12); color: #0f9488; margin-bottom: 16px; }
+    .hs-card h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-heading); margin-bottom: 8px; line-height: 1.25; }
+    .hs-card p { font-size: 0.93rem; color: #000000; line-height: 1.7; }
+    .hs-more { text-align: center; margin-top: 40px; }
+    @media (max-width: 1000px) { .hs-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .hs-grid { grid-template-columns: 1fr; } .hp-tile { min-width: 0; width: 100%; } }
     .about-stat-card { background: var(--bg-light); border-radius: 14px; padding: 18px; text-align: center; border: 1px solid var(--border); transition: border-color 0.25s, box-shadow 0.25s; }
     .about-stat-card:hover { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(45,212,191,0.07); }
     .about-stat-card .val { font-family: var(--font-display); font-size: 2rem; background: linear-gradient(135deg,var(--primary),#67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .about-stat-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .about-stat-card .lbl { font-size: 0.75rem; color: #000000; font-weight: 600; margin-top: 2px; }
     .about-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
     @media (max-width: 900px) {
@@ -282,40 +304,6 @@
     .edu-card p { font-size: 0.82rem; color: #000000; }
     @media (max-width: 860px) { .experience-grid { grid-template-columns: 1fr; gap: 48px; } }
 
-    /* ── SKILLS ── */
-    .skills { background: var(--bg-light); padding-bottom: 56px; }
-    .skills-groups { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
-    .skill-group { text-align: center; }
-    .skill-group h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-heading); margin-bottom: 14px; }
-    .tools-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 0; }
-    .tool-chip { padding: 8px 18px; border-radius: 999px; background: var(--bg-white); border: 1px solid var(--border); font-size: 0.82rem; color: #000000; font-weight: 500; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 6px; }
-    .tool-chip img { width: 15px; height: 15px; object-fit: contain; }
-    .tool-chip:hover { border-color: var(--primary); color: var(--primary); }
-    @media (max-width: 700px) {
-      .skills.section-pad { padding-top: 64px; padding-bottom: 40px; }
-      .skills-groups { gap: 20px; margin-top: 28px; }
-      .skill-group h3 { font-size: 1.05rem; margin-bottom: 10px; }
-      .tools-list { gap: 8px; }
-    }
-
-    /* ── COURSES ── */
-    .courses { background: var(--bg-white); }
-    .courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 56px; }
-    @media (max-width: 1100px) { .courses-grid { grid-template-columns: repeat(2, 1fr); } }
-    .course-card { background: var(--bg-light); border-radius: var(--radius); padding: 32px 22px 30px; text-align: center; border: 1px solid var(--border); transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; position: relative; cursor: pointer; }
-    .course-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 12px 40px rgba(45,212,191,0.1); }
-    .course-card-hit { position: absolute; inset: 0; z-index: 1; border-radius: var(--radius); }
-    .course-card-hit:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
-    .course-card-inner { position: relative; z-index: 0; pointer-events: none; }
-    .course-logo-wrap { width: auto; height: auto; min-height: 0; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; padding: 8px; margin: 0 auto 18px; transition: transform 0.25s; }
-    .course-logo-wrap img { width: 92px; height: 92px; object-fit: contain; display: block; }
-    .course-card:hover .course-logo-wrap { transform: scale(1.06); }
-    .course-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
-    .course-card h3 { font-family: var(--font-display); font-size: 1.45rem; color: var(--text-heading); margin-bottom: 12px; }
-    .course-card p { font-size: 0.95rem; color: #000000; line-height: 1.8; margin-bottom: 8px; }
-    @media (max-width: 560px) { .courses-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .course-card { padding: 22px 12px 20px; } .course-card h3 { font-size: 1.15rem; } .course-logo-wrap img { max-width: 72px; max-height: 72px; } }
-    .course-learn-hint { display: inline-block; margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: var(--primary); letter-spacing: 0.02em; }
-
     /* ── CONTACT CTA ── */
     .contact-cta { background: var(--bg-dark); }
     .contact-inner { text-align: center; max-width: 680px; margin: 0 auto; }
@@ -360,7 +348,7 @@
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
     <a href="/home" class="nav-logo">
-      <img src="assets/img/favicon.png" alt="SM Logo">
+      <img src="/assets/img/favicon.png" alt="SM Logo">
       <span class="nav-logo-text">Stephen<span> M.</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
@@ -401,13 +389,14 @@
         </h1>
         <div class="hero-role">
           <div class="line"></div>
-          <p>Data Scientist, Data Analyst &amp; Software Development</p>
+          <p>Fleet &amp; Telematics Data Scientist · Web &amp; Software Developer</p>
         </div>
         <p class="hero-desc">
-          Data Scientist and Analyst working across data analysis, API integration, software development, and analytics solutions, building practical systems that turn data into actionable insights. Experienced in developing web applications, integrating APIs such as Wialon, building Power BI dashboards, and deploying data-driven solutions. I also tutor and mentor students in Python, machine learning, statistics, data analysis, and software development.
+          I help transport and logistics companies turn GPS, telematics, and fuel data into clear decisions, spotting fuel loss, delivery delays, and unsafe driving early. I also build the websites, web apps, and custom software that put that data to work, from Wialon API integrations to Power BI dashboards. I also connect tracking platforms such as Wialon, MiX Telematics, and Howen VSS to ERPs, and document the APIs that tie it all together.
         </p>
         <div class="hero-actions">
           <a href="/contact" class="btn btn-primary"><i class="bi bi-send"></i> Work with Me</a>
+          <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="bi bi-file-earmark-pdf"></i> Download Brochure</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
@@ -429,7 +418,7 @@
       <div class="hero-photo-wrap">
         <div class="hero-photo-glow"></div>
         <div class="hero-photo-frame">
-          <img src="assets/img/Me1.png" alt="Stephen Mulingwa" onerror="this.src='assets/img/Me3.GIF'">
+          <img src="/assets/img/Me1.png" alt="Stephen Mulingwa" onerror="this.src='/assets/img/Me3.GIF'">
         </div>
       </div>
 
@@ -448,22 +437,21 @@
 
     <div class="about-split">
       <div class="about-main fade-left">
-        <p>…and I’m a Data Scientist, Data Analyst, Web Developer, and Software Developer based in Nairobi, Kenya.</p>
-        <p>My work is driven by one belief: <strong>technology only creates value when it solves real problems</strong>. I specialize in <strong>Data Science, Data Analytics, Software development, machine learning</strong>, and <strong>AI system design</strong>, shipping apps and platforms teams can actually use.</p>
-        <p>Currently, I work with large-scale logistics and telematics data, developing predictive models, automated dashboards, and AI-driven systems that improve operational efficiency, safety, and performance. I also build full-stack products from wellness ops portals to agri-marketplaces for Kenyan businesses.</p>
-        <p>Beyond this, I develop scalable web and analytics platforms across healthcare, research, and business sectors. Skilled in <strong>Next.js, Python, SQL, Power BI,</strong> and <strong>cloud databases</strong>, I focus on delivering solutions that are accurate and impactful.</p>
-        <p>My goal is to help organizations adopt smarter digital strategies that foster innovation, optimization, and sustainable growth.</p>
+        <p>…and I’m a Data Scientist, Web Developer, and Software Developer based in Nairobi, Kenya, focused on <span class="highlight">fleet intelligence and telematics</span> for transport and logistics companies.</p>
+        <p>My work is driven by one belief: <strong>technology only creates value when it solves real problems</strong>. A tracking system tells a fleet manager where a truck is. My work answers the harder questions: <strong>where the fuel went, why a delivery ran late, why a truck stopped where it did, and which drivers need coaching</strong>.</p>
+        <p>Every day I work with large-scale GPS and telematics data, including the <strong>Wialon API</strong>, building predictive models, automated exception reports, and dashboards that improve fleet performance, driver safety, and turnaround times.</p>
+        <p>Alongside fleet analytics, I build <strong>websites, web applications, and custom software</strong> for Kenyan businesses, from client portals and operations apps to agri-marketplaces. Skilled in <strong>Next.js, Python, SQL, Power BI,</strong> and <strong>cloud databases</strong>, I deliver solutions that are accurate, practical, and easy to use.</p>
+        <p>My goal is simple: help operators run safer, more accountable, and more profitable businesses with evidence they can trust, not just another dashboard.</p>
       </div>
       <aside class="about-aside fade-right">
         <div class="about-stats">
           <div class="about-stat-card"><div class="val">5+</div><div class="lbl">Years Experience</div></div>
           <div class="about-stat-card"><div class="val">50+</div><div class="lbl">Projects Delivered</div></div>
           <div class="about-stat-card"><div class="val">5+</div><div class="lbl">Sectors Served</div></div>
-          <div class="about-stat-card"><div class="val">$15–$40</div><div class="lbl">Hourly Rate</div></div>
         </div>
         <div class="about-actions">
           <a href="/contact" class="btn btn-dark"><i class="bi bi-person-lines-fill"></i> Explore Background</a>
-          <a href="assets/resume/STEPHEN%20MULINGWA-RESUME.pdf" class="btn btn-primary" download="STEPHEN MULINGWA-RESUME.pdf"><i class="bi bi-download"></i> Download Resume</a>
+          <a href="/assets/resume/STEPHEN%20MULINGWA-RESUME.pdf" class="btn btn-primary" download="STEPHEN MULINGWA-RESUME.pdf"><i class="bi bi-download"></i> Download Resume</a>
         </div>
       </aside>
     </div>
@@ -518,35 +506,35 @@
     <div class="projects-grid">
       <article class="project-card fade-up delay-1">
         <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/fleet-telematics-dashboard.png" alt="Fleet Telematics Dashboard" onerror="this.style.background='#e2e8f0'">
+          <img class="project-card-img" src="/assets/img/portfolio/fleet-telematics-dashboard.png" alt="Fleet Telematics Dashboard" onerror="this.style.background='#e2e8f0'">
         </div>
         <div class="project-card-body">
           <h3>Fleet Telematics Dashboard</h3>
           <p class="project-tagline">Wialon API fleet ops dashboard for logistics</p>
           <p><strong>What I did:</strong> Pulled live telematics data via the Wialon API and built a simplified fleet dashboard — violations, distance, fuel, and driver performance tailored to a logistics company's daily needs.</p>
-          <a href="project-fleet-telematics-dashboard.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+          <a href="/project-fleet-telematics-dashboard.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
         </div>
       </article>
       <article class="project-card fade-up delay-2">
         <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/kiki-mobile-wellness.png" alt="Kiki's Mobile Wellness" onerror="this.style.background='#e2e8f0'">
+          <img class="project-card-img" src="/assets/img/portfolio/kiki-mobile-wellness.png" alt="Kiki's Mobile Wellness" onerror="this.style.background='#e2e8f0'">
         </div>
         <div class="project-card-body">
           <h3>Kiki's Mobile Wellness</h3>
           <p class="project-tagline">Operations portal for appointments, sales, stock &amp; staff</p>
           <p><strong>What I did:</strong> Built a role-based Next.js Operations Progressive Web App (PWA) with appointments, checkout, inventory, expenses, and analytics dashboards — installed as an app for daily ops.</p>
-          <a href="project-kiki-mobile-wellness.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+          <a href="/project-kiki-mobile-wellness.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
         </div>
       </article>
       <article class="project-card fade-up delay-3">
         <div class="project-card-img-wrap">
-          <img class="project-card-img" src="assets/img/portfolio/taistat-agrolink.jpg.png" alt="Mkulima Sokoni" onerror="this.style.background='#e2e8f0'">
+          <img class="project-card-img" src="/assets/img/portfolio/taistat-agrolink.jpg.png" alt="Mkulima Sokoni" onerror="this.style.background='#e2e8f0'">
         </div>
         <div class="project-card-body">
           <h3>Mkulima Sokoni</h3>
           <p class="project-tagline">Kenya-first blockchain marketplace for farmers</p>
           <p><strong>What I did:</strong> Blockchain-powered traceability, real-time farmer–buyer connection, verified KYC onboarding, smart pricing and tender system across 34 counties.</p>
-          <a href="project-taistat-agrolink.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
+          <a href="/project-taistat-agrolink.html" class="project-link">View Project <i class="bi bi-arrow-right"></i></a>
         </div>
       </article>
     </div>
@@ -576,14 +564,14 @@
             <div class="timeline-card">
               <div class="timeline-head">
                 <h4>
-                  <img src="assets/img/controltech_logo.png" alt="ControlTech" onerror="this.style.display='none'">
+                  <img src="/assets/img/controltech_logo.png" alt="ControlTech" onerror="this.style.display='none'">
                   Data Scientist
                   <span class="current-badge">Current</span>
                 </h4>
                 <span class="timeline-period"><i class="bi bi-calendar3"></i> Jan 2026 – Present</span>
               </div>
               <p class="company-name">
-                <img src="assets/img/controltech_logo.png" alt="" onerror="this.style.display='none'">
+                <img src="/assets/img/controltech_logo.png" alt="" onerror="this.style.display='none'">
                 ControlTech Limited, Nairobi
               </p>
               <p class="timeline-desc">Analyzing large-scale logistics and telematics data to improve fleet performance, driver safety, and operational efficiency. Building interactive dashboards and predictive analytics solutions.</p>
@@ -602,14 +590,14 @@
             <div class="timeline-card">
               <div class="timeline-head">
                 <h4>
-                  <img src="assets/img/taistat_logo.png" alt="TaiStat" onerror="this.style.display='none'">
+                  <img src="/assets/img/taistat_logo.png" alt="TaiStat" onerror="this.style.display='none'">
                   Data Scientist &amp; Software Developer
                   <span class="current-badge">Current</span>
                 </h4>
                 <span class="timeline-period"><i class="bi bi-calendar3"></i> Jun 2025 – Present</span>
               </div>
               <p class="company-name">
-                <img src="assets/img/taistat_logo.png" alt="" onerror="this.style.display='none'">
+                <img src="/assets/img/taistat_logo.png" alt="" onerror="this.style.display='none'">
                 TaiStat Firm
               </p>
               <p class="timeline-desc">Lead Data Scientist at TaiStat developing AI-powered analytics platforms including YodaAI. Delivering intelligent decision support solutions across business sectors.</p>
@@ -631,12 +619,12 @@
                 <span class="timeline-period"><i class="bi bi-calendar3"></i> Aug 2023 – Present</span>
               </div>
               <p class="company-name"><i class="bi bi-globe"></i> Remote – Freelance</p>
-              <p class="timeline-desc">Collaborating with international clients and postgraduate students. Building ML models, POS systems, and interactive dashboards. Tutoring in Machine Learning, Python, and Statistical Methods.</p>
+              <p class="timeline-desc">Collaborating with international and local clients. Building ML models, POS systems, interactive dashboards, and API integrations, and advising teams on data and technology choices.</p>
               <div class="timeline-tags">
                 <span class="tag">ML Models</span>
                 <span class="tag">Tableau</span>
                 <span class="tag">Power BI</span>
-                <span class="tag">Tutoring</span>
+                <span class="tag">API Integration</span>
               </div>
             </div>
           </div>
@@ -647,13 +635,13 @@
             <div class="timeline-card">
               <div class="timeline-head">
                 <h4>
-                  <img src="assets/img/knh_logo.png" alt="KNH" onerror="this.style.display='none'">
+                  <img src="/assets/img/knh_logo.png" alt="KNH" onerror="this.style.display='none'">
                   Data Analyst Intern
                 </h4>
                 <span class="timeline-period"><i class="bi bi-calendar3"></i> Apr – Aug 2023</span>
               </div>
               <p class="company-name">
-                <img src="assets/img/knh_logo.png" alt="" onerror="this.style.display='none'">
+                <img src="/assets/img/knh_logo.png" alt="" onerror="this.style.display='none'">
                 Kenyatta National Hospital, Nairobi
               </p>
               <p class="timeline-desc">Supported collection, management, and analysis of large-scale healthcare datasets. Designed M&amp;E frameworks and KPIs for departmental monitoring.</p>
@@ -679,7 +667,7 @@
         </div>
         <div class="education-cards">
           <div class="edu-card">
-            <img src="assets/img/OUK.png" alt="Open University of Kenya" onerror="this.style.display='none'">
+            <img src="/assets/img/OUK.png" alt="Open University of Kenya" onerror="this.style.display='none'">
             <div>
               <h4>MSc Artificial Intelligence</h4>
               <p class="inst">Open University of Kenya</p>
@@ -687,7 +675,7 @@
             </div>
           </div>
           <div class="edu-card">
-            <img src="assets/img/jkuat_logo.png" alt="JKUAT" onerror="this.style.display='none'">
+            <img src="/assets/img/jkuat_logo.png" alt="JKUAT" onerror="this.style.display='none'">
             <div>
               <h4>BSc Statistics</h4>
               <p class="inst">Jomo Kenyatta University of Agriculture and Technology</p>
@@ -695,7 +683,7 @@
             </div>
           </div>
           <div class="edu-card">
-            <img src="assets/img/moringa_logo.png" alt="Moringa School" onerror="this.style.display='none'">
+            <img src="/assets/img/moringa_logo.png" alt="Moringa School" onerror="this.style.display='none'">
             <div>
               <h4>Data Science</h4>
               <p class="inst">Moringa School</p>
@@ -703,7 +691,7 @@
             </div>
           </div>
           <div class="edu-card">
-            <img src="assets/img/jkuat_logo.png" alt="JKUAT" onerror="this.style.display='none'">
+            <img src="/assets/img/jkuat_logo.png" alt="JKUAT" onerror="this.style.display='none'">
             <div>
               <h4>Applied data analysis (SPSS)</h4>
               <p class="inst">JKUAT</p>
@@ -717,121 +705,57 @@
   </div>
 </section>
 
-<!-- ══════════ SKILLS ══════════ -->
-<section id="skills" class="skills section-pad">
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services" class="services-home section-pad">
   <div class="container">
     <div class="text-center" style="margin-bottom:0">
-      <p class="section-label">Technical Arsenal</p>
-      <h2 class="section-title fade-up">My Data <span class="text-gradient">Toolkit</span></h2>
+      <p class="section-label">Services</p>
+      <h2 class="section-title fade-up">Fleet, Integration &amp; <span class="text-gradient">Software Services</span></h2>
+      <p class="section-subtitle fade-up delay-1" style="margin:0 auto 40px">From telematics analytics and ERP integration to API documentation, consultancy, and custom software.</p>
     </div>
-    <div class="skills-groups" id="skillsGrid">
-      <div class="skill-group fade-up">
-        <h3>Software &amp; Web Development</h3>
-        <div class="tools-list">
-          <span class="tool-chip">Next.js</span>
-          <span class="tool-chip">Software Development</span>
-          <span class="tool-chip">Web Development</span>
-          <span class="tool-chip">Vercel</span>
-          <span class="tool-chip">APIs</span>
-          <span class="tool-chip">FastAPI</span>
-          <span class="tool-chip">Git &amp; GitHub</span>
-        </div>
-      </div>
-      <div class="skill-group fade-up delay-1">
-        <h3>Programming &amp; Data</h3>
-        <div class="tools-list">
-          <span class="tool-chip"><img src="assets/img/python_logo.png" alt="" onerror="this.style.display='none'"> Python</span>
-          <span class="tool-chip">SQL</span>
-          <span class="tool-chip">PostgreSQL</span>
-          <span class="tool-chip">R</span>
-          <span class="tool-chip"><img src="assets/img/excel_logo.png" alt="" onerror="this.style.display='none'"> Excel</span>
-          <span class="tool-chip"><img src="assets/img/powerbi_logo.png" alt="" onerror="this.style.display='none'"> Power BI</span>
-          <span class="tool-chip">Tableau</span>
-        </div>
-      </div>
-      <div class="skill-group fade-up delay-2">
-        <h3>Cloud, Databases &amp; Ops</h3>
-        <div class="tools-list">
-          <span class="tool-chip">Neon database</span>
-          <span class="tool-chip">Supabase database</span>
-          <span class="tool-chip">AWS</span>
-          <span class="tool-chip">Cloudinary</span>
-          <span class="tool-chip">Docker</span>
-          <span class="tool-chip">Streamlit</span>
-        </div>
-      </div>
-      <div class="skill-group fade-up delay-3">
-        <h3>Telematics &amp; Fleet</h3>
-        <div class="tools-list">
-          <span class="tool-chip">Wialon</span>
-          <span class="tool-chip">Telematics</span>
-          <span class="tool-chip">Fleet Tracking</span>
-          <span class="tool-chip">Google Colab</span>
-          <span class="tool-chip">Jupyter Notebooks</span>
-          <span class="tool-chip">SPSS</span>
-          <span class="tool-chip">Stata</span>
-        </div>
-      </div>
+
+    <div class="home-platforms fade-up">
+      <p class="lbl">Tracking platforms I work with</p>
+      <div class="hp-tile"><img class="wialon-mark" src="/assets/img/platforms/wialon-symbol.png" alt=""><img class="wialon" src="/assets/img/platforms/wialon.svg" alt="Wialon"></div>
+      <div class="hp-tile"><img class="mix" src="/assets/img/platforms/mix-symbol.png" alt=""><span class="hp-mix">MiX<small>Telematics</small></span></div>
+      <div class="hp-tile"><img class="howen" src="/assets/img/platforms/howen-vss.png" alt="Howen"><span class="hp-vss">VSS</span></div>
     </div>
-  </div>
-</section>
 
-<!-- ══════════ COURSES ══════════ -->
-<section id="courses" class="courses section-pad">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:0">
-      <p class="section-label">Training</p>
-      <h2 class="section-title fade-up">Training &amp; <span class="text-gradient">Software Development</span></h2>
-      <p class="section-subtitle fade-up delay-1" style="margin:0 auto 56px">Hands-on training in software development, web development, and data analysis — plus support on your real projects.</p>
+    <div class="hs-grid">
+      <a href="/services#services" class="hs-card fade-up delay-1">
+        <div class="hs-icon"><i class="bi bi-diagram-3"></i></div>
+        <h3>ERP Integration</h3>
+        <p>Sync trips, mileage, fuel, and asset data from your tracking platform into Odoo, SAP, Dynamics, Sage, or ERPNext.</p>
+      </a>
+      <a href="/services#services" class="hs-card fade-up delay-2">
+        <div class="hs-icon"><i class="bi bi-hdd-network"></i></div>
+        <h3>API Development</h3>
+        <p>Connectors for Wialon, MiX and VSS, plus REST APIs, webhooks, M-Pesa, and SMS integrations.</p>
+      </a>
+      <a href="/services#services" class="hs-card fade-up delay-3">
+        <div class="hs-icon"><i class="bi bi-journal-code"></i></div>
+        <h3>API Documentation</h3>
+        <p>OpenAPI / Swagger specs, Postman collections, and integration guides your partners can follow.</p>
+      </a>
+      <a href="/services#services" class="hs-card fade-up delay-1">
+        <div class="hs-icon"><i class="bi bi-bar-chart-line"></i></div>
+        <h3>Fleet &amp; Telematics Analytics</h3>
+        <p>Fuel loss alerts, turnaround time, driver scorecards, and compliance reports across all your platforms.</p>
+      </a>
+      <a href="/services#services" class="hs-card fade-up delay-2">
+        <div class="hs-icon"><i class="bi bi-lightbulb"></i></div>
+        <h3>Consultancy</h3>
+        <p>Platform and data audits, integration architecture, and KPI design before you invest.</p>
+      </a>
+      <a href="/services#services" class="hs-card fade-up delay-3">
+        <div class="hs-icon"><i class="bi bi-code-square"></i></div>
+        <h3>Web &amp; Software Development</h3>
+        <p>Company websites, client portals, and operations apps built around how your team works.</p>
+      </a>
     </div>
-    <div class="courses-grid">
 
-      <div class="course-card fade-up delay-1">
-        <a href="course-apis.html" class="course-card-hit" aria-label="Open APIs &amp; automation course"></a>
-        <div class="course-card-inner">
-          <div class="course-logo-wrap"><img src="assets/img/api.png" alt="APIs"></div>
-          <h3>APIs &amp; automation</h3>
-          <p>REST APIs, Google Sheets API, databases connect data and automate workflows in Power BI, Tableau, and Python.</p>
-          <span class="course-learn-hint">Learn More <i class="bi bi-arrow-right-short"></i></span>
-        </div>
-      </div>
-
-      <div class="course-card fade-up delay-2">
-        <a href="course-powerbi.html" class="course-card-hit" aria-label="Open Power BI course"></a>
-        <div class="course-card-inner">
-          <div class="course-logo-wrap">
-            <img src="assets/img/powerbi_logo.png" alt="Power BI" onerror="this.style.display='none'">
-          </div>
-          <h3>Power BI</h3>
-          <p>Lakehouses, engineering, PySpark, APIs, DAX, Power Query, modelling, and dynamic dashboards.</p>
-          <span class="course-learn-hint">Learn More <i class="bi bi-arrow-right-short"></i></span>
-        </div>
-      </div>
-
-      <div class="course-card fade-up delay-3">
-        <a href="course-excel.html" class="course-card-hit" aria-label="Open Excel course"></a>
-        <div class="course-card-inner">
-          <div class="course-logo-wrap">
-            <img src="assets/img/excel_logo.png" alt="Excel" onerror="this.style.display='none'">
-          </div>
-          <h3>Excel</h3>
-          <p>Formulas, charts, PivotTables, analysis, Macros &amp; VBA automation, and dashboards.</p>
-          <span class="course-learn-hint">Learn More <i class="bi bi-arrow-right-short"></i></span>
-        </div>
-      </div>
-
-      <div class="course-card fade-up delay-1">
-        <a href="course-python.html" class="course-card-hit" aria-label="Open Python course"></a>
-        <div class="course-card-inner">
-          <div class="course-logo-wrap">
-            <img src="assets/img/python_logo.png" alt="Python" onerror="this.style.display='none'">
-          </div>
-          <h3>Python</h3>
-          <p>APIs, visualization, modelling, machine learning, deployment, NLP &amp; AI.</p>
-          <span class="course-learn-hint">Learn More <i class="bi bi-arrow-right-short"></i></span>
-        </div>
-      </div>
-
+    <div class="hs-more fade-up">
+      <a href="/services" class="btn btn-primary"><i class="bi bi-grid-3x3-gap-fill"></i> View all services</a>
     </div>
   </div>
 </section>
@@ -864,7 +788,7 @@
       <a href="/projects">Projects</a>
       <a href="/services">Services</a>
       <a href="/contact">Contact</a>
-      <a href="assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
+      <a href="/assets/brochure/stephen-mulingwa-brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a>
     </nav>
     <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Software Developer &amp; Data Scientist</p>
     <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
@@ -924,6 +848,6 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
 </script>
-<script src="assets/js/whatsapp-float.js" defer></script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
 </body>
 </html>

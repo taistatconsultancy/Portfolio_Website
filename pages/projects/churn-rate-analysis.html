@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kiki's Mobile Wellness Case Study | Stephen Mulingwa — Software &amp; Web</title>
-  <meta name="description" content="Kiki's Mobile Wellness operations portal — appointments, sales, stock, and staff PWA built by Stephen Mulingwa.">
+  <title>Churn Prediction &amp; ML | Data Science Project — Stephen Mulingwa</title>
+  <meta name="description" content="Customer churn analysis with machine learning — data science portfolio by Stephen Mulingwa.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://stephenmulingwa.com/project-kiki-mobile-wellness.html">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://stephenmulingwa.com/project-churn-rate-analysis.html">
+  <link rel="icon" href="/assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,10 +15,8 @@
   <style>
     :root {
       --primary: #2dd4bf;
-      --primary-dark: #0f9488;
       --primary-glow: rgba(45,212,191,0.25);
       --bg-hero: #060d14;
-      --bg-dark: #0b1521;
       --bg-light: #f7f9fc;
       --bg-white: #ffffff;
       --text-white: #ffffff;
@@ -57,7 +55,7 @@
     .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
     .nav-links a:hover, .nav-links a.active { color: var(--primary); }
     .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--primary); border-radius: 2px; }
-    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-cta { display: flex; align-items: center; }
     .nav-linkedin { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 9px; background: var(--primary); color: var(--bg-hero); font-size: 0.82rem; font-weight: 700; transition: all 0.25s; }
     .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
@@ -69,31 +67,15 @@
     @media (max-width: 900px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: block; } }
 
     /* ── PAGE HERO ── */
-    .page-hero {
-      background: var(--bg-hero);
-      padding: 140px 0 70px;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px);
-      background-size: 60px 60px;
-    }
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%);
-    }
+    .page-hero { background: var(--bg-hero); padding: 140px 0 70px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px); background-size: 60px 60px; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%); }
     .page-hero-inner { position: relative; z-index: 2; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb i { font-size: 0.65rem; }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.8rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
     .page-hero-tagline { font-size: 1.05rem; color: rgba(255,255,255,0.5); max-width: 640px; line-height: 1.75; margin-bottom: 28px; }
     .hero-meta-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .meta-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; }
@@ -106,15 +88,7 @@
 
     /* ── PROJECT CONTENT ── */
     .project-content { background: var(--bg-light); padding: 0 0 100px; }
-    .project-layout {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 48px;
-      align-items: start;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+    .project-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
 
     .project-block { background: var(--bg-white); border-radius: var(--radius); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
     .project-block:last-child { margin-bottom: 0; }
@@ -125,6 +99,20 @@
     .project-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
     .project-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
     .project-block ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
+
+    /* ML pipeline steps */
+    .pipeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+    .pipeline-step { background: var(--bg-light); border-radius: 12px; padding: 16px; border: 1px solid var(--border); text-align: center; transition: border-color 0.25s; }
+    .pipeline-step:hover { border-color: var(--primary); }
+    .pipeline-step i { font-size: 1.3rem; color: var(--primary); display: block; margin-bottom: 8px; }
+    .pipeline-step strong { font-size: 0.82rem; color: var(--text-heading); display: block; margin-bottom: 3px; }
+    .pipeline-step span { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* Metric highlight strip */
+    .metric-strip { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    .metric-pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; background: rgba(45,212,191,0.07); border: 1px solid rgba(45,212,191,0.2); border-radius: 999px; font-size: 0.8rem; }
+    .metric-pill i { color: var(--primary); }
+    .metric-pill span { color: var(--text-muted); }
 
     /* Sidebar */
     .project-sidebar { position: sticky; top: 100px; }
@@ -138,20 +126,9 @@
     .sidebar-actions { display: flex; flex-direction: column; gap: 10px; }
     .sidebar-actions .btn { justify-content: center; }
 
-    /* County badge strip */
-    .county-strip {
-      background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(103,232,249,0.04));
-      border: 1px solid rgba(45,212,191,0.2);
-      border-radius: 14px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-top: 20px;
-    }
-    .county-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--primary); line-height: 1; }
-    .county-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
-    .county-text strong { color: var(--text-heading); display: block; }
+    /* python logo */
+    .py-logo-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
+    .py-logo-wrap img { width: 52px; height: 52px; object-fit: contain; }
 
     /* ── FOOTER ── */
     .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
@@ -170,10 +147,9 @@
     .fade-up.visible { opacity: 1; transform: none; }
     .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
 
-    @media (max-width: 860px) {
-      .project-layout { grid-template-columns: 1fr; }
-      .project-sidebar { position: static; }
-    }
+    @media (max-width: 900px) { .pipeline { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } }
+    @media (max-width: 500px) { .pipeline { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -182,7 +158,7 @@
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
     <a href="/home" class="nav-logo">
-      <img src="assets/img/favicon.png" alt="SM">
+      <img src="/assets/img/favicon.png" alt="SM">
       <span class="nav-logo-text">Stephen<span> M.</span></span>
     </a>
     <ul class="nav-links">
@@ -216,15 +192,15 @@
       <i class="bi bi-chevron-right"></i>
       <a href="/projects">Projects</a>
       <i class="bi bi-chevron-right"></i>
-      <span>Kiki's Mobile Wellness</span>
+      <span>Churn Rate Analysis</span>
     </div>
-    <h1>Kiki's <span class="text-gradient">Mobile Wellness</span></h1>
-    <p class="page-hero-tagline">A role-based operations portal for a Nairobi wellness business — appointments, sales, stock, staff, and expenses in one installable web app.</p>
+    <h1>Churn Rate <span class="text-gradient">Analysis</span></h1>
+    <p class="page-hero-tagline">Neural networks for telecom churn prediction — identifying at-risk customers early and supporting targeted, cost-effective retention strategies.</p>
     <div class="hero-meta-chips">
-      <span class="meta-chip"><i class="bi bi-phone"></i> PWA</span>
-      <span class="meta-chip"><i class="bi bi-calendar-check"></i> Appointments</span>
-      <span class="meta-chip"><i class="bi bi-box-seam"></i> Stock &amp; Sales</span>
-      <span class="meta-chip"><i class="bi bi-people"></i> Staff Roles</span>
+      <span class="meta-chip"><i class="bi bi-diagram-3"></i> Neural Networks</span>
+      <span class="meta-chip"><i class="bi bi-telephone"></i> Telecoms</span>
+      <span class="meta-chip"><i class="bi bi-person-dash"></i> Churn Prediction</span>
+      <span class="meta-chip"><i class="bi bi-bullseye"></i> Retention Strategy</span>
     </div>
   </div>
 </section>
@@ -232,7 +208,7 @@
 <!-- ══ PROJECT IMAGE ══ -->
 <div class="project-image-wrap">
   <div class="project-image-frame">
-    <img src="assets/img/portfolio/kiki-mobile-wellness.png" alt="Kiki's Mobile Wellness" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
+    <img src="/assets/img/portfolio/churn-rate-analysis.jpg.jpg" alt="Churn Rate Analysis" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
   </div>
 </div>
 
@@ -249,26 +225,59 @@
           <span class="block-icon" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="bi bi-exclamation-circle"></i></span>
           The Problem
         </h3>
-        <p>Kiki's Mobile Wellness was running appointments, payments, inventory, staff duties, and referrals across spreadsheets and ad-hoc tools. Revenue, stock levels, and day-to-day ops were hard to track in one place.</p>
-        <p>The business needed a single, mobile-friendly operations system staff could install and use daily — with clear roles for admin, front desk, and therapists.</p>
+        <p>Telecom operators lose significant revenue when customers churn. Without a way to predict who is likely to leave, retention efforts are spread thinly across the entire base and often applied too late to make a difference.</p>
+        <p>The business needed a model that could flag high-risk customers in advance and support targeted, cost-effective retention campaigns — focusing spend where it actually matters.</p>
       </div>
 
-      <!-- What I Did -->
+      <!-- What I Built -->
       <div class="project-block fade-up delay-1">
         <h3>
-          <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-wrench-adjustable"></i></span>
+          <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-cpu"></i></span>
           What I Built
         </h3>
-        <p>I designed and built a <strong style="color:var(--text-heading)">Next.js Operations Progressive Web App (PWA)</strong> with role-based portals for Admin, Front Desk, and Staff.</p>
-        <p>The app covers appointment calendars (with Google Calendar sync), multi-step checkout (cash, M-Pesa, card, and more), sales and client records, stock movements, expense tracking, service referrals, and admin analytics with P&amp;L views.</p>
-        <p>It ships as an installable Progressive Web App so the team can run the business from phones and desktops without a separate native app store release.</p>
+        <p>I took customer and usage data — tenure, usage patterns, complaints, and contract type — and prepared it for modelling: handling missing values, encoding categories, and engineering features that capture behaviour over time.</p>
+        <p>I built and compared several classifiers with a focus on <strong style="color:var(--text-heading)">neural networks</strong>, tuning hyperparameters and applying cross-validation to avoid overfitting. The priority was strong <strong style="color:var(--text-heading)">recall on churners</strong> — catching most at-risk customers — without contacting the entire base unnecessarily.</p>
 
-        <div class="county-strip">
-          <div class="county-num">3</div>
-          <div class="county-text">
-            <strong>Role-Based Portals</strong>
-            Admin, Front Desk, and Staff experiences with permissions tailored to daily wellness operations.
+        <!-- ML pipeline -->
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <i class="bi bi-database"></i>
+            <strong>Data Prep</strong>
+            <span>Missing values, encoding, feature engineering</span>
           </div>
+          <div class="pipeline-step">
+            <i class="bi bi-diagram-3"></i>
+            <strong>Model Training</strong>
+            <span>Neural networks + classifier comparison</span>
+          </div>
+          <div class="pipeline-step">
+            <i class="bi bi-sliders"></i>
+            <strong>Tuning</strong>
+            <span>Hyperparameter search + cross-validation</span>
+          </div>
+          <div class="pipeline-step">
+            <i class="bi bi-bar-chart-line"></i>
+            <strong>Evaluation</strong>
+            <span>Precision, Recall, AUC-ROC</span>
+          </div>
+          <div class="pipeline-step">
+            <i class="bi bi-eye"></i>
+            <strong>Explainability</strong>
+            <span>Feature importance &amp; error analysis</span>
+          </div>
+          <div class="pipeline-step">
+            <i class="bi bi-file-earmark-text"></i>
+            <strong>Deliverable</strong>
+            <span>Trained model + scoring script + report</span>
+          </div>
+        </div>
+
+        <!-- Evaluation metrics -->
+        <div class="metric-strip">
+          <div class="metric-pill"><i class="bi bi-bullseye"></i><span>Precision</span></div>
+          <div class="metric-pill"><i class="bi bi-arrow-repeat"></i><span>Recall</span></div>
+          <div class="metric-pill"><i class="bi bi-graph-up"></i><span>AUC-ROC</span></div>
+          <div class="metric-pill"><i class="bi bi-check2-all"></i><span>Cross-Validation</span></div>
         </div>
       </div>
 
@@ -278,14 +287,14 @@
           <span class="block-icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="bi bi-graph-up-arrow"></i></span>
           Outcome
         </h3>
-        <p>Staff now manage bookings, sales, stock, and expenses in one branded system — with clearer accountability and faster day-to-day workflows for a Westlands, Nairobi wellness business.</p>
+        <p>The business gained a data-driven way to rank customers by churn risk and design targeted retention interventions — such as offers or direct outreach — for the highest-risk segment, improving the efficiency of retention spend.</p>
         <ul>
-          <li>Appointment scheduling with complete / cancel / no-show flows</li>
-          <li>Checkout supporting cash, M-Pesa, card, bank, gift card, and split payments</li>
-          <li>Stock inventory, movements, and staff product possessions</li>
-          <li>Expense tracking by category and referral payment statuses</li>
-          <li>Admin revenue, expenses, P&amp;L, and stock-value dashboards</li>
-          <li>Installable PWA with offline-friendly service worker support</li>
+          <li>Neural network classifier trained on real telecom customer data</li>
+          <li>High-recall model catches most at-risk customers before they leave</li>
+          <li>Feature importance analysis explains key drivers of churn</li>
+          <li>Scoring script to rank new customers by risk level</li>
+          <li>Short report with model findings and retention recommendations</li>
+          <li>More efficient retention campaigns — targeted, not blanket</li>
         </ul>
       </div>
 
@@ -295,46 +304,51 @@
     <aside class="project-sidebar">
 
       <div class="sidebar-card fade-up">
+        <div class="py-logo-wrap">
+          <img src="/assets/img/python_logo.png" alt="Python" onerror="this.style.display='none'">
+        </div>
         <h4>Project Details</h4>
         <div class="sidebar-row">
           <span class="label">Category</span>
-          <span class="value">Software / Web App</span>
+          <span class="value">AI &amp; ML</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Client</span>
-          <span class="value">Kiki's Mobile Wellness</span>
+          <span class="label">Domain</span>
+          <span class="value">Telecoms</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Location</span>
-          <span class="value">Nairobi, Kenya</span>
+          <span class="label">Model</span>
+          <span class="value">Neural Network</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Type</span>
-          <span class="value">Operations PWA</span>
+          <span class="label">Language</span>
+          <span class="value">Python</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Status</span>
-          <span class="value" style="color:var(--primary)">Live</span>
+          <span class="value" style="color:var(--primary)">Complete</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-1">
         <h4>Tools &amp; Technologies</h4>
         <div class="tools-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Prisma</span>
-          <span class="tag">Neon Postgres</span>
-          <span class="tag">JWT Auth</span>
-          <span class="tag">PWA</span>
-          <span class="tag">Vercel</span>
+          <span class="tag">Python</span>
+          <span class="tag">Keras</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Jupyter</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-2">
         <h4>Actions</h4>
         <div class="sidebar-actions">
+          <a href="https://github.com/StephenMulingwa/Churn_Rate_Project" target="_blank" class="btn btn-primary">
+            <i class="bi bi-github"></i> View on GitHub
+          </a>
           <a href="/projects" class="btn btn-outline">
             <i class="bi bi-arrow-left"></i> Back to Projects
           </a>
@@ -360,7 +374,7 @@
       <a href="https://github.com/StephenMulingwa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
       <a href="https://wa.me/254111224952" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
     </div>
-    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Software Developer &amp; Data Scientist</p>
+    <p class="footer-copy">Stephen Mulingwa &nbsp;·&nbsp; Data Scientist</p>
     <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
       <i class="bi bi-arrow-up-short"></i>
     </button>
@@ -384,6 +398,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => obs.observe(el));
 </script>
-<script src="assets/js/whatsapp-float.js" defer></script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
 </body>
 </html>

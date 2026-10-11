@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mkulima Sokoni Case Study | Stephen Mulingwa — Data &amp; Platform</title>
-  <meta name="description" content="Mkulima Sokoni blockchain marketplace for Kenyan agriculture — portfolio project by Stephen Mulingwa, data scientist &amp; TaiStat founder.">
+  <title>Excel Analytics Portfolio | Dashboards &amp; Models — Stephen Mulingwa</title>
+  <meta name="description" content="Excel analytics and dashboard solutions — data analysis project by Stephen Mulingwa, data scientist and software developer.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://stephenmulingwa.com/project-taistat-agrolink.html">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="canonical" href="https://stephenmulingwa.com/project-excel-analytics.html">
+  <link rel="icon" href="/assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,10 +15,8 @@
   <style>
     :root {
       --primary: #2dd4bf;
-      --primary-dark: #0f9488;
       --primary-glow: rgba(45,212,191,0.25);
       --bg-hero: #060d14;
-      --bg-dark: #0b1521;
       --bg-light: #f7f9fc;
       --bg-white: #ffffff;
       --text-white: #ffffff;
@@ -57,7 +55,7 @@
     .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.25s; position: relative; }
     .nav-links a:hover, .nav-links a.active { color: var(--primary); }
     .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--primary); border-radius: 2px; }
-    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-cta { display: flex; align-items: center; }
     .nav-linkedin { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 9px; background: var(--primary); color: var(--bg-hero); font-size: 0.82rem; font-weight: 700; transition: all 0.25s; }
     .nav-linkedin:hover { background: #1ab5a3; transform: translateY(-1px); }
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text-heading); font-size: 1.5rem; }
@@ -69,31 +67,15 @@
     @media (max-width: 900px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: block; } }
 
     /* ── PAGE HERO ── */
-    .page-hero {
-      background: var(--bg-hero);
-      padding: 140px 0 70px;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px);
-      background-size: 60px 60px;
-    }
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%);
-    }
+    .page-hero { background: var(--bg-hero); padding: 140px 0 70px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px); background-size: 60px 60px; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(45,212,191,0.07) 0%, transparent 70%); }
     .page-hero-inner { position: relative; z-index: 2; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb i { font-size: 0.65rem; }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.8rem); color: var(--text-white); line-height: 1.1; margin-bottom: 16px; }
     .page-hero-tagline { font-size: 1.05rem; color: rgba(255,255,255,0.5); max-width: 640px; line-height: 1.75; margin-bottom: 28px; }
     .hero-meta-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .meta-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; }
@@ -106,15 +88,7 @@
 
     /* ── PROJECT CONTENT ── */
     .project-content { background: var(--bg-light); padding: 0 0 100px; }
-    .project-layout {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 48px;
-      align-items: start;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+    .project-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
 
     .project-block { background: var(--bg-white); border-radius: var(--radius); padding: 36px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
     .project-block:last-child { margin-bottom: 0; }
@@ -125,6 +99,17 @@
     .project-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
     .project-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
     .project-block ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 8px; }
+
+    /* Data flow steps */
+    .flow-steps { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+    .flow-step { display: flex; align-items: flex-start; gap: 16px; background: var(--bg-light); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--border); }
+    .flow-num { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,var(--primary),#67e8f9); color: var(--bg-hero); font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .flow-text strong { display: block; font-size: 0.88rem; color: var(--text-heading); margin-bottom: 2px; }
+    .flow-text span { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Excel logo in sidebar */
+    .excel-logo-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
+    .excel-logo-wrap img { width: 56px; height: 56px; object-fit: contain; }
 
     /* Sidebar */
     .project-sidebar { position: sticky; top: 100px; }
@@ -138,20 +123,18 @@
     .sidebar-actions { display: flex; flex-direction: column; gap: 10px; }
     .sidebar-actions .btn { justify-content: center; }
 
-    /* County badge strip */
-    .county-strip {
+    /* Course CTA banner */
+    .course-cta-banner {
       background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(103,232,249,0.04));
       border: 1px solid rgba(45,212,191,0.2);
       border-radius: 14px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      padding: 20px;
+      text-align: center;
       margin-top: 20px;
     }
-    .county-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--primary); line-height: 1; }
-    .county-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
-    .county-text strong { color: var(--text-heading); display: block; }
+    .course-cta-banner img { width: 40px; height: 40px; object-fit: contain; margin: 0 auto 10px; }
+    .course-cta-banner p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .course-cta-banner .btn { width: 100%; justify-content: center; font-size: 0.82rem; padding: 11px 20px; }
 
     /* ── FOOTER ── */
     .site-footer { background: var(--bg-hero); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
@@ -170,10 +153,7 @@
     .fade-up.visible { opacity: 1; transform: none; }
     .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
 
-    @media (max-width: 860px) {
-      .project-layout { grid-template-columns: 1fr; }
-      .project-sidebar { position: static; }
-    }
+    @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-sidebar { position: static; } }
   </style>
 </head>
 <body>
@@ -182,7 +162,7 @@
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
     <a href="/home" class="nav-logo">
-      <img src="assets/img/favicon.png" alt="SM">
+      <img src="/assets/img/favicon.png" alt="SM">
       <span class="nav-logo-text">Stephen<span> M.</span></span>
     </a>
     <ul class="nav-links">
@@ -216,15 +196,15 @@
       <i class="bi bi-chevron-right"></i>
       <a href="/projects">Projects</a>
       <i class="bi bi-chevron-right"></i>
-      <span>Mkulima Sokoni</span>
+      <span>Excel Analytics Solutions</span>
     </div>
-    <h1>Mkulima <span class="text-gradient">Sokoni</span></h1>
-    <p class="page-hero-tagline">A Kenya-first blockchain marketplace connecting verified farmers with trusted buyers through transparent pricing, fair markets, and guaranteed sales.</p>
+    <h1>Excel Analytics <span class="text-gradient">Solutions</span></h1>
+    <p class="page-hero-tagline">Advanced Excel dashboards and data models for reporting and decision support — turning messy spreadsheets into clean, reusable business tools.</p>
     <div class="hero-meta-chips">
-      <span class="meta-chip"><i class="bi bi-shield-check"></i> Blockchain</span>
-      <span class="meta-chip"><i class="bi bi-geo-alt"></i> 34 Counties</span>
-      <span class="meta-chip"><i class="bi bi-people"></i> Farmer–Buyer Platform</span>
-      <span class="meta-chip"><i class="bi bi-bar-chart"></i> Smart Pricing</span>
+      <span class="meta-chip"><i class="bi bi-file-earmark-spreadsheet"></i> Microsoft Excel</span>
+      <span class="meta-chip"><i class="bi bi-table"></i> PivotTables</span>
+      <span class="meta-chip"><i class="bi bi-lightning"></i> Power Query</span>
+      <span class="meta-chip"><i class="bi bi-bar-chart"></i> Dashboards</span>
     </div>
   </div>
 </section>
@@ -232,7 +212,7 @@
 <!-- ══ PROJECT IMAGE ══ -->
 <div class="project-image-wrap">
   <div class="project-image-frame">
-    <img src="assets/img/portfolio/taistat-agrolink.jpg.png" alt="Mkulima Sokoni" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
+    <img src="/assets/img/portfolio/excel-analytics.jpg.jpg" alt="Excel Analytics Solutions" onerror="this.style.background='#e2e8f0';this.style.minHeight='300px'">
   </div>
 </div>
 
@@ -249,25 +229,48 @@
           <span class="block-icon" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="bi bi-exclamation-circle"></i></span>
           The Problem
         </h3>
-        <p>Farmers and buyers in Kenya often dealt with unclear pricing, little traceability from farm to buyer, and no single place to trade with trust. Middlemen and information gaps made it hard for farmers to get fair prices and for buyers to be sure of origin and quality.</p>
-        <p>A transparent, verifiable marketplace was missing — one that could level the playing field between producers and buyers across Kenya's diverse agricultural regions.</p>
+        <p>Many teams rely on Excel for reporting but struggle with slow, error-prone workbooks, unclear structure, and no single view of key metrics. Data is often copied manually between sheets, and there's no easy way to slice by period, region, or product without rebuilding the report.</p>
+        <p>Leadership needed clear, repeatable dashboards that could be updated with new data without constant rework or relying on a data analyst every month.</p>
       </div>
 
-      <!-- What I Did -->
+      <!-- What I Built -->
       <div class="project-block fade-up delay-1">
         <h3>
           <span class="block-icon" style="background:rgba(45,212,191,0.1);color:var(--primary)"><i class="bi bi-wrench-adjustable"></i></span>
           What I Built
         </h3>
-        <p>I contributed to the design and implementation of a <strong style="color:var(--text-heading)">blockchain-based agri-marketplace</strong> so that every crop could be traced from farm to buyer. The system supports verified farmer onboarding with KYC-style checks, so only vetted producers can list produce. Buyers see clear provenance and can connect with farmers in real time.</p>
-        <p>Smart pricing and a tender system were built so that offers and bids are visible and fair. The platform also uses a coin-based model for payments and bidding, making it easier to settle and to run auctions.</p>
-        <p>My work focused on the data and analytics side: how traceability data is stored and queried, how pricing and tender data feed into the platform, and how dashboards and reports can sit on top of the blockchain and application data.</p>
+        <p>I designed and built Excel-based solutions that turn raw data into structured reports and dashboards. The workbooks are built for reuse — when new data is added, the user refreshes or pastes into the data sheet, and all dashboards and PivotTables update automatically.</p>
+        <p>I used <strong style="color:var(--text-heading)">dynamic arrays, named ranges, and conditional formatting</strong> so that KPIs and exceptions are visible at a glance, and added <strong style="color:var(--text-heading)">Power Pivot data models</strong> where multiple tables needed to be combined for ratio and trend measures.</p>
 
-        <div class="county-strip">
-          <div class="county-num">34</div>
-          <div class="county-text">
-            <strong>Kenyan Counties Covered</strong>
-            A nationwide rollout giving farmers and buyers across Kenya access to a verified, fair marketplace.
+        <!-- Data flow -->
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <div class="flow-text">
+              <strong>Data Layer</strong>
+              <span>Single data sheet or external connection — one place to paste or refresh</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <div class="flow-text">
+              <strong>Power Query / Data Model</strong>
+              <span>Transform, clean, and combine tables with measures and calculated columns</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <div class="flow-text">
+              <strong>PivotTables &amp; Calculated Fields</strong>
+              <span>Structured summaries that update with the data — no manual rework</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">4</div>
+            <div class="flow-text">
+              <strong>Dashboard &amp; Slicers</strong>
+              <span>Charts, KPIs, conditional formatting, and filters for stakeholder use</span>
+            </div>
           </div>
         </div>
       </div>
@@ -278,14 +281,14 @@
           <span class="block-icon" style="background:rgba(16,185,129,0.1);color:#10b981"><i class="bi bi-graph-up-arrow"></i></span>
           Outcome
         </h3>
-        <p>The platform gives verified farmers and trusted buyers a single place to trade with end-to-end visibility, fairer pricing, and clearer accountability. It supports better market access for farmers and more reliable supply and traceability for buyers.</p>
+        <p>Teams have reliable, reusable Excel templates and dashboards that support monthly reporting and ad hoc analysis without heavy IT support. Decision-making is faster because the data is structured and the views are consistent.</p>
         <ul>
-          <li>End-to-end traceability from farm to buyer via blockchain</li>
-          <li>Verified KYC onboarding for all farmers and buyers</li>
-          <li>Real-time farmer–buyer connections across 34 counties</li>
-          <li>Smart pricing and open tender system for fair bidding</li>
-          <li>Coin-based payment and auction settlement model</li>
-          <li>Analytics dashboards and reports on top of platform data</li>
+          <li>Clean, reusable workbooks — refresh data and all views update</li>
+          <li>KPI summary views with variance vs. plan built in</li>
+          <li>Drill-down by time period, region, or product via slicers</li>
+          <li>Power Pivot models for multi-table ratio and trend analysis</li>
+          <li>Conditional formatting for instant exception spotting</li>
+          <li>Documented structure so non-technical staff can maintain files</li>
         </ul>
       </div>
 
@@ -295,50 +298,62 @@
     <aside class="project-sidebar">
 
       <div class="sidebar-card fade-up">
+        <div class="excel-logo-wrap">
+          <img src="/assets/img/excel_logo.png" alt="Excel" onerror="this.style.display='none'">
+        </div>
         <h4>Project Details</h4>
         <div class="sidebar-row">
           <span class="label">Category</span>
-          <span class="value">Blockchain</span>
+          <span class="value">Analytics</span>
         </div>
         <div class="sidebar-row">
-          <span class="label">Client</span>
-          <span class="value">TaiStat Firm</span>
-        </div>
-        <div class="sidebar-row">
-          <span class="label">Reach</span>
-          <span class="value">34 Counties</span>
+          <span class="label">Tool</span>
+          <span class="value">Microsoft Excel</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Type</span>
-          <span class="value">Marketplace Platform</span>
+          <span class="value">Dashboard / Template</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="label">Sectors</span>
+          <span class="value">Multiple</span>
         </div>
         <div class="sidebar-row">
           <span class="label">Status</span>
-          <span class="value" style="color:var(--primary)">Live</span>
+          <span class="value" style="color:var(--primary)">Complete</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-1">
         <h4>Tools &amp; Technologies</h4>
         <div class="tools-tags">
-          <span class="tag">Blockchain</span>
-          <span class="tag">Smart Contracts</span>
-          <span class="tag">Python</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Database</span>
-          <span class="tag">Data Analytics</span>
-          <span class="tag">KYC / Identity</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">Power Pivot</span>
+          <span class="tag">PivotTables</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Charts &amp; Slicers</span>
+          <span class="tag">Dynamic Arrays</span>
         </div>
       </div>
 
       <div class="sidebar-card fade-up delay-2">
         <h4>Actions</h4>
         <div class="sidebar-actions">
-          <a href="https://www.mkulimasokoni.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <i class="bi bi-box-arrow-up-right"></i> Visit Mkulima Sokoni
-          </a>
           <a href="/projects" class="btn btn-outline">
             <i class="bi bi-arrow-left"></i> Back to Projects
+          </a>
+          <a href="/contact" class="btn btn-primary">
+            <i class="bi bi-send"></i> Discuss a Project
+          </a>
+        </div>
+
+        <!-- Services cross-link -->
+        <div class="course-cta-banner">
+          <img src="/assets/img/excel_logo.png" alt="Excel" onerror="this.style.display='none'">
+          <p>Need automated reports or dashboards connected to your systems? Stephen builds reporting, integrations, and analytics.</p>
+          <a href="/services" class="btn btn-primary">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Explore Services
           </a>
         </div>
       </div>
@@ -386,6 +401,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => obs.observe(el));
 </script>
-<script src="assets/js/whatsapp-float.js" defer></script>
+<script src="/assets/js/whatsapp-float.js" defer></script>
 </body>
 </html>
